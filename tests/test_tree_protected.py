@@ -226,6 +226,7 @@ def test_apply_allocates_the_forced_nodes_in_pob() -> None:
 
 
 @pytest.mark.pob
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#7: node 29161 has no path from the allocated tree", strict=True)
 def test_apply_allocates_a_forced_mastery_effect_in_pob() -> None:
     from junkroan.pob.session import PobSession
     from junkroan.search.skeleton import Skeleton

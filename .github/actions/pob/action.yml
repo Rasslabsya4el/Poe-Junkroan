@@ -22,6 +22,7 @@ runs:
         print("path=" + lock["canonical_path"])
         release = json.load(open("locks/pob.lock.json", encoding="utf-8"))
         print("release_dir=var/cache/pob/" + release["tag"] + "/" + release["extract_subdir"])
+        print("downloads_dir=var/cache/pob/" + release["tag"] + "/downloads")
         EOF
     - name: The runtime build script must exist
       shell: bash
@@ -64,13 +65,17 @@ runs:
         fi
         echo "PoB source at the pinned commit $found"
     # The pinned portable release (locks/pob.lock.json, about 630 MB zipped) extracted to var/cache/pob/<tag>/app, where
-    # the code looks for it. Only the extracted folder is cached, keyed by the lock file; the zip is deleted after use.
+    # the code looks for it. The zip is cached with it: every PoB launch checks the zip's size and sha256 against the
+    # lock (release_manager fetch + verify) and downloads it again when it is missing, so a missing zip made each of a
+    # shard's parallel processes download it into the same .part file at once.
     - name: Restore the pinned PoB release
       id: release
       uses: actions/cache@v6.1.0
       with:
-        path: ${{ steps.pin.outputs.release_dir }}
-        key: pob-release-${{ hashFiles('locks/pob.lock.json') }}
+        path: |
+          ${{ steps.pin.outputs.release_dir }}
+          ${{ steps.pin.outputs.downloads_dir }}
+        key: pob-release-with-zip-${{ hashFiles('locks/pob.lock.json') }}
     - name: Fetch the pinned PoB release (only on a cache miss; size and sha256 checked against the lock)
       if: steps.release.outputs.cache-hit != 'true'
       shell: bash
@@ -80,7 +85,6 @@ runs:
           [ "$attempt" = 3 ] && exit 1
           echo "fetch failed (attempt $attempt)"; sleep $((attempt * 30))
         done
-        rm -rf var/cache/pob/*/downloads
     - name: The release is there
       shell: bash
       env:
@@ -90,6 +94,10 @@ runs:
           echo "::error file=locks/pob.lock.json::the pinned PoB release is not extracted at $RELEASE_DIR (no lua51.dll)"
           exit 1
         fi
+        python -m junkroan.pob.release_manager pob verify > /dev/null || {
+          echo "::error file=locks/pob.lock.json::the cached PoB release zip does not match the lock: every PoB test would download it again"
+          exit 1
+        }
     # The runtime follows the build script and the pin; the runner's system and architecture are part of the key.
     - name: Restore the Linux PoB runtime
       id: runtime

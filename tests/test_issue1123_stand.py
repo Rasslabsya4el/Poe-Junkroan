@@ -211,8 +211,7 @@ def test_main_exit_code_and_limit(tmp_path: Path):
 def test_spark_stand_two_fixture_records_move_pob_numbers():
     from junkroan.pob.session import PobSession
 
-    folder = check.newest_core_folder(ROOT / "artifacts" / "benchmark")
-    stand = check.stand_files(folder)["spell"]
+    stand = ROOT / "tests" / "fixtures" / "builds" / "spark-s4.pob.txt"  # the spark stand of weekly core run 20261013-0101-P2-core-3
     records = [
         record("+10 to maximum Life", boss=["+10 to maximum Life"], type="spell", group="fixture"),
         record("+15 to maximum Life", optimistic=["+15 to maximum Life"], type="spell", group="fixture"),

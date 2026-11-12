@@ -110,7 +110,9 @@ def test_relative_marginal():
 
 
 @pytest.mark.pob
-def test_chaos_inoculation_on_spark_smoke(tmp_path):
+def test_chaos_inoculation_on_spark_smoke(tmp_path, monkeypatch):
+    # the spark build of weekly core run 20261013-0101-P2-core-3; run output is not in the repository
+    monkeypatch.setitem(kf.NAMED_BUILDS, "spark", Path(__file__).resolve().parent / "fixtures" / "builds" / "spark-s4.pob.txt")
     out = tmp_path / "spark.json"
     start = time.monotonic()
     assert kf.run(["--build", "spark", "--keystone", "Chaos Inoculation", "--limit", "1", "--out", str(out)]) == 0
