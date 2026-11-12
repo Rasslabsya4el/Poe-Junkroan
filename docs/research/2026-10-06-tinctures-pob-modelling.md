@@ -1,0 +1,44 @@
+# Tinctures in PoB: modelling (#607 unit 1)
+Paths are relative to vendor/pob/source/src unless they start with src/. Read-only research; facts are file:line, inferences are marked.
+
+## 1. Representation
+- Item type "Tincture"; it lives in the Flask slots (Flask 1..5): Item.lua:2136-2137 (default slot "Flask 1"); ItemsTab.lua:2486 (Tincture item in a Flask slot is allowed).
+- Activation: the slot active flag, same as flasks. CalcSetup.lua:943-946: for a Tincture item, if slot.active then env.tinctures[item] = true (flask twin at 926-930). Flag written in Classes/ItemSlotControl.lua:33-35.
+- Applied in CalcPerform.lua:1823 mergeTinctures(env.tinctures), called at 2043. Limit: TinctureLimit BASE 1 (CalcSetup.lua:544), loop stops when used up (CalcPerform.lua:1866-1870). "You can have an additional Tincture active" = TinctureLimit +1 (ModParser.lua:5192).
+- While active: item buffModList and modList (implicit + affixes) are scaled by effectMod and added to modDB (CalcPerform.lua:1840-1881). effectMod = floor((1 + (TinctureEffect INC + item.tinctureData.effectInc, plus MagicTinctureEffect if MAGIC)/100) * (1 + quality/100) * 100)/100 (1834-1840). Conditions set: UsingTincture, Using plus BaseName without spaces (1872-1873).
+- Gate: nothing applies unless canGainRequiredBurn = Weeping Wounds flag, or (TincturesNotInflictManaBurn < 100 and output.ManaUnreserved > 0) (CalcPerform.lua:1824-1828).
+- Melee limit: no special case in code; it is the mod flags. Implicits parse "with Melee Weapons" to flags = ModFlag.WeaponMelee (ModParser.lua:955-956, comment: Tincture mod does not care about it being a Hit). Example Data/Bases/tincture.lua:8 "(70-100)% increased Elemental Damage with Melee Weapons". Ranged: flag TinctureRangedWeapons copies every buff mod having WeaponMelee into a WeaponRanged copy (CalcPerform.lua:1882-1891). Oakbranch "Gain 3 Rage on Melee Weapon Hit" (tincture.lua:80): not checked how it parses.
+- Per-item data Item.lua:2404-2411: tinctureData.manaBurn = (base.manaBurn + 0.01) / (1 + local INC TinctureManaBurnRate) / (1 + local MORE); cooldown = base cooldown / (1 + cdInc); effectInc local. Used for tooltips (ItemsTab.lua:4558-4559, 5026-5031).
+
+## 2. Mana Burn
+- Config var multiplierManaBurnStacks, type count, label "Mana Burn Stacks:", tooltip "Mana Burn Applies a 1% of mana degen per stack" and "This also applies Weeping Wounds if the Keystone is Allocated" (Modules/ConfigOptions.lua:1105). The stack count is MANUAL: PoB never derives stacks from rate or uptime.
+- Handling CalcPerform.lua:902-915: stacks = min(config, MaxManaBurnStacks, else 9999); Multiplier:ManaBurnStacks = that; plus EffectiveManaBurnStacks BASE (the "first # Mana Burn have no effect" mod is negative, ModParser.lua:5188); result goes to Multiplier:EffectiveManaBurnStacks, or Multiplier:WeepingWoundsStacks when Condition:WeepingWoundsInsteadOfManaBurn (ModParser.lua:5190).
+- Drain: CalcSetup.lua:545 ManaDegenPercentTincture BASE 1 per EffectiveManaBurnStacks (Life twin with WeepingWoundsStacks, :546). CalcDefence.lua:1288-1291: baseDegen += max(pool * pct / 100, pct), pool = Mana pool (minimum 1 per stack); degenRate = baseDegen * calcLib.mod(modDB, nil, "ManaDegen"). So 1% of the pool per second per config stack (min 1/s), independent of tincture count.
+- Readable outputs (CalcDefence.lua:1285-1299, resource Mana): ManaDegen, ManaRegen, ManaRecovery, ManaRegenRecovery (= regen - degen + recovery, per second), ManaRegenPercent, ManaRegenInc. No ManaBurn output. Tincture outputs TinctureEffect and TinctureLimit exist only when breakdown is on (CalcPerform.lua:1817-1820; CalcSections.lua:1766-1773).
+- "reduced Mana Burn rate" mods: parsed to TinctureManaBurnRate INC/MORE (ModParser.lua:882, 5186-5187); "chance to not inflict" to TincturesNotInflictManaBurn (881). Consumers found: Item.lua:2406 and ItemsTab.lua:5026-5029 (tooltips); CalcPerform reads TincturesNotInflictManaBurn only as the 100% gate (1824). A grep of Modules/ found no use in the degen path. So rate mods do NOT change ManaDegen unless the stack count is changed by hand; stacks must be computed by us.
+- "Tinctures deactivate when you have # or more Mana Burn" -> MaxManaBurnStacks, caps config stacks only (ModParser.lua:5189). "+% effect at 10 or more stacks" = TinctureEffect with MultiplierThreshold on ManaBurnStacks / WeepingWoundsStacks (5185). "per Mana Burn" mods use Multiplier ManaBurnStacks (ModParser.lua:1350-1352).
+- Unparsed (nil in cache): Enduring Suffusion linger line (Data/ModCache.lua:12346-12347), "Recover 15% of Mana when you activate a Tincture" (ModCache.lua:10727); its "30% less Mana Burn rate" half parses (ModCache.lua:12354).
+
+## 3. Uptime / time to empty
+- PoB computes NO tincture uptime, time-to-empty or cooldown simulation (no such code in CalcPerform/CalcDefence/CalcOffence; CalcOffence has no Tincture or ManaBurn match). A tincture is on or off by slot flag. Flask uptime exists only for flasks: src/junkroan/pob/headless_runtime_worker.py:1697-1710 flask_uptimes_for takes item.base.flask only.
+- Outputs to compute it ourselves: Mana (max), ManaUnreserved (CalcDefence.lua:229, 2308; BuildDisplayStats.lua:130), ManaRegen, ManaDegen, ManaRegenRecovery (CalcDefence.lua:1285-1295), ManaPerSecondCost and ManaPerSecondHasCost (BuildDisplayStats.lua:82), ManaCost / ManaHasCost (:80). Tincture base manaBurn seconds per stack and cooldown: Bases/tincture.lua, manaBurn 0.5-0.9, cooldown 6-10. ItemsTab.lua:5026 prints "Mana Burn Inflicted Every Second". The steady-state stack count (degen = regen) would be our own derivation (inference).
+
+## 4. Warden ascendancy notable (ranged)
+- Node "Seasoned Hunter" (id 36958, ascendancyName "Raider" in the tree file; icon path under passives/Warden): TreeData/3_28/tree.lua:83516-83523, stat "Tincture Effects also apply to Ranged Weapons". Mod: TinctureRangedWeapons FLAG (ModParser.lua:5191; Data/ModCache.lua:12348). Same node in 3_25 (tree.lua:78377-78381), 3_26 (:78830-78834).
+- Neighbours: "Experienced Herbalist", "You can have an additional Tincture active" (3_28 tree.lua:83476-83482; ModCache.lua:12834); "Enduring Suffusion" (3_28 tree.lua:83497-83502).
+
+## 5. Bases and mod pool
+- 10 bases, Data/Bases/tincture.lua (implicit; manaBurn s / cooldown s): Prismatic (70-100% inc Elemental Damage with Melee Weapons; 0.7/8) :5; Rosethorn (100-150% inc Critical Strike Chance with Melee Weapons; 0.7/8) :14; Ironwood (40% reduced Enemy Stun Threshold + 15-25% inc Stun Duration with Melee Weapons; 0.9/10) :23; Ashbark (25% Ignite + 60-90% inc Ignite damage; 0.6/7) :32; Borealwood (25% Freeze + 25-35% Chill effect; 0.6/7) :41; Fulgurite (25% Shock + 25-35% Shock effect; 0.6/7) :50; Poisonberry (20% Poison + 60-90% Poison damage; 0.7/6) :59; Blood Sap (20% Bleed + 60-90% Bleed damage; 0.7/6) :68; Oakbranch (Gain 3 Rage on Melee Weapon Hit; 0.5/8) :77; Sporebloom (25% Blind + 25-35% Blind effect; 0.9/8) :86.
+- Mod pool: Data/ModTincture.lua, 66 Prefix/Suffix entries, weightKey tincture; e.g. TinctureEffect1-4 "(11-13)..(20-22)% increased effect" (:5-8), TinctureToxicityRate1-4 "(15-17)..(24-26)% reduced Mana Burn rate" (:9-12), TinctureEffectFasterToxicity "35% increased effect" + "(47-51)% increased Mana Burn rate" (:17). Loaded Modules/Data.lua:656.
+- Uniques: Data/Uniques/tincture.lua (5 lines end in Tincture, so about 5 uniques, unverified); unique-only Mana Burn mods in Data/ModItemExclusive.lua:7995-8058.
+
+## 6. src/junkroan today
+- No tincture modelling and no ManaBurn handling in src/junkroan (grep Tincture, tincture, ManaBurn over src/junkroan).
+- optimizer/flask_lines.py:1-8, 25, 77, 94: day-1 MAGIC flask or tincture candidate lines from Bases/tincture.lua + ModTincture.lua (kind tincture).
+- optimizer/item_bases.py:30 NON_GEAR_TYPES includes Tincture; optimizer/trace.py:115-116 tags Tincture bases as tincture.
+- optimizer/flask_probe.py:90-91: comment says equip drops the flag and a tincture flag is never re-derived: hand the author flag back, then set_flasks_active({slot: True}).
+- pob/headless_runtime_worker.py:3196-3197 flask_uptimes leaves a tincture out; :3221-3254 set_flasks_active writes slot.active, slot.controls.activate.state and activeItemSet[slot].active (docstring 3224-3225 names env.tinctures).
+- The #575 active derivation: Lua derive_flask_flags at headless_runtime_worker.py:1752-1761 (active iff Flask uptime 100%; helpers flask_flips :1743, flask_slot_active :1717, flask_set_flag :1721, flask_uptimes_for :1697). Used at :1835, :1922, :1974, :2383, :2493, :2519; delivered export :4588-4593 and :6860 (derive_flask_flags=True). Inference: flask_uptimes_for filters item.base.flask (:1702), so a tincture slot flag is never derived.
+
+## Not checked
+How Oakbranch and unique tinctures parse (WeaponMelee flag or not); which tree version our builds use (3_28 assumed from vendor dir).

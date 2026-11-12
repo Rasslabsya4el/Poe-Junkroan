@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+# PoB source and its native runtime: fetched by the pin in locks/, never committed
+vendor/
+# run output and local data
+artifacts/
+var/
+# raw scraped PoEDB HTML snapshots; regenerate with poedb_affix_ingestion.py refresh
+src/junkroan/pob/mod_data/poedb_affix_catalog/snapshots/
+# worktrees and scratch of agent chats
+.claude/worktrees/
+.claude/scratch/
+.claude/settings.local.json
+.venv-linux/

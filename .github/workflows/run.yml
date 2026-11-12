@@ -1,0 +1,94 @@
+name: Run a command
+
+# A heavy run on GitHub instead of on a developer's PC: slow tests, PoB benchmarks, sweeps.
+# Started only through the dispatcher, which waits until there is room for it:
+# `python .github/scripts/heavy_dispatch.py run --ref <branch> --runners 4 [--runner poe-server] --command '...'`;
+# never `gh workflow run`. It checks out the branch, sets up Python and the pinned PoB (the same steps as CI), runs
+# the command in bash on 1 to 16 runners and uploads what the command wrote into $OUT_DIR. See docs/ci.md.
+# `runner` picks GitHub's hosted Linux runners (default) or the self-hosted server (label poe-server). Only this
+# workflow_dispatch workflow may run on the server; no pull_request job ever does.
+# The run name carries runners, runner kind and timeout so the dispatcher can count a run before its jobs exist.
+# Every input reaches a shell only through `env:`, never through ${{ }} inside `run:`.
+
+run-name: "heavy ${{ inputs.runners }}x ${{ inputs.runner }} t${{ inputs.timeout_minutes }}: ${{ inputs.command }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "bash command, run from the repository root with the project's Python on the PATH; write results into $OUT_DIR"
+        required: true
+        type: string
+      runners:
+        description: "how many runners run the command (1 to 16); each sees RUNNER_INDEX (1..N) and RUNNER_COUNT"
+        required: false
+        default: "1"
+        type: string
+      runner:
+        description: "ubuntu-latest (GitHub's hosted runners) or poe-server (the self-hosted server)"
+        required: false
+        default: ubuntu-latest
+        type: choice
+        options: [ubuntu-latest, poe-server]
+      timeout_minutes:
+        description: "minutes before a runner is stopped (1 to 360 on ubuntu-latest, 1 to 1440 on poe-server)"
+        required: false
+        default: "60"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    name: plan
+    runs-on: ubuntu-latest
+    outputs:
+      indices: ${{ steps.plan.outputs.indices }}
+    steps:
+      - id: plan
+        env:
+          RUNNERS: ${{ inputs.runners }}
+          RUNNER_KIND: ${{ inputs.runner }}
+          TIMEOUT: ${{ inputs.timeout_minutes }}
+        run: |
+          case "$RUNNERS" in ([1-9]|1[0-6]) ;; (*) echo "::error::runners must be 1 to 16, not '$RUNNERS'"; exit 1;; esac
+          case "$TIMEOUT" in ([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-4][0-9][0-9]) ;; (*) echo "::error::timeout_minutes must be a number from 1, not '$TIMEOUT'"; exit 1;; esac
+          limit=360
+          [ "$RUNNER_KIND" = poe-server ] && limit=1440
+          if [ "$TIMEOUT" -gt "$limit" ]; then echo "::error::timeout_minutes on $RUNNER_KIND must be 1 to $limit, not $TIMEOUT"; exit 1; fi
+          echo "indices=$(seq -s, 1 "$RUNNERS" | sed 's/^/[/; s/$/]/')" >> "$GITHUB_OUTPUT"
+
+  run:
+    name: run (${{ inputs.runner }}, runner ${{ matrix.index }}/${{ inputs.runners }})
+    needs: plan
+    runs-on: ${{ inputs.runner == 'poe-server' && fromJSON('["self-hosted","poe-server"]') || 'ubuntu-latest' }}
+    timeout-minutes: ${{ fromJSON(inputs.timeout_minutes) }}
+    strategy:
+      fail-fast: false
+      matrix:
+        index: ${{ fromJSON(needs.plan.outputs.indices) }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: ./.github/actions/python
+      - uses: ./.github/actions/pob
+      - name: Run the command
+        env:
+          COMMAND: ${{ inputs.command }}
+          RUNNER_INDEX: ${{ matrix.index }}
+          RUNNER_COUNT: ${{ inputs.runners }}
+        run: |
+          export OUT_DIR="$PWD/out"
+          mkdir -p "$OUT_DIR"
+          bash -c "$COMMAND" 2>&1 | tee "$OUT_DIR/output.log"
+          exit "${PIPESTATUS[0]}"
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: run-${{ inputs.runner }}-${{ matrix.index }}
+          overwrite: true
+          path: out/
+          if-no-files-found: warn

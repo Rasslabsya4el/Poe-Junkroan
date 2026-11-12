@@ -1,0 +1,1211 @@
+{
+  "observed_at": "2026-09-20T05:17:48.305746+00:00",
+  "repo_head": "391f8f9020c382bd39dbf74bac43fee959b2b9fd",
+  "corpus": {
+    "unique_records": 1332,
+    "day1_allowed_records": 550,
+    "day1_equippable_records": 521,
+    "unique_slot_count_union_bow_and_non_bow": 574,
+    "supported_types": {
+      "Body Armour": [
+        "Body Armour"
+      ],
+      "Helmet": [
+        "Helmet"
+      ],
+      "Gloves": [
+        "Gloves"
+      ],
+      "Boots": [
+        "Boots"
+      ],
+      "Belt": [
+        "Belt"
+      ],
+      "Amulet": [
+        "Amulet"
+      ],
+      "Ring": [
+        "Ring 1",
+        "Ring 2"
+      ],
+      "Shield": [
+        "Weapon 2"
+      ],
+      "Quiver": [
+        "Weapon 2"
+      ],
+      "Bow": [
+        "Weapon 1"
+      ],
+      "Wand": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "Sceptre": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "Dagger": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "Claw": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "One Handed Sword": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "One Handed Axe": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "One Handed Mace": [
+        "Weapon 1",
+        "Weapon 2"
+      ],
+      "Staff": [
+        "Weapon 1"
+      ],
+      "Two Handed Sword": [
+        "Weapon 1"
+      ],
+      "Two Handed Axe": [
+        "Weapon 1"
+      ],
+      "Two Handed Mace": [
+        "Weapon 1"
+      ],
+      "Jewel": [],
+      "Flask": [
+        "Flask 1",
+        "Flask 2",
+        "Flask 3",
+        "Flask 4",
+        "Flask 5"
+      ]
+    },
+    "ordinary_notables_proxy": 454,
+    "geometric_groups_with_notable_proxy": 374,
+    "all_equippable_x_group_bound": 194854,
+    "per_consumer_equippable_items": 88,
+    "per_items_x_group_bound": 32912,
+    "cached_distinct_item_enabler_pairs": {
+      "all_sources": 1430,
+      "tree_sources": 18
+    },
+    "per_vector_details": [
+      {
+        "vector": "per:PowerCharge",
+        "unique_sources": 9,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:FrenzyCharge",
+        "unique_sources": 8,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:Life",
+        "unique_sources": 3,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 47,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:EnduranceCharge",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:Int",
+        "unique_sources": 8,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 45,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:Str",
+        "unique_sources": 7,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 47,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:Dex",
+        "unique_sources": 10,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 46,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:Level",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:Mana",
+        "unique_sources": 2,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 40,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:FrenzyCharges",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EnduranceCharges",
+        "unique_sources": 3,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LifeReserved",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:PowerCharges",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:BlockChance",
+        "unique_sources": 1,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 41,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:Evasion",
+        "unique_sources": 2,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 40,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:CorruptedItem",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ManaReserved",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:RedSocketIn{SlotName}",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:GreenSocketIn{SlotName}",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:BlueSocketIn{SlotName}",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:WhiteSocketIn{SlotName}",
+        "unique_sources": 4,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:FortificationStacks",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:TotemsSummoned",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:NearbyCorpse",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LinkedTargets",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ActiveZombieLimit",
+        "unique_sources": 1,
+        "cached_enabler_rows": 8,
+        "cached_unique_enabler_sources": 7,
+        "cached_tree_sources": 2,
+        "enabler_families": {
+          "unique": 6,
+          "notable": 2
+        }
+      },
+      {
+        "vector": "per:Ward",
+        "unique_sources": 1,
+        "cached_enabler_rows": 7,
+        "cached_unique_enabler_sources": 7,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 6,
+          "ascendancy": 1
+        }
+      },
+      {
+        "vector": "per:ActiveSpectreLimit",
+        "unique_sources": 1,
+        "cached_enabler_rows": 10,
+        "cached_unique_enabler_sources": 9,
+        "cached_tree_sources": 1,
+        "enabler_families": {
+          "unique": 9,
+          "notable": 1
+        }
+      },
+      {
+        "vector": "per:PierceCount",
+        "unique_sources": 2,
+        "cached_enabler_rows": 5,
+        "cached_unique_enabler_sources": 5,
+        "cached_tree_sources": 2,
+        "enabler_families": {
+          "unique": 3,
+          "notable": 2
+        }
+      },
+      {
+        "vector": "per:ManaSpentRecently",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:CurseOnEnemy",
+        "unique_sources": 2,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EnemyPower",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:TotalCharges",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LifeReservedPercent",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ActiveSkeletonLimit",
+        "unique_sources": 1,
+        "cached_enabler_rows": 9,
+        "cached_unique_enabler_sources": 7,
+        "cached_tree_sources": 2,
+        "enabler_families": {
+          "unique": 7,
+          "notable": 2
+        }
+      },
+      {
+        "vector": "per:ActiveRagingSpiritLimit",
+        "unique_sources": 1,
+        "cached_enabler_rows": 2,
+        "cached_unique_enabler_sources": 2,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 2
+        }
+      },
+      {
+        "vector": "per:Sextant",
+        "unique_sources": 3,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LifeRegen",
+        "unique_sources": 1,
+        "cached_enabler_rows": 37,
+        "cached_unique_enabler_sources": 31,
+        "cached_tree_sources": 10,
+        "enabler_families": {
+          "unique": 26,
+          "notable": 2,
+          "keystone": 1,
+          "mastery": 7,
+          "ascendancy": 1
+        }
+      },
+      {
+        "vector": "per:Accuracy",
+        "unique_sources": 2,
+        "cached_enabler_rows": 50,
+        "cached_unique_enabler_sources": 38,
+        "cached_tree_sources": 0,
+        "enabler_families": {
+          "unique": 50
+        }
+      },
+      {
+        "vector": "per:Herald",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EnemyKilledRecently",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:Rampage",
+        "unique_sources": 2,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:WarcryPower",
+        "unique_sources": 1,
+        "cached_enabler_rows": 2,
+        "cached_unique_enabler_sources": 2,
+        "cached_tree_sources": 2,
+        "enabler_families": {
+          "notable": 2
+        }
+      },
+      {
+        "vector": "per:UniqueItem",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ArmourDoubled",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ForkRemaining",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LowestOfMaximumLifeAndMaximumMana",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EmptyWhiteSocketsInAnySlot",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ChillEffect",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:SocketedGemsIn{SlotName}",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:ForkedCount",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:LifeLeechRateDoubled",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EmptyRedSocketsInAnySlot",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EmptyGreenSocketsInAnySlot",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EmptyBlueSocketsInAnySlot",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:SocketedRedGemsIn{SlotName}",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:SocketedGreenGemsIn{SlotName}",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:SocketedBlueGemsIn{SlotName}",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      },
+      {
+        "vector": "per:EmptySocketIn{SlotName}",
+        "unique_sources": 1,
+        "cached_enabler_rows": 0,
+        "cached_unique_enabler_sources": 0,
+        "cached_tree_sources": 0,
+        "enabler_families": {}
+      }
+    ]
+  },
+  "evaluations": [
+    {
+      "path": "artifacts\\search-cold_snap\\evaluations.jsonl",
+      "rows": 7,
+      "rungs": {
+        "rig": 3,
+        "screen": 3,
+        "full": 1
+      },
+      "commits": {
+        "da2ef28": 7
+      },
+      "unique_request_skeleton_commit": 3,
+      "screen_full_pairs_same_commit": 1,
+      "full_rows": [
+        {
+          "skeleton": "Witch/Occultist [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 1072.4141705000075,
+          "value": 522452.96879333
+        }
+      ]
+    },
+    {
+      "path": "artifacts\\search-cyclone\\evaluations.jsonl",
+      "rows": 5,
+      "rungs": {
+        "rig": 1,
+        "screen": 1,
+        "full": 3
+      },
+      "commits": {
+        "28530ea": 5
+      },
+      "unique_request_skeleton_commit": 1,
+      "screen_full_pairs_same_commit": 1,
+      "full_rows": [
+        {
+          "skeleton": "Duelist/Slayer [Infernal Sword]",
+          "seed": 2,
+          "feasible": true,
+          "seconds": 2835.1689755000407,
+          "value": 487609.57130054
+        },
+        {
+          "skeleton": "Duelist/Slayer [Infernal Sword]",
+          "seed": 3,
+          "feasible": true,
+          "seconds": 2866.3999612999614,
+          "value": 730131.2376759
+        },
+        {
+          "skeleton": "Duelist/Slayer [Infernal Sword]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3144.043188199983,
+          "value": 969027.5172744
+        }
+      ]
+    },
+    {
+      "path": "artifacts\\search-fireball\\evaluations.jsonl",
+      "rows": 50,
+      "rungs": {
+        "rig": 20,
+        "screen": 20,
+        "full": 10
+      },
+      "commits": {
+        "866842d": 50
+      },
+      "unique_request_skeleton_commit": 20,
+      "screen_full_pairs_same_commit": 10,
+      "full_rows": [
+        {
+          "skeleton": "Scion/Ascendant [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 1892.3412429000018,
+          "value": 588029.94414688
+        },
+        {
+          "skeleton": "Templar/Inquisitor [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 2835.888813599944,
+          "value": 1773147.1616267
+        },
+        {
+          "skeleton": "Shadow/Assassin [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 2847.301041100058,
+          "value": 1500832.4102444
+        },
+        {
+          "skeleton": "Templar/Guardian [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 2994.6928399000317,
+          "value": 721791.04483127
+        },
+        {
+          "skeleton": "Shadow/Trickster [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3122.8555783000775,
+          "value": 649194.71722285
+        },
+        {
+          "skeleton": "Witch/Necromancer [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 2971.149116000044,
+          "value": 842104.14211
+        },
+        {
+          "skeleton": "Marauder/Juggernaut [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3033.4506040000124,
+          "value": 483616.81293489
+        },
+        {
+          "skeleton": "Duelist/Champion [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3177.995836600079,
+          "value": 453452.53103156
+        },
+        {
+          "skeleton": "Ranger/Deadeye [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3145.0091594000114,
+          "value": 689360.62060594
+        },
+        {
+          "skeleton": "Ranger/Raider [Void Sceptre]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 3111.6849103999557,
+          "value": 524402.02168669
+        }
+      ]
+    },
+    {
+      "path": "artifacts\\search-summon_raging_spirit\\evaluations.jsonl",
+      "rows": 5,
+      "rungs": {
+        "rig": 1,
+        "screen": 1,
+        "full": 3
+      },
+      "commits": {
+        "89289c9": 5
+      },
+      "unique_request_skeleton_commit": 1,
+      "screen_full_pairs_same_commit": 1,
+      "full_rows": [
+        {
+          "skeleton": "Witch/Necromancer [Prophecy Wand]",
+          "seed": 1,
+          "feasible": true,
+          "seconds": 1244.6351947999792,
+          "value": 223935.73713546
+        },
+        {
+          "skeleton": "Witch/Necromancer [Prophecy Wand]",
+          "seed": 3,
+          "feasible": true,
+          "seconds": 1307.9422513999743,
+          "value": 201925.65852629
+        },
+        {
+          "skeleton": "Witch/Necromancer [Prophecy Wand]",
+          "seed": 2,
+          "feasible": true,
+          "seconds": 2124.5227065000217,
+          "value": 280927.25393284
+        }
+      ]
+    }
+  ],
+  "worker_logs": {
+    "count": 43,
+    "report_present_logs": 1,
+    "report_missing_logs": 2,
+    "md_files": 31,
+    "part_files": 2,
+    "files": [
+      {
+        "file": "gpt-worker-2.out",
+        "bytes": 490,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-ailment-stacks-inside-ramp-budget.out",
+        "bytes": 561,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-ailment-stacks-poison-stack-limit.out",
+        "bytes": 614,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-bench-unlock-rail.out",
+        "bytes": 475,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-benchmark-durable-and-readable-early.out",
+        "bytes": 593,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-buff-proof-from-parsed-mods.out",
+        "bytes": 1774,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-buffs-ended-by-skill-use.out",
+        "bytes": 753,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-castability-refresh-budget.out",
+        "bytes": 534,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-construction-rig-first.out",
+        "bytes": 2563,
+        "report_md_exists": false,
+        "part_exists": true,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-day1-gear-templates-amendment.out",
+        "bytes": 978,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-day1-gear-templates-finish.out",
+        "bytes": 527,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-day1-gear-templates.out",
+        "bytes": 737,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-flat-reservation-aura-level.out",
+        "bytes": 524,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-game-systems-inventory.out",
+        "bytes": 501,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-gem-count-zero-fix.out",
+        "bytes": 1506,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-gem-count-zero-kills-the-build.out",
+        "bytes": 665,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-gpt-worker-never-loses-work.out",
+        "bytes": 532,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-gpt-worker-stall-counts-file-activity.out",
+        "bytes": 658,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-move-ledger.out",
+        "bytes": 2311,
+        "report_md_exists": false,
+        "part_exists": true,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-picks-never-keep-an-infeasible-support.out",
+        "bytes": 1148,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-picks-self-cost-finish.out",
+        "bytes": 509,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-proxy-delivery-gives-the-player-nothing.out",
+        "bytes": 841,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-replay-bench.out",
+        "bytes": 692,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-search-evaluation-rows-and-full-ranks.out",
+        "bytes": 586,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-tree-hygiene-visible.out",
+        "bytes": 1017,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-tree-moves-see-proof-holders.out",
+        "bytes": 655,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-usable-skills-amendment.out",
+        "bytes": 502,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-usable-skills-and-max-res-floors.out",
+        "bytes": 690,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-warcry-item-granted-is-pressable.out",
+        "bytes": 560,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-warcry-triggered-finish.out",
+        "bytes": 508,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-whole-tree-mip-experiment.out",
+        "bytes": 528,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-19-wishlist-probability-budget.out",
+        "bytes": 498,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-20-day1-gear-templates-weapons-buy-damage.out",
+        "bytes": 7252,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": true,
+        "has_report_missing": true,
+        "has_done": true
+      },
+      {
+        "file": "gpt-worker-2026-09-20-judge-fix-v2-proof-holders-only.out",
+        "bytes": 562,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-2026-09-20-judge-fix-v3-necessary-proofs.out",
+        "bytes": 1358,
+        "report_md_exists": true,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": true,
+        "has_done": true
+      },
+      {
+        "file": "gpt-worker-3.out",
+        "bytes": 663,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-4.out",
+        "bytes": 563,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-5.out",
+        "bytes": 468,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-6.out",
+        "bytes": 554,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-7.out",
+        "bytes": 568,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-8.out",
+        "bytes": 571,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-9.out",
+        "bytes": 491,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      },
+      {
+        "file": "gpt-worker-counted-rows-one-rule.out",
+        "bytes": 272,
+        "report_md_exists": false,
+        "part_exists": false,
+        "has_report_present": false,
+        "has_report_missing": false,
+        "has_done": false
+      }
+    ]
+  },
+  "fixture_manifests": {
+    "zizaran_325": 7,
+    "zizaran_326": 8,
+    "zizaran_327": 9,
+    "zizaran_328": 4,
+    "zizaran_329": 5
+  },
+  "all_fixture_import_codes": 98,
+  "input_sha256": {
+    "src\\junkroan\\pob\\corpus_data\\uniques.json": "910d3a56178ca9713bbbcbb2d26a4dda807e59f5ef476fbf21ba5eccbd86d037",
+    "src\\junkroan\\pob\\corpus_data\\passives.json": "e298a15db60857838cbe2b5c1ea331492c1a3c7dff31f2ea571e306147175cc6",
+    "src\\junkroan\\pob\\corpus_data\\scaling_vectors.json": "6c864bc96bbca90c66af2f8ed2e2a03935d13fd411680c74b5a4d9348b4ccf4b",
+    "scripts\\build_scaling_vectors.py": "651f0199c6098884d0285fb4e27d4a42ec18f88facfac04d59794f105369a248",
+    "src\\junkroan\\optimizer\\rails_default.json": "97e5e62a7f2a54869cac5008caa3a94d561625ee492bc24a39e0ce767c1db9b0"
+  }
+}

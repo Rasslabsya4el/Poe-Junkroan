@@ -1,0 +1,110 @@
+name: Pinned Path of Building
+description: >
+  Put the pinned PoB source in vendor/pob/source (restored from actions/cache keyed by the pin file, else a shallow
+  clone at the pinned tag) and check its commit against locks/pob.source.lock.json; then build the Linux native
+  runtime with `bash scripts/pob_runtime_linux.sh` into vendor/pob/runtime-linux/ (cached by the script and the pin).
+  Run after actions/checkout. Linux only.
+
+runs:
+  using: composite
+  steps:
+    - name: Read the pin
+      id: pin
+      shell: bash
+      run: |
+        python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+        import json
+        lock = json.load(open("locks/pob.source.lock.json", encoding="utf-8"))
+        ref = lock["pinned_ref"]
+        print("url=" + lock["repo_url"])
+        print("tag=" + (ref[len("refs/tags/"):] if ref.startswith("refs/tags/") else ref))
+        print("commit=" + lock["pinned_commit"])
+        print("path=" + lock["canonical_path"])
+        release = json.load(open("locks/pob.lock.json", encoding="utf-8"))
+        print("release_dir=var/cache/pob/" + release["tag"] + "/" + release["extract_subdir"])
+        EOF
+    - name: The runtime build script must exist
+      shell: bash
+      run: |
+        if [ ! -f scripts/pob_runtime_linux.sh ]; then
+          echo "::error file=scripts/pob_runtime_linux.sh::scripts/pob_runtime_linux.sh is missing: the Linux PoB runtime cannot be built, so no PoB test can run. Add the script (it builds into vendor/pob/runtime-linux/)."
+          exit 1
+        fi
+    # The key holds a hash of the pin file: a new pin is a new key, so the source follows the pin without touching CI.
+    - name: Restore the PoB source
+      id: source
+      uses: actions/cache@v6.1.0
+      with:
+        path: vendor/pob/source
+        key: pob-source-${{ hashFiles('locks/pob.source.lock.json') }}
+    - name: Clone the pinned PoB source (only on a cache miss)
+      if: steps.source.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        POB_URL: ${{ steps.pin.outputs.url }}
+        POB_TAG: ${{ steps.pin.outputs.tag }}
+        POB_PATH: ${{ steps.pin.outputs.path }}
+      run: |
+        for attempt in 1 2 3; do
+          rm -rf "$POB_PATH"
+          git clone --quiet --depth 1 --branch "$POB_TAG" "$POB_URL" "$POB_PATH" && exit 0
+          echo "clone failed (attempt $attempt)"; sleep $((attempt * 15))
+        done
+        exit 1
+    - name: Check the source against the pinned commit
+      shell: bash
+      env:
+        POB_COMMIT: ${{ steps.pin.outputs.commit }}
+        POB_PATH: ${{ steps.pin.outputs.path }}
+      run: |
+        found="$(git -C "$POB_PATH" rev-parse HEAD)"
+        if [ "$found" != "$POB_COMMIT" ]; then
+          echo "::error file=locks/pob.source.lock.json::PoB source is at $found, the pin says $POB_COMMIT (the tag moved, or the cache is wrong)"
+          exit 1
+        fi
+        echo "PoB source at the pinned commit $found"
+    # The pinned portable release (locks/pob.lock.json, about 630 MB zipped) extracted to var/cache/pob/<tag>/app, where
+    # the code looks for it. Only the extracted folder is cached, keyed by the lock file; the zip is deleted after use.
+    - name: Restore the pinned PoB release
+      id: release
+      uses: actions/cache@v6.1.0
+      with:
+        path: ${{ steps.pin.outputs.release_dir }}
+        key: pob-release-${{ hashFiles('locks/pob.lock.json') }}
+    - name: Fetch the pinned PoB release (only on a cache miss; size and sha256 checked against the lock)
+      if: steps.release.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        for attempt in 1 2 3; do
+          python -m junkroan.pob.release_manager pob fetch && break
+          [ "$attempt" = 3 ] && exit 1
+          echo "fetch failed (attempt $attempt)"; sleep $((attempt * 30))
+        done
+        rm -rf var/cache/pob/*/downloads
+    - name: The release is there
+      shell: bash
+      env:
+        RELEASE_DIR: ${{ steps.pin.outputs.release_dir }}
+      run: |
+        if [ ! -f "$RELEASE_DIR/lua51.dll" ]; then
+          echo "::error file=locks/pob.lock.json::the pinned PoB release is not extracted at $RELEASE_DIR (no lua51.dll)"
+          exit 1
+        fi
+    # The runtime follows the build script and the pin; the runner's system and architecture are part of the key.
+    - name: Restore the Linux PoB runtime
+      id: runtime
+      uses: actions/cache@v6.1.0
+      with:
+        path: vendor/pob/runtime-linux
+        key: pob-runtime-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/pob_runtime_linux.sh', 'locks/pob.source.lock.json') }}
+    - name: Build the Linux PoB runtime (only on a cache miss)
+      if: steps.runtime.outputs.cache-hit != 'true'
+      shell: bash
+      run: bash scripts/pob_runtime_linux.sh
+    - name: The runtime is there
+      shell: bash
+      run: |
+        if [ -z "$(ls -A vendor/pob/runtime-linux 2>/dev/null)" ]; then
+          echo "::error file=scripts/pob_runtime_linux.sh::scripts/pob_runtime_linux.sh ran but vendor/pob/runtime-linux/ is empty"
+          exit 1
+        fi
