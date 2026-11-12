@@ -25,8 +25,9 @@ A push to `main` starts no CI run. To test `main` (or any ref) on demand: `gh wo
   `vendor/pob/runtime-linux/`, cached by a hash of that script and of the pin (plus the runner's OS and
   architecture). It also puts the pinned portable release (`locks/pob.lock.json`, about 630 MB zipped) at
   `var/cache/pob/<tag>/app`, where the code looks for it: `python -m junkroan.pob.release_manager pob fetch` downloads
-  it and checks its size and sha256 against the lock, the zip is then deleted, and only the extracted folder is
-  cached, keyed by a hash of the lock file. A new pin or a changed script is a new key, so the cache follows them without anyone touching CI.
+  it and checks its size and sha256 against the lock. The zip is cached with the extracted folder, keyed by a hash
+  of the lock file, because every PoB launch checks the zip again and downloads it when it is missing; the action
+  runs `pob verify` once and fails if the cached zip does not match. A new pin or a changed script is a new key, so the cache follows them without anyone touching CI.
   If the script is missing the step fails with an error that names it; if it leaves `vendor/pob/runtime-linux/`
   empty, the next step fails.
 - **Sharding.** The shard options come from the pytest plugin `tests/shard_support.py`. It is **registered on the
