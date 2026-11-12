@@ -396,7 +396,10 @@ def fetch_raw(api: Api, own: str = "") -> dict:
     runs = [{"run": run, "jobs": api.jobs(run["id"])} for run in api.active_runs()]
     shared, unreadable = {}, []
     for repo in parse_shared_repos(api.text_variable("SHARED_REPOS"), own):
-        found = api.shared_jobs(repo)
+        try:
+            found = api.shared_jobs(repo)
+        except (RuntimeError, OSError):  # a 403, a 5xx after the retries, a dropped connection (URLError is an OSError)
+            found = None
         if found is None:
             unreadable.append(repo)
         else:

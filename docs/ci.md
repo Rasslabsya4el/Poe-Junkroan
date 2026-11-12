@@ -96,8 +96,8 @@ The dispatcher starts a hosted run only while
     HEAVY_BUDGET = max(HEAVY_FLOOR, 20 - CI_RESERVE - ci_jobs_queued_or_running - shared_jobs)
 
 `shared_jobs` is the hosted jobs queued or running in the repositories named by `SHARED_REPOS` (jobs on their own
-self-hosted machines do not count). Each is read once per 90-second snapshot; one that cannot be read counts 0 and
-`status` says so. `status` lists the jobs of each shared repository.
+self-hosted machines do not count). Each is read once per 90-second snapshot; one that cannot be read (no access, an API error) counts
+0 and `status` says so. A shared run whose jobs are not created yet also counts 0, so the count can run low. `status` lists the jobs of each shared repository.
 
 With the defaults, heavy runs may use 16 runners when no CI run is waiting (20 - 4 - 0), 8 while one CI run is
 (20 - 4 - 8), and only the floor, 4, while two are. Hosted heavy jobs are kept short so runners free up:

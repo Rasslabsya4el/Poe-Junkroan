@@ -925,3 +925,19 @@ def test_api_shared_jobs_reads_the_other_repo_and_none_when_it_cannot(monkeypatc
     assert api.shared_jobs("a/b") == {"running": 3, "queued": 2}
     assert {repo for repo, _ in calls} == {"a/b"} and len(calls) == 4  # two run lists, the jobs of each run once
     assert api.shared_jobs("c/missing") is None
+
+
+def test_a_shared_repo_that_fails_with_an_error_counts_0_and_does_not_stop_the_run(capsys):
+    api = FakeApi([], variables={"HEAVY_FLOOR": 4, "CI_RESERVE": 4, "SERVER_RUNNERS": 1, "SHARED_REPOS": "a/b, c/d"})
+    api.shared = {"c/d": other_jobs(running=2)}
+
+    def shared_jobs(repo):
+        if repo == "a/b":
+            raise RuntimeError("GitHub API 403: Resource not accessible by personal access token")
+        return heavy.hosted_jobs(api.shared[repo])
+
+    api.shared_jobs = shared_jobs
+    assert heavy.cmd_run(api, args(runners=8, no_wait=True)) == 0  # budget 20 - 4 - 0 - 2 = 14
+    assert heavy.cmd_status(api, type("S", (), {"no_logs": True})()) == 0
+    out = capsys.readouterr().out
+    assert "shared a/b: cannot be read" in out and "shared c/d: 2 running, 0 queued" in out
