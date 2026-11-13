@@ -22,7 +22,8 @@ a guess (D114 amd 1).
 _Avoid_: hint, preference, bias
 
 **Hypothesis**:
-A skeleton proposed in in-game names by a language model: a place to look, never a verdict on strength.
+A skeleton written in in-game names, by hand or by a language model: a place to look, never a verdict on strength.
+Nothing produces one today; the language model's planned job is the future site's request front (D119).
 _Avoid_: idea, candidate build
 
 **Skeleton**:

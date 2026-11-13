@@ -9,7 +9,7 @@ in parentheses.
 - Validation is a test that measures the outcome, here a test that measures build strength, never a schema check. (CLAUDE.md, principle 6)
 - No parallel registry of tasks or decisions beside GitHub issues, `GLOSSARY.md` and `docs/adr/`. (CLAUDE.md, "Agent skills")
 - A decision becomes an ADR only when it is hard to reverse, surprising and a real trade-off; the rest lives in the commit message or PR with its numbers. (docs/agents/domain.md)
-- A new ADR takes the highest number in `docs/adr/` plus one; an amendment lives inside its ADR; ADR numbers are never reused. (docs/agents/domain.md)
+- A new ADR takes the highest number in `docs/adr/` plus one; an amendment lives inside its ADR; ADR numbers are never reused: 0117 and 0118 were process decisions of the archive and stay unused here. (docs/agents/domain.md)
 - Human-facing text writes a duration in a unit a human reads: seconds only under ~90 s, then minutes, then hours and minutes past ~90 min; machine files keep raw seconds. (CLAUDE.md, principle 7)
 - A rate is quoted per minute, never per 100 s. (CLAUDE.md, principle 7)
 - A red suite is never merged around: fix the code, or the data the failing tests read. (CLAUDE.md, "How work is split")
