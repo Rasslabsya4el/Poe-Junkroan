@@ -16,7 +16,7 @@ A push to `main` starts no CI run. To test `main` (or any ref) on demand: `gh wo
 
 ## What one CI run does
 
-- **Python.** `.github/actions/python` installs uv, makes `.venv` with Python 3.12 and `pip install -e ".[dev]"`, and
+- **Python.** `.github/actions/python` installs uv, makes `.venv` with Python 3.12 and `pip install -e ".[dev,research]"`, and
   puts `.venv/bin` first on the PATH.
 - **PoB.** `.github/actions/pob` reads the pin `locks/pob.source.lock.json` (PathOfBuilding v2.67.2, commit
   `b32759ab...`). It restores `vendor/pob/source` from `actions/cache`, keyed by a hash of the pin file, and on a miss

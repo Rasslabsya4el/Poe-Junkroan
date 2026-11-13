@@ -113,3 +113,6 @@ def _gem_corpus_caches_never_outlive_a_patch():
 
     config_rules._active_gem_records.cache_clear()
     config_rules._active_gem_names.cache_clear()
+    from junkroan.search import skeleton
+
+    skeleton._corpse_pool_cap_bonus_nodes.cache_clear()
