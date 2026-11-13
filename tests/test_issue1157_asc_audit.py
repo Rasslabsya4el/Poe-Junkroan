@@ -17,8 +17,8 @@ from junkroan.optimizer.tree_graph import TreeGraph
 from junkroan.optimizer.tree_hygiene import ascendancy_node_names, ascendancy_removals, dead_ascendancy_nodes
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-A1 = PROJECT_ROOT / "artifacts" / "search-contagion" / "20261015-0336" / "01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
-B1 = PROJECT_ROOT / "artifacts" / "search-searing_bond" / "20261015-0004" / "01 templar_inquisitor_demon_dagger.pob.txt"
+A1 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "search-contagion" / "20261015-0336" / "01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
+B1 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "search-searing_bond" / "20261015-0004" / "01 templar_inquisitor_demon_dagger.pob.txt"
 OBJECTIVE = Objective(maximize="TotalDotDPS")
 BASE = {"TotalDotDPS": 1000.0, "CombinedDPS": 1000.0, "TotalEHP": 5000.0}
 

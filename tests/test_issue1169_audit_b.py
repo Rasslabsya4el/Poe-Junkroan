@@ -26,9 +26,9 @@ from junkroan.optimizer.rails import Rails
 from junkroan.pob.session import decode_import_code
 
 ROOT = Path(__file__).resolve().parents[1]
-A1 = ROOT / "artifacts/search-contagion/20261015-0336/01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
-B1 = ROOT / "artifacts/search-searing_bond/20261015-0004/01 templar_inquisitor_demon_dagger.pob.txt"
-C1 = ROOT / "artifacts/search-armageddon_brand/20261014-2358/01 templar_hierophant_demon_dagger.pob.txt"
+A1 = ROOT / "tests/fixtures/run_output/search-contagion/20261015-0336/01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
+B1 = ROOT / "tests/fixtures/run_output/search-searing_bond/20261015-0004/01 templar_inquisitor_demon_dagger.pob.txt"
+C1 = ROOT / "tests/fixtures/run_output/search-armageddon_brand/20261014-2358/01 templar_hierophant_demon_dagger.pob.txt"
 needs_artifacts = pytest.mark.skipif(not (A1.exists() and B1.exists() and C1.exists()), reason="16.10 read builds not linked")
 
 ALL_GEMS = "weapon-all-gems-level"

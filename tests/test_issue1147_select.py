@@ -24,7 +24,7 @@ from junkroan.optimizer.tree_graph import TreeGraph, parse_allocated_from_xml
 from junkroan.pob.session import decode_import_code
 
 ROOT = Path(__file__).resolve().parents[1]
-STANDS = ROOT / "artifacts" / "stands-1124"
+STANDS = ROOT / "tests" / "fixtures" / "run_output" / "stands-1124"
 STAND_NAMES = ("spark", "smite", "summon_raging_spirits")
 ASCENDANCY_OF = {"spark": "inquisitor", "smite": "slayer", "summon_raging_spirits": "guardian"}
 # independent literals of the real stands, read from the graph and the stands once (names in the issue report)

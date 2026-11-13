@@ -236,7 +236,7 @@ def test_without_an_ascendancy_node_the_forced_nodes_call_is_the_old_one():
 
 # -- the rail test: two notables on a stand, counted at the PoB boundary -------------------------------------------
 
-STAND = ROOT / "artifacts" / "stands-1124" / "spark-s4.pob.txt"
+STAND = ROOT / "tests" / "fixtures" / "run_output" / "stands-1124" / "spark-s4.pob.txt"
 
 
 def _first_notable_edge(allocated: set[int]) -> tuple[str, str]:

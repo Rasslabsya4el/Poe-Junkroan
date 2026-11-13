@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from junkroan.pob import headless_runtime_worker as worker  # noqa: E402
 from junkroan.pob.session import PobSession  # noqa: E402
 
-BENCH = ROOT / "artifacts" / "benchmark" / "20261013-0101-P2-core-3"
+BENCH = ROOT / "tests" / "fixtures" / "run_output" / "benchmark" / "20261013-0101-P2-core-3"
 RUNTIME = ROOT / "var" / "cache" / "pob"
 
 

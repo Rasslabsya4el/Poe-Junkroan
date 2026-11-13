@@ -17,7 +17,7 @@ from junkroan.optimizer.trace import TRACE
 from junkroan.pob.session import PobSession, decode_import_code
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-S4 = PROJECT_ROOT / "artifacts" / "benchmark" / "20261005-1220-gate-20261005" / "hit_penance_brand-s4.pob.txt"
+S4 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "benchmark" / "20261005-1220-gate-20261005" / "hit_penance_brand-s4.pob.txt"
 AUTHOR = PROJECT_ROOT / "tests" / "fixtures" / "tuadh_329" / "hit_penance_brand.pob.txt"
 LOCK = json.loads((PROJECT_ROOT / "locks" / "pob.lock.json").read_text(encoding="utf-8"))
 RUNTIME_ROOT = PROJECT_ROOT / "var" / "cache" / "pob" / LOCK["tag"] / LOCK["extract_subdir"]

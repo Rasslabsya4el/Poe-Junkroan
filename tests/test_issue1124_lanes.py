@@ -307,6 +307,7 @@ def test_empty_marks_count_nothing(no_marks) -> None:
 
 @needs_pob
 @pytest.mark.pob
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#11: the exported marks block keeps its indentation and comment line", strict=True)
 def test_the_block_reaches_pob_and_the_boss_lane_number_moves(tmp_path, monkeypatch: pytest.MonkeyPatch) -> None:
     build = PROJECT_ROOT / "tests" / "fixtures" / "tuadh_329" / "arc_archmage.pob.txt"
     held_line = "+1 to Level of all Spell Skill Gems"

@@ -13,7 +13,7 @@ from junkroan.optimizer.objective import Objective
 from junkroan.optimizer.pipeline import BuildPipeline
 from junkroan.search.skeleton import Skeleton
 
-SAVED = (Path(__file__).resolve().parents[1] / "artifacts" / "search-contagion" / "20261015-0336"
+SAVED = (Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "run_output" / "search-contagion" / "20261015-0336"
          / "01 witch_occultist_no_iron_will_prophecy_wand.json")
 
 

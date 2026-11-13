@@ -110,7 +110,10 @@ def test_relative_marginal():
 
 
 @pytest.mark.pob
-def test_chaos_inoculation_on_spark_smoke(tmp_path):
+def test_chaos_inoculation_on_spark_smoke(tmp_path, monkeypatch):
+    # keystone_flip reads the spark build from run output, which is not in the repository: the copy in the fixtures
+    bench = Path(__file__).resolve().parent / "fixtures" / "run_output" / "benchmark" / "20261013-0101-P2-core-3"
+    monkeypatch.setitem(kf.NAMED_BUILDS, "spark", bench / "spark-s4.pob.txt")
     out = tmp_path / "spark.json"
     start = time.monotonic()
     assert kf.run(["--build", "spark", "--keystone", "Chaos Inoculation", "--limit", "1", "--out", str(out)]) == 0

@@ -186,7 +186,7 @@ def test_a_plain_node_takes_the_calls_it_took_before_and_never_derives() -> None
 
 # -- the bug-specific number (PoB) ---------------------------------------------
 
-SMITE_S4 = PROJECT_ROOT / "artifacts" / "benchmark" / "20261005-1220-gate-20261005" / "smite-s4.pob.txt"
+SMITE_S4 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "benchmark" / "20261005-1220-gate-20261005" / "smite-s4.pob.txt"
 
 
 @pytest.mark.pob

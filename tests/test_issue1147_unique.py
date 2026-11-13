@@ -128,7 +128,7 @@ def test_a_unique_only_bundle_makes_no_tree_call(monkeypatch):
 
 # -- the rail test: one stand, the unique worn in the evaluated build -------------------------------------------------
 
-STAND = ROOT / "artifacts" / "stands-1124" / "spark-s4.pob.txt"
+STAND = ROOT / "tests" / "fixtures" / "run_output" / "stands-1124" / "spark-s4.pob.txt"
 needs_pob = pytest.mark.skipif(not ((ROOT / "var" / "cache" / "pob").is_dir() and STAND.is_file()), reason="PoB runtime or the stand file not present")
 
 

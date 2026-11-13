@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from junkroan.pob.session import PobSession, decode_import_code  # noqa: E402
 from junkroan.search.skeleton import Skeleton  # noqa: E402
 
-WITNESS = ROOT / "artifacts" / "trace-550"
+WITNESS = ROOT / "tests" / "fixtures" / "run_output" / "trace-550"
 LOCK = json.loads((ROOT / "locks" / "pob.lock.json").read_text(encoding="utf-8"))
 RUNTIME_ROOT = ROOT / "var" / "cache" / "pob" / LOCK["tag"] / LOCK["extract_subdir"]
 needs_pob = pytest.mark.skipif(

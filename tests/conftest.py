@@ -98,3 +98,21 @@ def pytest_runtest_setup(item: pytest.Item) -> None:
     while SRC_DIR in sys.path:
         sys.path.remove(SRC_DIR)
     sys.path.insert(0, SRC_DIR)
+
+
+@pytest.fixture(autouse=True)
+def _gem_corpus_caches_never_outlive_a_patch():
+    """Tests patch `junkroan.search.hypothesis.active_gems` (e.g. to `{}` in `tests/test_construction_rig.py` and
+    `tests/loop_fakes.py`). `config_rules` keeps two `lru_cache` wrappers over it; filled during such a patch they
+    would keep the patched corpus for every later test in the process (CI: `test_picks_memo` read an empty corpus
+    after `test_flask_pipeline::test_construction_only_skips_the_step`). Cleared after each test; rebuilding them
+    is a dict copy of the cached corpus."""
+
+    yield
+    from junkroan.optimizer import config_rules
+
+    config_rules._active_gem_records.cache_clear()
+    config_rules._active_gem_names.cache_clear()
+    from junkroan.search import skeleton
+
+    skeleton._corpse_pool_cap_bonus_nodes.cache_clear()

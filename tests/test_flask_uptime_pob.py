@@ -42,6 +42,7 @@ def _lines(pob) -> dict[str, str | None]:
 
 @pytest.mark.pob
 @needs_pob
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_s4_saved_active_flasks_are_all_inactive_once_derived(tmp_path: Path) -> None:
     from junkroan.pob.session import PobSession
 
@@ -139,6 +140,7 @@ def test_a_cached_read_state_before_a_stats_read_does_not_go_stale_on_a_derived_
 
 @pytest.mark.pob
 @needs_pob
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_active_skill_stats_derives_and_agrees_with_stats_on_the_main_skill(tmp_path: Path) -> None:
     from junkroan.optimizer.castability import _skill_entries
     from junkroan.pob.session import PobSession

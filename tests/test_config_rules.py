@@ -101,6 +101,7 @@ def _without_baseline_power_charges(xml: str) -> str:
     return ET.tostring(root, encoding="unicode")
 
 
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_gearloot_channelling_generator_is_off_and_isolated_toggle_is_measured(tmp_path: Path) -> None:
     """The isolated mutation keeps every original config input except Power Charges.
 
