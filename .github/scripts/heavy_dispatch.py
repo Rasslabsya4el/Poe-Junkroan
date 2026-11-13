@@ -10,10 +10,13 @@ Two kinds of runner (`--runner`):
   only) takes 8 per run, for pull requests and dispatched runs alike, and heavy runs take 1 to 16. The dispatcher
   starts a hosted heavy run only while
 
-      hosted_heavy_in_flight + requested <= HEAVY_BUDGET,   HEAVY_BUDGET = max(HEAVY_FLOOR, 20 - CI_RESERVE - ci_jobs)
+      hosted_heavy_in_flight + requested <= HEAVY_BUDGET,
+      HEAVY_BUDGET = max(HEAVY_FLOOR, 20 - CI_RESERVE - ci_jobs - shared_jobs)
 
   `HEAVY_FLOOR` (default 4) and `CI_RESERVE` (default 4) are GitHub Actions repository variables, so they can be
-  turned without a commit; `ci_jobs` is the CI jobs queued or running now. Heavy jobs are kept short so runners free
+  turned without a commit; `ci_jobs` is the CI jobs queued or running now. The 20 hosted jobs belong to the account,
+  not the repository: `shared_jobs` is the hosted jobs queued or running in the repositories named by the variable
+  `SHARED_REPOS` (comma-separated `owner/name`; unset or empty = none). Heavy jobs are kept short so runners free
   up: `--timeout-minutes` above 60 needs `--long`, which is for a single indivisible job (one runner).
 - `poe-server`: the self-hosted server (runner label `poe-server`). CI never runs there, so its budget is simply the
   number of server runners, the repository variable `SERVER_RUNNERS` (default 1):
@@ -47,7 +50,7 @@ DEFAULT_REPO = "Rasslabsya4el/Poe-Junkroan"
 HOSTED = "ubuntu-latest"
 SERVER = "poe-server"  # the self-hosted runner label; run.yml asks for [self-hosted, poe-server]
 RUNNER_KINDS = (HOSTED, SERVER)
-TOTAL_RUNNERS = 20  # concurrent hosted jobs the free plan gives the repository
+TOTAL_RUNNERS = 20  # concurrent hosted jobs the free plan gives the account, shared by its repositories (SHARED_REPOS)
 CI_JOBS_PER_RUN = 8  # a CI run (pull request or dispatch): 8 Linux shards; counted for a CI run whose jobs are not created yet
 DEFAULT_FLOOR = 4
 DEFAULT_RESERVE = 4
@@ -88,9 +91,32 @@ def pause(seconds: float) -> None:
 # ---- pure decisions (tested on recorded API responses) -------------------------------------------------------------
 
 
-def heavy_budget(floor: int, reserve: int, ci_jobs: int, total: int = TOTAL_RUNNERS) -> int:
-    """Runners heavy runs may hold at once: what CI and its reserve leave, but never below the floor."""
-    return max(floor, total - reserve - ci_jobs)
+def heavy_budget(floor: int, reserve: int, ci_jobs: int, total: int = TOTAL_RUNNERS, shared_jobs: int = 0) -> int:
+    """Runners heavy runs may hold at once: what CI, its reserve and the shared repositories' hosted jobs leave, but
+    never below the floor."""
+    return max(floor, total - reserve - ci_jobs - shared_jobs)
+
+
+def parse_shared_repos(text: str | None, own: str = "") -> list[str]:
+    """`owner/name` entries of the SHARED_REPOS variable: comma or whitespace separated, duplicates and this
+    repository itself dropped, order kept. Anything without exactly one slash is ignored."""
+    found: list[str] = []
+    for item in re.split(r"[,\s]+", text or ""):
+        parts = item.split("/")
+        if len(parts) != 2 or not all(parts):
+            continue
+        if item.lower() == own.lower() or item.lower() in (f.lower() for f in found):
+            continue
+        found.append(item)
+    return found
+
+
+def hosted_jobs(jobs: list[dict]) -> dict[str, int]:
+    """Running and queued jobs of another repository that hold or wait for a hosted runner (a job whose labels name
+    `self-hosted` runs on that repository's own machines and is not counted)."""
+    hosted = [job for job in jobs if job.get("status") in ACTIVE and "self-hosted" not in (job.get("labels") or [])]
+    return {"running": sum(1 for job in hosted if job["status"] == "in_progress"),
+            "queued": sum(1 for job in hosted if job["status"] == "queued")}
 
 
 def runners_to_start(heavy_in_flight: int, requested: int, minimum: int, budget: int) -> int:
@@ -152,7 +178,12 @@ def totals(occupancies: list[tuple[dict, dict]]) -> dict[str, int]:
 
 def budget_for(kind: str, floor: int, reserve: int, server_runners: int, counted: dict[str, int]) -> int:
     """Runners heavy runs of this kind may hold at once: the hosted formula, or the number of server runners."""
-    return server_runners if kind == SERVER else heavy_budget(floor, reserve, counted["ci"])
+    return server_runners if kind == SERVER else heavy_budget(floor, reserve, counted["ci"], shared_jobs=counted.get("shared", 0))
+
+
+def shared_total(shared: dict[str, dict]) -> int:
+    """Hosted jobs (running + queued) of all shared repositories in a raw snapshot's `shared` entry."""
+    return sum(item["running"] + item["queued"] for item in shared.values())
 
 
 def stale_reason(run: dict, jobs: list[dict], now: dt.datetime, last_output: dt.datetime | None) -> str | None:
@@ -246,6 +277,7 @@ def wait_for_secondary_limit(method: str, path: str, retry_after: str | None) ->
 
 class Api:
     def __init__(self, repo: str, token: str):
+        self.repo = repo
         self.base = f"https://api.github.com/repos/{repo}"
         self.token = token
 
@@ -294,6 +326,28 @@ class Api:
         except (KeyError, ValueError):
             return default
 
+    def text_variable(self, name: str) -> str:
+        found = self.call(f"/actions/variables/{name}")
+        return str(found.get("value", "")) if found else ""
+
+    def shared_jobs(self, repo: str) -> dict[str, int] | None:
+        """Hosted jobs running or queued in another repository of the account: one run list per status, then the jobs
+        of each active run. None when the repository cannot be read (no access, a typo)."""
+        other = Api(repo, self.token)
+        runs, readable = {}, False
+        for status in ACTIVE:
+            page = other.call(f"/actions/runs?status={status}&per_page=100")
+            if page is not None:
+                readable = True
+                runs.update({run["id"]: run for run in page.get("workflow_runs", [])})
+        if not readable:
+            return None
+        jobs = []
+        for run_id in runs:
+            page = other.call(f"/actions/runs/{run_id}/jobs?per_page=100&filter=latest")
+            jobs.extend(page["jobs"] if page else [])
+        return hosted_jobs(jobs)
+
     def active_runs(self) -> list[dict]:
         runs = []
         for workflow in ("ci.yml", "run.yml"):
@@ -332,13 +386,25 @@ class Api:
         return parse_time(stamps[-1] + "Z") if stamps else None
 
 
-def fetch_raw(api: Api) -> dict:
-    """What the API says now, unprocessed: the three variables and every active run with its jobs."""
+def fetch_raw(api: Api, own: str = "") -> dict:
+    """What the API says now, unprocessed: the variables, every active run with its jobs, and the hosted jobs of
+    each shared repository (`shared`: {repo: {running, queued}}; a repository that cannot be read is listed in
+    `unreadable` and counts 0)."""
     floor = api.variable("HEAVY_FLOOR", DEFAULT_FLOOR)
     reserve = api.variable("CI_RESERVE", DEFAULT_RESERVE)
     server = api.variable("SERVER_RUNNERS", DEFAULT_SERVER_RUNNERS)
     runs = [{"run": run, "jobs": api.jobs(run["id"])} for run in api.active_runs()]
-    return {"floor": floor, "reserve": reserve, "server": server, "runs": runs}
+    shared, unreadable = {}, []
+    for repo in parse_shared_repos(api.text_variable("SHARED_REPOS"), own):
+        try:
+            found = api.shared_jobs(repo)
+        except (RuntimeError, OSError):  # a 403, a 5xx after the retries, a dropped connection (URLError is an OSError)
+            found = None
+        if found is None:
+            unreadable.append(repo)
+        else:
+            shared[repo] = found
+    return {"floor": floor, "reserve": reserve, "server": server, "runs": runs, "shared": shared, "unreadable": unreadable}
 
 
 def occupancies(raw_runs: list[dict], ledger: dict[str, int]) -> list[tuple[dict, list[dict], dict]]:
@@ -599,18 +665,19 @@ def decide(api: Api, args) -> dict:
     raw = read_shared_snapshot()
     if raw is None:
         fetched_at = now()
-        raw = fetch_raw(api)
+        raw = fetch_raw(api, getattr(api, "repo", ""))
         write_shared_snapshot(raw, fetched_at)
     floor, reserve, server = raw["floor"], raw["reserve"], raw["server"]
     seen = occupancies(raw["runs"], read_ledger())
     counted = totals([(run, occ) for run, _, occ in seen])
+    counted["shared"] = shared_total(raw.get("shared", {}))
     budget = budget_for(args.runner, floor, reserve, server, counted)
     count = runners_to_start(counted[args.runner], args.runners, args.min_runners, budget)
     if args.runner == SERVER:
         line = f"{SERVER}: heavy in flight {counted[SERVER]}, budget {budget} (SERVER_RUNNERS={server})"
     else:
         line = (
-            f"{HOSTED}: CI jobs {counted['ci']}, heavy in flight {counted[HOSTED]}, budget {budget} "
+            f"{HOSTED}: CI jobs {counted['ci']}, shared repos {counted['shared']}, heavy in flight {counted[HOSTED]}, budget {budget} "
             f"(HEAVY_FLOOR={floor}, CI_RESERVE={reserve})"
         )
     line += f", wanted {args.runners}" + (f" (at least {args.min_runners})" if args.min_runners != args.runners else "")
@@ -665,15 +732,22 @@ def minutes_since(stamp_text: str | None, now: dt.datetime) -> float:
 
 def cmd_status(api: Api, args) -> int:
     now = dt.datetime.now(dt.timezone.utc)
-    raw = fetch_raw(api)  # reads the three variables once, with the runs
+    raw = fetch_raw(api, getattr(api, "repo", ""))  # reads each variable once, with the runs
     floor, reserve, server = raw["floor"], raw["reserve"], raw["server"]
     seen = occupancies(raw["runs"], read_ledger())
     counted = totals([(run, occ) for run, _, occ in seen])
     ci_jobs, hosted = counted["ci"], counted[HOSTED]
-    budget = heavy_budget(floor, reserve, ci_jobs)
+    shared = raw.get("shared", {})
+    shared_jobs = shared_total(shared)
+    budget = heavy_budget(floor, reserve, ci_jobs, shared_jobs=shared_jobs)
     in_use = sum(occ["running"] for run, _, occ in seen if not (run["path"].endswith("run.yml") and runner_kind(run) == SERVER))
-    print(f"Hosted runner jobs: {in_use} running of {TOTAL_RUNNERS}; CI {ci_jobs} (running or queued), heavy {hosted}")
-    print(f"Hosted heavy budget {budget} = max(HEAVY_FLOOR={floor}, {TOTAL_RUNNERS} - CI_RESERVE={reserve} - CI jobs {ci_jobs}); room for {max(0, budget - hosted)} more")
+    in_use += sum(item["running"] for item in shared.values())
+    print(f"Hosted runner jobs: {in_use} running of {TOTAL_RUNNERS}; CI {ci_jobs} (running or queued), shared repos {shared_jobs}, heavy {hosted}")
+    for repo, item in shared.items():
+        print(f"  shared {repo}: {item['running']} running, {item['queued']} queued")
+    for repo in raw.get("unreadable", []):
+        print(f"  shared {repo}: cannot be read (no access or no such repository), counted as 0")
+    print(f"Hosted heavy budget {budget} = max(HEAVY_FLOOR={floor}, {TOTAL_RUNNERS} - CI_RESERVE={reserve} - CI jobs {ci_jobs} - shared {shared_jobs}); room for {max(0, budget - hosted)} more")
     print(f"Server heavy budget {server} (SERVER_RUNNERS), heavy {counted[SERVER]}; room for {max(0, server - counted[SERVER])} more")
     print("\nIn use / queued, by kind:")
     if not seen:

@@ -87,12 +87,17 @@ of `--ref`. Every input reaches a shell only through `env:`.
 
 ### The two budgets
 
-**Hosted (`--runner ubuntu-latest`, the default).** The repository has 20 hosted runner jobs at once. One CI run
+**Hosted (`--runner ubuntu-latest`, the default).** The account has 20 hosted runner jobs at once, shared by all its
+repositories (Crafting system among them). One CI run
 takes 8 of them for its duration; a heavy run takes up to 16, so unchecked heavy runs would stall every pull request.
 The dispatcher starts a hosted run only while
 
     hosted_heavy_in_flight + requested <= HEAVY_BUDGET
-    HEAVY_BUDGET = max(HEAVY_FLOOR, 20 - CI_RESERVE - ci_jobs_queued_or_running)
+    HEAVY_BUDGET = max(HEAVY_FLOOR, 20 - CI_RESERVE - ci_jobs_queued_or_running - shared_jobs)
+
+`shared_jobs` is the hosted jobs queued or running in the repositories named by `SHARED_REPOS` (jobs on their own
+self-hosted machines do not count). Each is read once per 90-second snapshot; one that cannot be read (no access, an API error) counts
+0 and `status` says so. A shared run whose jobs are not created yet also counts 0, so the count can run low. `status` lists the jobs of each shared repository.
 
 With the defaults, heavy runs may use 16 runners when no CI run is waiting (20 - 4 - 0), 8 while one CI run is
 (20 - 4 - 8), and only the floor, 4, while two are. Hosted heavy jobs are kept short so runners free up:
@@ -110,6 +115,7 @@ request for more runners than `SERVER_RUNNERS` is refused at once.
 | `HEAVY_FLOOR` | 4 | Hosted runners heavy runs always may use, even when CI is busy. |
 | `CI_RESERVE` | 4 | Hosted runners kept free for CI on top of the jobs it already has. |
 | `SERVER_RUNNERS` | 1 | Runners registered on the server with the label `poe-server`. |
+| `SHARED_REPOS` | empty | Other repositories of the account whose hosted jobs take from the same 20 (comma-separated `owner/name`, e.g. `Rasslabsya4el/crafting-system`). Empty: none counted. |
 
 They are turned without a commit (`gh variable set SERVER_RUNNERS --body 2`); the next look of every waiting
 dispatcher sees the new value. A heavy run counts against its budget from the moment it is dispatched (its run name,

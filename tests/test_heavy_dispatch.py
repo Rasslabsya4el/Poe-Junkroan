@@ -42,6 +42,21 @@ class FakeApi:
         self.variable_reads.append(name)
         return self.variables.get(name, default)
 
+    def text_variable(self, name):
+        self.reads += 1
+        self.variable_reads.append(name)
+        return str(self.variables.get(name, ""))
+
+    shared = {}  # repo -> its jobs (dicts with status and labels); a repo missing here cannot be read
+    shared_reads = []
+
+    def shared_jobs(self, repo):
+        self.reads += 1
+        self.shared_reads = [*self.shared_reads, repo]
+        if repo not in self.shared:
+            return None
+        return heavy.hosted_jobs(self.shared[repo])
+
     def active_runs(self):
         self.reads += 1
         return [{k: v for k, v in run.items() if k != "jobs"} for run in self.runs]
@@ -345,7 +360,7 @@ def test_status_shows_both_budgets_kinds_and_queue(capsys):
     assert heavy.cmd_status(api, type("S", (), {"no_logs": True})()) == 0
     out = capsys.readouterr().out
     assert "CI 16" in out and "heavy 5" in out
-    assert "Hosted heavy budget 4 = max(HEAVY_FLOOR=4, 20 - CI_RESERVE=4 - CI jobs 16)" in out
+    assert "Hosted heavy budget 4 = max(HEAVY_FLOOR=4, 20 - CI_RESERVE=4 - CI jobs 16 - shared 0)" in out
     assert "Server heavy budget 1 (SERVER_RUNNERS), heavy 1; room for 0 more" in out
     assert "CI    " in out and "heavy " in out and "poe-server" in out
     assert "queued" in out and "Queue (waiting for a runner)" in out
@@ -354,7 +369,7 @@ def test_status_shows_both_budgets_kinds_and_queue(capsys):
 def test_status_reads_each_variable_once(capsys):
     api = FakeApi(busy_runs())
     assert heavy.cmd_status(api, type("S", (), {"no_logs": True})()) == 0
-    assert sorted(api.variable_reads) == ["CI_RESERVE", "HEAVY_FLOOR", "SERVER_RUNNERS"]
+    assert sorted(api.variable_reads) == ["CI_RESERVE", "HEAVY_FLOOR", "SERVER_RUNNERS", "SHARED_REPOS"]
 
 
 def test_stale_runs_older_than_their_own_timeout_or_silent_are_flagged():
@@ -438,14 +453,14 @@ def test_lock_is_released_only_by_its_owner(tmp_path):
 def look(api, runners=4):
     """One decision the way cmd_run takes it: under the lock."""
     with heavy.DispatchLock():
-        return heavy.decide(api, args(runners=runners))
+        return heavy.decide(api, args(runners=runners, min_runners=runners))
 
 
 def test_two_decisions_30_seconds_apart_make_one_round_of_api_calls(clock):
     api = FakeApi([ci_run(10, running=6), heavy_run(5, 4, running=4)])
     first = look(api)
     one_round = api.reads
-    assert one_round == 3 + 1 + 2  # three variables, one run list, the jobs of the two runs
+    assert one_round == 4 + 1 + 2  # four variables (SHARED_REPOS unset: no shared look), one run list, the jobs of the two runs
     clock.t += 30
     second = look(api)
     assert api.reads == one_round  # the second look called nothing
@@ -801,3 +816,128 @@ def test_the_lock_wait_goes_on_when_the_holder_lets_go(clock, monkeypatch, capsy
     assert heavy.cmd_run(api, args(runners=2, max_wait=10)) == 0
     assert len(api.dispatched) == 1
     assert sum("lock held by" in line for line in capsys.readouterr().out.splitlines()) == 1
+
+
+# ---- shared repositories (SHARED_REPOS): the account's 20 hosted jobs are shared ------------------------------------
+
+
+def other_jobs(running=0, queued=0, self_hosted=0, done=0):
+    """Jobs of another repository: hosted running/queued, some on its own self-hosted machines, some finished."""
+    return ([{"status": "in_progress", "labels": ["ubuntu-latest"]}] * running
+            + [{"status": "queued", "labels": ["ubuntu-latest"]}] * queued
+            + [{"status": "in_progress", "labels": ["self-hosted", "linux"]}] * self_hosted
+            + [{"status": "completed", "labels": ["ubuntu-latest"]}] * done)
+
+
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        (None, []),
+        ("", []),
+        ("Rasslabsya4el/crafting-system", ["Rasslabsya4el/crafting-system"]),
+        (" a/b, c/d\nA/B ,", ["a/b", "c/d"]),  # separators, a duplicate in another case
+        ("me/this, a/b", ["a/b"]),  # the repository itself is never counted twice
+        ("noslash, a/b/c, /x, a/", []),  # not owner/name
+    ],
+)
+def test_shared_repos_variable_is_parsed(text, expected):
+    assert heavy.parse_shared_repos(text, own="me/this") == expected
+
+
+def test_only_hosted_running_or_queued_jobs_of_a_shared_repo_count():
+    assert heavy.hosted_jobs(other_jobs(running=3, queued=2, self_hosted=4, done=5)) == {"running": 3, "queued": 2}
+
+
+def test_the_shared_jobs_lower_the_budget_like_ci_jobs_but_never_below_the_floor():
+    assert heavy.heavy_budget(4, 4, 0, shared_jobs=10) == 6  # 20 - 4 - 0 - 10
+    assert heavy.heavy_budget(4, 4, 8, shared_jobs=10) == 4  # 20 - 4 - 8 - 10 = -2: the floor holds
+    assert heavy.heavy_budget(4, 4, 8) == heavy.heavy_budget(4, 4, 8, shared_jobs=0) == 8
+
+
+def test_a_shared_repos_running_and_queued_jobs_make_a_hosted_run_wait():
+    api = FakeApi([], variables={"HEAVY_FLOOR": 4, "CI_RESERVE": 4, "SERVER_RUNNERS": 1,
+                                 "SHARED_REPOS": "Rasslabsya4el/crafting-system"})
+    api.shared = {"Rasslabsya4el/crafting-system": other_jobs(running=10, queued=2, self_hosted=3)}
+    assert heavy.cmd_run(api, args(runners=8, no_wait=True)) == 3  # budget = max(4, 20 - 4 - 0 - 12) = 4 < 8
+    assert api.dispatched == []
+    assert heavy.cmd_run(api, args(runners=4, no_wait=True)) == 0  # 4 fits
+    assert api.dispatched[0]["inputs"]["runners"] == "4"
+
+
+def test_without_shared_repos_the_budget_is_unchanged_and_no_other_repo_is_read():
+    api = FakeApi([ci_run(10, running=8)])  # SHARED_REPOS unset
+    api.shared = {"Rasslabsya4el/crafting-system": other_jobs(running=20)}
+    assert heavy.cmd_run(api, args(runners=8, no_wait=True)) == 0  # 20 - 4 - 8 = 8, as before
+    assert api.shared_reads == []
+
+
+def test_a_server_run_ignores_the_shared_repos():
+    api = FakeApi([], variables={"SERVER_RUNNERS": 2, "SHARED_REPOS": "a/b"})
+    api.shared = {"a/b": other_jobs(running=20)}
+    assert heavy.cmd_run(api, args(runner="poe-server", runners=2, no_wait=True)) == 0
+
+
+def test_status_shows_each_shared_repo_and_the_one_it_cannot_read(capsys):
+    api = FakeApi([ci_run(10, running=8)], variables={"HEAVY_FLOOR": 4, "CI_RESERVE": 4, "SERVER_RUNNERS": 1,
+                                                       "SHARED_REPOS": "a/b, c/missing"})
+    api.shared = {"a/b": other_jobs(running=3, queued=1)}
+    assert heavy.cmd_status(api, type("S", (), {"no_logs": True})()) == 0
+    out = capsys.readouterr().out
+    assert "Hosted runner jobs: 11 running of 20; CI 8 (running or queued), shared repos 4, heavy 0" in out
+    assert "shared a/b: 3 running, 1 queued" in out
+    assert "shared c/missing: cannot be read" in out
+    assert "Hosted heavy budget 4 = max(HEAVY_FLOOR=4, 20 - CI_RESERVE=4 - CI jobs 8 - shared 4); room for 4 more" in out
+
+
+def test_shared_jobs_are_part_of_the_shared_snapshot_and_not_fetched_again_within_90_seconds(clock):
+    api = FakeApi([], variables={"HEAVY_FLOOR": 4, "CI_RESERVE": 4, "SERVER_RUNNERS": 1, "SHARED_REPOS": "a/b"})
+    api.shared = {"a/b": other_jobs(running=12)}
+    first = look(api, runners=8)
+    assert api.shared_reads == ["a/b"]
+    assert "shared repos 12" in first["line"] and first["count"] == 0  # budget max(4, 20 - 4 - 12) = 4 < 8
+    clock.t += 30
+    assert look(api, runners=8) == first
+    assert api.shared_reads == ["a/b"]  # one look per shared repository per snapshot
+
+
+def test_a_snapshot_stored_before_shared_repos_existed_still_counts(clock):
+    heavy.write_shared_snapshot({"floor": 4, "reserve": 4, "server": 1, "runs": []}, clock.t)
+    api = FakeApi([])
+    assert look(api, runners=16)["count"] == 16  # no `shared` key: none counted
+    assert api.reads == 0
+
+
+def test_api_shared_jobs_reads_the_other_repo_and_none_when_it_cannot(monkeypatch):
+    calls = []
+    pages = {
+        "/actions/runs?status=queued&per_page=100": {"workflow_runs": [{"id": 1}]},
+        "/actions/runs?status=in_progress&per_page=100": {"workflow_runs": [{"id": 1}, {"id": 2}]},
+        "/actions/runs/1/jobs?per_page=100&filter=latest": {"jobs": other_jobs(queued=2)},
+        "/actions/runs/2/jobs?per_page=100&filter=latest": {"jobs": other_jobs(running=3, self_hosted=1)},
+    }
+
+    def fake_call(self, path, method="GET", body=None, tries=4):
+        calls.append((self.repo, path))
+        return pages.get(path) if self.repo == "a/b" else None
+
+    monkeypatch.setattr(heavy.Api, "call", fake_call)
+    api = heavy.Api("me/this", "token")
+    assert api.shared_jobs("a/b") == {"running": 3, "queued": 2}
+    assert {repo for repo, _ in calls} == {"a/b"} and len(calls) == 4  # two run lists, the jobs of each run once
+    assert api.shared_jobs("c/missing") is None
+
+
+def test_a_shared_repo_that_fails_with_an_error_counts_0_and_does_not_stop_the_run(capsys):
+    api = FakeApi([], variables={"HEAVY_FLOOR": 4, "CI_RESERVE": 4, "SERVER_RUNNERS": 1, "SHARED_REPOS": "a/b, c/d"})
+    api.shared = {"c/d": other_jobs(running=2)}
+
+    def shared_jobs(repo):
+        if repo == "a/b":
+            raise RuntimeError("GitHub API 403: Resource not accessible by personal access token")
+        return heavy.hosted_jobs(api.shared[repo])
+
+    api.shared_jobs = shared_jobs
+    assert heavy.cmd_run(api, args(runners=8, no_wait=True)) == 0  # budget 20 - 4 - 0 - 2 = 14
+    assert heavy.cmd_status(api, type("S", (), {"no_logs": True})()) == 0
+    out = capsys.readouterr().out
+    assert "shared a/b: cannot be read" in out and "shared c/d: 2 running, 0 queued" in out
