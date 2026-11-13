@@ -1,1 +1,1438 @@
-{}
+{
+ "tests/test_392_trace_classes.py": {
+  "seconds": 0.277,
+  "tests": 2
+ },
+ "tests/test_392_witness.py": {
+  "seconds": 0.057,
+  "tests": 1
+ },
+ "tests/test_426_witness.py": {
+  "seconds": 0.012,
+  "tests": 2
+ },
+ "tests/test_427_witness.py": {
+  "seconds": 0.009,
+  "tests": 1
+ },
+ "tests/test_428_witness.py": {
+  "seconds": 0.003,
+  "tests": 2
+ },
+ "tests/test_429_witness.py": {
+  "seconds": 0.103,
+  "tests": 4
+ },
+ "tests/test_430_witness.py": {
+  "seconds": 0.002,
+  "tests": 2
+ },
+ "tests/test_438_witness.py": {
+  "seconds": 0.003,
+  "tests": 2
+ },
+ "tests/test_510_forced_line_never_lost.py": {
+  "seconds": 0.009,
+  "tests": 9
+ },
+ "tests/test_516_attribute_cap_every_path.py": {
+  "seconds": 0.009,
+  "tests": 10
+ },
+ "tests/test_519_screen_weapon2.py": {
+  "seconds": 0.08,
+  "tests": 4
+ },
+ "tests/test_519_unique_pick_weapon2.py": {
+  "seconds": 0.002,
+  "tests": 5
+ },
+ "tests/test_aggravated_bleed_rule.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_ailment_threshold_pob.py": {
+  "seconds": 5.014,
+  "tests": 3
+ },
+ "tests/test_anoint_candidates.py": {
+  "seconds": 0.095,
+  "tests": 3
+ },
+ "tests/test_anoint_line.py": {
+  "seconds": 0.014,
+  "tests": 5
+ },
+ "tests/test_anoint_pipeline_pob.py": {
+  "seconds": 5.492,
+  "tests": 1
+ },
+ "tests/test_anoint_pob.py": {
+  "seconds": 7.997,
+  "tests": 1
+ },
+ "tests/test_anoint_step.py": {
+  "seconds": 0.031,
+  "tests": 10
+ },
+ "tests/test_anoint_trace.py": {
+  "seconds": 0.028,
+  "tests": 6
+ },
+ "tests/test_ascendancy_loadout.py": {
+  "seconds": 0.027,
+  "tests": 4
+ },
+ "tests/test_audit_and_config_limits.py": {
+  "seconds": 0.06,
+  "tests": 10
+ },
+ "tests/test_audit_dead_groups.py": {
+  "seconds": 0.071,
+  "tests": 4
+ },
+ "tests/test_audit_elemental_overload.py": {
+  "seconds": 0.002,
+  "tests": 6
+ },
+ "tests/test_audit_flask.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_author_count_target.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_author_flask_regime.py": {
+  "seconds": 17.214,
+  "tests": 7
+ },
+ "tests/test_azadi_block.py": {
+  "seconds": 5.213,
+  "tests": 4
+ },
+ "tests/test_base_screen_order.py": {
+  "seconds": 0.018,
+  "tests": 3
+ },
+ "tests/test_bench_mod_ids.py": {
+  "seconds": 0.04,
+  "tests": 10
+ },
+ "tests/test_benchmark_counted_rows.py": {
+  "seconds": 0.011,
+  "tests": 12
+ },
+ "tests/test_benchmark_durable.py": {
+  "seconds": 1.857,
+  "tests": 4
+ },
+ "tests/test_benchmark_exit.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_benchmark_pobbin.py": {
+  "seconds": 0.044,
+  "tests": 7
+ },
+ "tests/test_benchmark_pobbin_429.py": {
+  "seconds": 0.074,
+  "tests": 4
+ },
+ "tests/test_benchmark_pobbin_backfill.py": {
+  "seconds": 0.02,
+  "tests": 8
+ },
+ "tests/test_benchmark_resume.py": {
+  "seconds": 63.077,
+  "tests": 6
+ },
+ "tests/test_benchmark_variants_file.py": {
+  "seconds": 62.156,
+  "tests": 4
+ },
+ "tests/test_bounded_pool.py": {
+  "seconds": 0.444,
+  "tests": 4
+ },
+ "tests/test_brand_counts.py": {
+  "seconds": 0.009,
+  "tests": 3
+ },
+ "tests/test_buff_proof_from_parsed_mods.py": {
+  "seconds": 6.465,
+  "tests": 20
+ },
+ "tests/test_build_result.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_castability.py": {
+  "seconds": 0.007,
+  "tests": 13
+ },
+ "tests/test_charge_triggers_warcry_when_hit.py": {
+  "seconds": 19.982,
+  "tests": 6
+ },
+ "tests/test_check_clusters.py": {
+  "seconds": 0.012,
+  "tests": 4
+ },
+ "tests/test_check_coloured_sockets.py": {
+  "seconds": 0.251,
+  "tests": 6
+ },
+ "tests/test_check_jewels.py": {
+  "seconds": 0.003,
+  "tests": 7
+ },
+ "tests/test_check_spare_865.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_check_useful_lines.py": {
+  "seconds": 0.001,
+  "tests": 5
+ },
+ "tests/test_ci_summary.py": {
+  "seconds": 0.047,
+  "tests": 9
+ },
+ "tests/test_cli.py": {
+  "seconds": 0.476,
+  "tests": 8
+ },
+ "tests/test_cli_level_day1.py": {
+  "seconds": 0.017,
+  "tests": 4
+ },
+ "tests/test_cluster_candidates.py": {
+  "seconds": 0.052,
+  "tests": 7
+ },
+ "tests/test_cluster_lines.py": {
+  "seconds": 0.148,
+  "tests": 7
+ },
+ "tests/test_cluster_pob.py": {
+  "seconds": 25.047,
+  "tests": 4
+ },
+ "tests/test_cluster_step.py": {
+  "seconds": 0.004,
+  "tests": 5
+ },
+ "tests/test_cluster_trace.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_cluster_witness_pob.py": {
+  "seconds": 180.899,
+  "tests": 1
+ },
+ "tests/test_compare_per_build.py": {
+  "seconds": 0.001,
+  "tests": 5
+ },
+ "tests/test_compare_runs_missing.py": {
+  "seconds": 0.004,
+  "tests": 3
+ },
+ "tests/test_config_enabler_rules.py": {
+  "seconds": 18.625,
+  "tests": 39
+ },
+ "tests/test_config_proof_rules.py": {
+  "seconds": 0.152,
+  "tests": 12
+ },
+ "tests/test_config_rules.py": {
+  "seconds": 62.735,
+  "tests": 5
+ },
+ "tests/test_construction_rig.py": {
+  "seconds": 1.443,
+  "tests": 4
+ },
+ "tests/test_count_forced.py": {
+  "seconds": 0.005,
+  "tests": 3
+ },
+ "tests/test_cruelty_excess.py": {
+  "seconds": 31.333,
+  "tests": 8
+ },
+ "tests/test_day1_base_level.py": {
+  "seconds": 0.065,
+  "tests": 8
+ },
+ "tests/test_day1_rulebook_rails.py": {
+  "seconds": 0.229,
+  "tests": 3
+ },
+ "tests/test_derived_seeds.py": {
+  "seconds": 1.691,
+  "tests": 3
+ },
+ "tests/test_describe_build.py": {
+  "seconds": 0.001,
+  "tests": 1
+ },
+ "tests/test_duration_minion_counts.py": {
+  "seconds": 0.006,
+  "tests": 4
+ },
+ "tests/test_enablers.py": {
+  "seconds": 0.059,
+  "tests": 2
+ },
+ "tests/test_explain.py": {
+  "seconds": 0.002,
+  "tests": 5
+ },
+ "tests/test_extra_resistance_cap.py": {
+  "seconds": 0.002,
+  "tests": 4
+ },
+ "tests/test_fixture_weapon_lines.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_flask_flags_cache.py": {
+  "seconds": 0.006,
+  "tests": 15
+ },
+ "tests/test_flask_pipeline.py": {
+  "seconds": 11.671,
+  "tests": 13
+ },
+ "tests/test_flask_step.py": {
+  "seconds": 0.016,
+  "tests": 34
+ },
+ "tests/test_flask_uptime_formula.py": {
+  "seconds": 0.009,
+  "tests": 9
+ },
+ "tests/test_flask_uptime_pob.py": {
+  "seconds": 49.381,
+  "tests": 7
+ },
+ "tests/test_flat_reservation_aura_levels.py": {
+  "seconds": 4.776,
+  "tests": 6
+ },
+ "tests/test_forced.py": {
+  "seconds": 0.001,
+  "tests": 5
+ },
+ "tests/test_forced_glue.py": {
+  "seconds": 8.85,
+  "tests": 5
+ },
+ "tests/test_fulldps_shortcut.py": {
+  "seconds": 11.725,
+  "tests": 8
+ },
+ "tests/test_gear_slot_order.py": {
+  "seconds": 20.21,
+  "tests": 9
+ },
+ "tests/test_gem_removal_probe.py": {
+  "seconds": 0.021,
+  "tests": 17
+ },
+ "tests/test_generator_corpus.py": {
+  "seconds": 0.006,
+  "tests": 6
+ },
+ "tests/test_golem_counts.py": {
+  "seconds": 14.396,
+  "tests": 13
+ },
+ "tests/test_graph_path_probe.py": {
+  "seconds": 0.001,
+  "tests": 5
+ },
+ "tests/test_graph_tree_authoring.py": {
+  "seconds": 0.186,
+  "tests": 11
+ },
+ "tests/test_headless_runtime_adapter.py": {
+  "seconds": 0.007,
+  "tests": 2
+ },
+ "tests/test_heavy_dispatch.py": {
+  "seconds": 0.113,
+  "tests": 71
+ },
+ "tests/test_hypothesis_validation.py": {
+  "seconds": 0.008,
+  "tests": 3
+ },
+ "tests/test_import_code_verifier.py": {
+  "seconds": 0.014,
+  "tests": 10
+ },
+ "tests/test_improvement_loop.py": {
+  "seconds": 0.14,
+  "tests": 80
+ },
+ "tests/test_issue1015_permanent_minion_mana.py": {
+  "seconds": 0.01,
+  "tests": 8
+ },
+ "tests/test_issue1022_main_skill_kept.py": {
+  "seconds": 71.116,
+  "tests": 6
+ },
+ "tests/test_issue1023_vaal_aura_level.py": {
+  "seconds": 15.559,
+  "tests": 5
+ },
+ "tests/test_issue1024_saved_minion_values.py": {
+  "seconds": 31.537,
+  "tests": 5
+ },
+ "tests/test_issue1029_force_keystone.py": {
+  "seconds": 0.659,
+  "tests": 6
+ },
+ "tests/test_issue1030_keystone_flip.py": {
+  "seconds": 12.983,
+  "tests": 11
+ },
+ "tests/test_issue1030_keystone_flip_report.py": {
+  "seconds": 0.021,
+  "tests": 8
+ },
+ "tests/test_issue1030_keystone_parse.py": {
+  "seconds": 0.002,
+  "tests": 8
+ },
+ "tests/test_issue1038_seeder_builder.py": {
+  "seconds": 0.013,
+  "tests": 9
+ },
+ "tests/test_issue1044_floor_swap.py": {
+  "seconds": 0.012,
+  "tests": 6
+ },
+ "tests/test_issue1044_forced_node_check.py": {
+  "seconds": 0.018,
+  "tests": 5
+ },
+ "tests/test_issue1055_dot_final_line.py": {
+  "seconds": 0.015,
+  "tests": 10
+ },
+ "tests/test_issue1057_saved_scored_key.py": {
+  "seconds": 0.011,
+  "tests": 7
+ },
+ "tests/test_issue1064_repair.py": {
+  "seconds": 0.073,
+  "tests": 31
+ },
+ "tests/test_issue1064_repair_rule.py": {
+  "seconds": 0.018,
+  "tests": 28
+ },
+ "tests/test_issue1119_groups.py": {
+  "seconds": 0.185,
+  "tests": 4
+ },
+ "tests/test_issue1119_lines.py": {
+  "seconds": 0.002,
+  "tests": 9
+ },
+ "tests/test_issue1119_parse_pass.py": {
+  "seconds": 0.007,
+  "tests": 8
+ },
+ "tests/test_issue1119_real_shape.py": {
+  "seconds": 0.019,
+  "tests": 2
+ },
+ "tests/test_issue1119_report.py": {
+  "seconds": 0.004,
+  "tests": 8
+ },
+ "tests/test_issue1123_marks.py": {
+  "seconds": 0.028,
+  "tests": 28
+ },
+ "tests/test_issue1123_stand.py": {
+  "seconds": 11.676,
+  "tests": 19
+ },
+ "tests/test_issue1124_gate_path.py": {
+  "seconds": 0.02,
+  "tests": 5
+ },
+ "tests/test_issue1124_gear.py": {
+  "seconds": 0.18,
+  "tests": 26
+ },
+ "tests/test_issue1124_lanes.py": {
+  "seconds": 10.069,
+  "tests": 21
+ },
+ "tests/test_issue1124_node_trial.py": {
+  "seconds": 5.336,
+  "tests": 18
+ },
+ "tests/test_issue1124_probe.py": {
+  "seconds": 1.553,
+  "tests": 21
+ },
+ "tests/test_issue1125_graph.py": {
+  "seconds": 0.005,
+  "tests": 10
+ },
+ "tests/test_issue1125_mod_records.py": {
+  "seconds": 0.005,
+  "tests": 7
+ },
+ "tests/test_issue1146_warcry_power.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_issue1147_catalogue.py": {
+  "seconds": 0.011,
+  "tests": 15
+ },
+ "tests/test_issue1147_fit.py": {
+  "seconds": 0.247,
+  "tests": 17
+ },
+ "tests/test_issue1147_roots.py": {
+  "seconds": 0.023,
+  "tests": 5
+ },
+ "tests/test_issue1147_unique.py": {
+  "seconds": 499.312,
+  "tests": 11
+ },
+ "tests/test_issue1152_incumbent.py": {
+  "seconds": 0.005,
+  "tests": 7
+ },
+ "tests/test_issue1152_restore_clean.py": {
+  "seconds": 0.013,
+  "tests": 9
+ },
+ "tests/test_issue1153_movement_pair.py": {
+  "seconds": 0.075,
+  "tests": 13
+ },
+ "tests/test_issue1153_replay_move.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue1153_replay_nofixture.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_issue1154_base_excluded.py": {
+  "seconds": 0.086,
+  "tests": 6
+ },
+ "tests/test_issue1154_gear_incumbent.py": {
+  "seconds": 0.012,
+  "tests": 4
+ },
+ "tests/test_issue1154_left_out_slot.py": {
+  "seconds": 0.007,
+  "tests": 4
+ },
+ "tests/test_issue1155_shield.py": {
+  "seconds": 0.009,
+  "tests": 5
+ },
+ "tests/test_issue1156_audit_stale.py": {
+  "seconds": 0.026,
+  "tests": 12
+ },
+ "tests/test_issue1156_config.py": {
+  "seconds": 0.187,
+  "tests": 6
+ },
+ "tests/test_issue1156_fill.py": {
+  "seconds": 0.139,
+  "tests": 31
+ },
+ "tests/test_issue1156_replay_fill.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_issue1157_asc_audit.py": {
+  "seconds": 11.87,
+  "tests": 8
+ },
+ "tests/test_issue1157_asc_swap.py": {
+  "seconds": 0.027,
+  "tests": 14
+ },
+ "tests/test_issue1158_base_swap.py": {
+  "seconds": 0.154,
+  "tests": 16
+ },
+ "tests/test_issue1158_dead_implicit.py": {
+  "seconds": 13.422,
+  "tests": 10
+ },
+ "tests/test_issue1164_callers.py": {
+  "seconds": 0.009,
+  "tests": 11
+ },
+ "tests/test_issue1164_trim.py": {
+  "seconds": 0.008,
+  "tests": 6
+ },
+ "tests/test_issue1167_swap_accept.py": {
+  "seconds": 0.012,
+  "tests": 6
+ },
+ "tests/test_issue1167_swap_cut.py": {
+  "seconds": 0.003,
+  "tests": 2
+ },
+ "tests/test_issue1169_audit_a.py": {
+  "seconds": 7.663,
+  "tests": 19
+ },
+ "tests/test_issue1169_audit_b.py": {
+  "seconds": 0.887,
+  "tests": 14
+ },
+ "tests/test_issue1205_catalog_standin.py": {
+  "seconds": 3.506,
+  "tests": 3
+ },
+ "tests/test_issue12_move_streams.py": {
+  "seconds": 0.005,
+  "tests": 2
+ },
+ "tests/test_issue15_dead_candidate.py": {
+  "seconds": 0.002,
+  "tests": 2
+ },
+ "tests/test_issue167_reverted_move_score.py": {
+  "seconds": 0.003,
+  "tests": 3
+ },
+ "tests/test_issue170_rebuild_keep.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_issue173_forced_spectre.py": {
+  "seconds": 9.589,
+  "tests": 9
+ },
+ "tests/test_issue173_spectre_session.py": {
+  "seconds": 7.008,
+  "tests": 4
+ },
+ "tests/test_issue176_rederive_line.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue17_momentum_pob.py": {
+  "seconds": 6.277,
+  "tests": 1
+ },
+ "tests/test_issue181_pass_start_reread.py": {
+  "seconds": 0.004,
+  "tests": 3
+ },
+ "tests/test_issue189_records_rejudged.py": {
+  "seconds": 0.027,
+  "tests": 9
+ },
+ "tests/test_issue33_revert_resistance_plan.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue34_gear_view_refresh.py": {
+  "seconds": 0.002,
+  "tests": 4
+ },
+ "tests/test_issue34_generator_self_cost.py": {
+  "seconds": 0.001,
+  "tests": 1
+ },
+ "tests/test_issue34_hooked_after_gear.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue34_revert_contexts.py": {
+  "seconds": 0.009,
+  "tests": 4
+ },
+ "tests/test_issue435_colour_step_pob.py": {
+  "seconds": 25.273,
+  "tests": 1
+ },
+ "tests/test_issue526_dated_search_folder.py": {
+  "seconds": 0.002,
+  "tests": 2
+ },
+ "tests/test_issue531_two_hander_after_shield.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue534_transcript_stable.py": {
+  "seconds": 0.004,
+  "tests": 4
+ },
+ "tests/test_issue537_anoint_dead_candidate.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue540_stack_restore.py": {
+  "seconds": 52.604,
+  "tests": 8
+ },
+ "tests/test_issue542_mortar_volley_overlap.py": {
+  "seconds": 0.008,
+  "tests": 17
+ },
+ "tests/test_issue542_pob.py": {
+  "seconds": 29.532,
+  "tests": 14
+ },
+ "tests/test_issue547_loop_colours.py": {
+  "seconds": 0.013,
+  "tests": 2
+ },
+ "tests/test_issue548_candidate_sockets.py": {
+  "seconds": 0.014,
+  "tests": 7
+ },
+ "tests/test_issue550_final_line.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue550_repick_keeps_supports.py": {
+  "seconds": 0.006,
+  "tests": 6
+ },
+ "tests/test_issue550_spectre_supports_set_skills.py": {
+  "seconds": 98.124,
+  "tests": 3
+ },
+ "tests/test_issue553_extra_pass_order.py": {
+  "seconds": 0.005,
+  "tests": 3
+ },
+ "tests/test_issue553_final_repair.py": {
+  "seconds": 0.004,
+  "tests": 4
+ },
+ "tests/test_issue553_floor_errors.py": {
+  "seconds": 0.001,
+  "tests": 6
+ },
+ "tests/test_issue553_line_order.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue553_loop_order.py": {
+  "seconds": 0.006,
+  "tests": 8
+ },
+ "tests/test_issue553_one_order.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue553_priced_score.py": {
+  "seconds": 0.001,
+  "tests": 7
+ },
+ "tests/test_issue553_replay_repair.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_issue555_loop_exits.py": {
+  "seconds": 0.124,
+  "tests": 5
+ },
+ "tests/test_issue556_support_trial_raises.py": {
+  "seconds": 0.006,
+  "tests": 6
+ },
+ "tests/test_issue557_repick_monotone.py": {
+  "seconds": 0.011,
+  "tests": 11
+ },
+ "tests/test_issue559_headroom_sockets.py": {
+  "seconds": 0.006,
+  "tests": 6
+ },
+ "tests/test_issue560_r2_infeasible_trials.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue569_count_budget.py": {
+  "seconds": 0.005,
+  "tests": 3
+ },
+ "tests/test_issue569_net_report.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue569_record_calls.py": {
+  "seconds": 0.003,
+  "tests": 4
+ },
+ "tests/test_issue589_flask_active_kinds_pob.py": {
+  "seconds": 7.67,
+  "tests": 1
+ },
+ "tests/test_issue589_flask_output_counts.py": {
+  "seconds": 0.03,
+  "tests": 4
+ },
+ "tests/test_issue589_input_flag_pob.py": {
+  "seconds": 11.369,
+  "tests": 1
+ },
+ "tests/test_issue589_keep_flask_flags_pob.py": {
+  "seconds": 6.896,
+  "tests": 1
+ },
+ "tests/test_issue590_life_floor.py": {
+  "seconds": 0.008,
+  "tests": 4
+ },
+ "tests/test_issue596_flask_bare_output_counts.py": {
+  "seconds": 0.132,
+  "tests": 7
+ },
+ "tests/test_issue596_flask_keep_input_pob.py": {
+  "seconds": 274.675,
+  "tests": 1
+ },
+ "tests/test_issue600_boots_movement.py": {
+  "seconds": 0.045,
+  "tests": 8
+ },
+ "tests/test_issue601_shield_gem_level.py": {
+  "seconds": 0.01,
+  "tests": 7
+ },
+ "tests/test_issue603_crafted_mod_count.py": {
+  "seconds": 0.102,
+  "tests": 3
+ },
+ "tests/test_issue604_mana_flask_rail.py": {
+  "seconds": 9.402,
+  "tests": 4
+ },
+ "tests/test_issue608_mom_casts_rail.py": {
+  "seconds": 0.003,
+  "tests": 6
+ },
+ "tests/test_issue609_poison_hit_count.py": {
+  "seconds": 7.332,
+  "tests": 1
+ },
+ "tests/test_issue610_overleech_leeching.py": {
+  "seconds": 9.702,
+  "tests": 7
+ },
+ "tests/test_issue616_flask_bare_input.py": {
+  "seconds": 0.017,
+  "tests": 9
+ },
+ "tests/test_issue616_flask_duplicate_base.py": {
+  "seconds": 0.027,
+  "tests": 12
+ },
+ "tests/test_issue616_report_output.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue617_rebuild_trace.py": {
+  "seconds": 0.0,
+  "tests": 1
+ },
+ "tests/test_issue619_seed_streams.py": {
+  "seconds": 0.037,
+  "tests": 10
+ },
+ "tests/test_issue632_rage_candidate.py": {
+  "seconds": 16.281,
+  "tests": 7
+ },
+ "tests/test_issue702_own_hit_ailments.py": {
+  "seconds": 33.356,
+  "tests": 10
+ },
+ "tests/test_issue705_flask_audit.py": {
+  "seconds": 0.739,
+  "tests": 3
+ },
+ "tests/test_issue711_loop_lines.py": {
+  "seconds": 0.008,
+  "tests": 3
+ },
+ "tests/test_issue711_pipeline_start_lines.py": {
+  "seconds": 0.009,
+  "tests": 5
+ },
+ "tests/test_issue711_stage_catalog.py": {
+  "seconds": 0.644,
+  "tests": 5
+ },
+ "tests/test_issue711_stage_shares.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_issue713_text_c1.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue713_text_c2.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_issue718_weapon_line_dps.py": {
+  "seconds": 0.002,
+  "tests": 4
+ },
+ "tests/test_issue723_human_durations.py": {
+  "seconds": 0.003,
+  "tests": 9
+ },
+ "tests/test_issue748_commit_host.py": {
+  "seconds": 1.022,
+  "tests": 6
+ },
+ "tests/test_issue748_row_missing.py": {
+  "seconds": 62.811,
+  "tests": 9
+ },
+ "tests/test_issue749_early_warning.py": {
+  "seconds": 0.001,
+  "tests": 6
+ },
+ "tests/test_issue784_curse_limit.py": {
+  "seconds": 0.004,
+  "tests": 6
+ },
+ "tests/test_issue785_bandit_rail.py": {
+  "seconds": 0.013,
+  "tests": 2
+ },
+ "tests/test_issue795_gear_interface.py": {
+  "seconds": 0.016,
+  "tests": 13
+ },
+ "tests/test_issue800_fixed_point_repeat.py": {
+  "seconds": 0.014,
+  "tests": 6
+ },
+ "tests/test_issue800_replay_fixed_point.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_issue801_final_line_stat.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue802_count_vaal_gems.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_issue802_vaal_delivery.py": {
+  "seconds": 0.005,
+  "tests": 7
+ },
+ "tests/test_issue808_totem_mana.py": {
+  "seconds": 0.009,
+  "tests": 8
+ },
+ "tests/test_issue816_start_broken.py": {
+  "seconds": 0.029,
+  "tests": 2
+ },
+ "tests/test_issue817_spare_point.py": {
+  "seconds": 0.016,
+  "tests": 10
+ },
+ "tests/test_issue854_revert_history.py": {
+  "seconds": 0.011,
+  "tests": 10
+ },
+ "tests/test_issue880_vaal_nil_position.py": {
+  "seconds": 0.002,
+  "tests": 2
+ },
+ "tests/test_issue908_final_lane_proof.py": {
+  "seconds": 80.924,
+  "tests": 16
+ },
+ "tests/test_issue941_castability_current.py": {
+  "seconds": 0.007,
+  "tests": 8
+ },
+ "tests/test_issue963_brand_count_one.py": {
+  "seconds": 17.189,
+  "tests": 12
+ },
+ "tests/test_issue967_duration_17.py": {
+  "seconds": 0.0,
+  "tests": 1
+ },
+ "tests/test_issue967_duration_ab.py": {
+  "seconds": 0.003,
+  "tests": 14
+ },
+ "tests/test_issue967_duration_c.py": {
+  "seconds": 0.003,
+  "tests": 10
+ },
+ "tests/test_issue976_fulldps_counts.py": {
+  "seconds": 19.068,
+  "tests": 3
+ },
+ "tests/test_issue978_cache_record.py": {
+  "seconds": 0.109,
+  "tests": 16
+ },
+ "tests/test_item_lines_census.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_jewel_lines.py": {
+  "seconds": 0.002,
+  "tests": 4
+ },
+ "tests/test_jewel_pipeline.py": {
+  "seconds": 713.785,
+  "tests": 13
+ },
+ "tests/test_jewel_socket_pob.py": {
+  "seconds": 41.565,
+  "tests": 6
+ },
+ "tests/test_jewel_step.py": {
+  "seconds": 0.003,
+  "tests": 11
+ },
+ "tests/test_jewel_trace.py": {
+  "seconds": 0.003,
+  "tests": 4
+ },
+ "tests/test_judging.py": {
+  "seconds": 0.034,
+  "tests": 38
+ },
+ "tests/test_keystone_variants.py": {
+  "seconds": 0.003,
+  "tests": 2
+ },
+ "tests/test_kill_enablers.py": {
+  "seconds": 16.243,
+  "tests": 3
+ },
+ "tests/test_legal_supports_readback.py": {
+  "seconds": 0.037,
+  "tests": 2
+ },
+ "tests/test_link_caps_benchmark_skeletons.py": {
+  "seconds": 0.828,
+  "tests": 73
+ },
+ "tests/test_link_caps_pob_choice.py": {
+  "seconds": 25.467,
+  "tests": 3
+ },
+ "tests/test_link_caps_rail.py": {
+  "seconds": 0.015,
+  "tests": 4
+ },
+ "tests/test_loop_attempt.py": {
+  "seconds": 0.004,
+  "tests": 18
+ },
+ "tests/test_loot_forced.py": {
+  "seconds": 6.359,
+  "tests": 11
+ },
+ "tests/test_loot_gear_keep_best_179.py": {
+  "seconds": 0.012,
+  "tests": 15
+ },
+ "tests/test_loot_gear_rank_finding3.py": {
+  "seconds": 0.0,
+  "tests": 1
+ },
+ "tests/test_loot_gear_snapshot_pob_179.py": {
+  "seconds": 19.734,
+  "tests": 2
+ },
+ "tests/test_loot_useful_lines.py": {
+  "seconds": 0.087,
+  "tests": 13
+ },
+ "tests/test_loot_useful_lines_pob.py": {
+  "seconds": 7.161,
+  "tests": 3
+ },
+ "tests/test_measure_724_table.py": {
+  "seconds": 0.086,
+  "tests": 2
+ },
+ "tests/test_move_ledger.py": {
+  "seconds": 0.002,
+  "tests": 9
+ },
+ "tests/test_native_runtime.py": {
+  "seconds": 0.005,
+  "tests": 5
+ },
+ "tests/test_no_pob_switch.py": {
+  "seconds": 0.319,
+  "tests": 4
+ },
+ "tests/test_numeric_config_rules.py": {
+  "seconds": 30.207,
+  "tests": 4
+ },
+ "tests/test_objective_floors.py": {
+  "seconds": 0.018,
+  "tests": 18
+ },
+ "tests/test_open_line_buys_feasibility_174.py": {
+  "seconds": 6.154,
+  "tests": 1
+ },
+ "tests/test_over_limit_gems.py": {
+  "seconds": 8.358,
+  "tests": 5
+ },
+ "tests/test_pantheon_rail.py": {
+  "seconds": 0.003,
+  "tests": 5
+ },
+ "tests/test_pending_facts.py": {
+  "seconds": 10.613,
+  "tests": 17
+ },
+ "tests/test_pipeline_attribute_cap.py": {
+  "seconds": 0.005,
+  "tests": 2
+ },
+ "tests/test_pipeline_forced.py": {
+  "seconds": 0.001,
+  "tests": 4
+ },
+ "tests/test_pipeline_invariants.py": {
+  "seconds": 0.003,
+  "tests": 5
+ },
+ "tests/test_pipeline_revive_supports.py": {
+  "seconds": 59.691,
+  "tests": 1
+ },
+ "tests/test_pob_call_record.py": {
+  "seconds": 3.127,
+  "tests": 3
+ },
+ "tests/test_pob_call_record_all.py": {
+  "seconds": 0.865,
+  "tests": 2
+ },
+ "tests/test_pob_inplace_writes.py": {
+  "seconds": 202.549,
+  "tests": 114
+ },
+ "tests/test_pob_session_smoke.py": {
+  "seconds": 35.947,
+  "tests": 5
+ },
+ "tests/test_pob_skill_requirements.py": {
+  "seconds": 5.863,
+  "tests": 6
+ },
+ "tests/test_pob_support_legality_readback.py": {
+  "seconds": 0.08,
+  "tests": 6
+ },
+ "tests/test_pob_tree_authoring_tools.py": {
+  "seconds": 0.019,
+  "tests": 32
+ },
+ "tests/test_pob_tree_version.py": {
+  "seconds": 6.7,
+  "tests": 1
+ },
+ "tests/test_pobbin.py": {
+  "seconds": 0.012,
+  "tests": 9
+ },
+ "tests/test_poedb_affix_ingestion.py": {
+  "seconds": 0.005,
+  "tests": 4
+ },
+ "tests/test_rails_gems_and_choices.py": {
+  "seconds": 21.728,
+  "tests": 3
+ },
+ "tests/test_rails_loot_rolls.py": {
+  "seconds": 0.196,
+  "tests": 6
+ },
+ "tests/test_ramp.py": {
+  "seconds": 0.01,
+  "tests": 10
+ },
+ "tests/test_ramp_inputs.py": {
+  "seconds": 38.279,
+  "tests": 20
+ },
+ "tests/test_random_parts.py": {
+  "seconds": 5.29,
+  "tests": 3
+ },
+ "tests/test_rank_bases_forced.py": {
+  "seconds": 0.046,
+  "tests": 3
+ },
+ "tests/test_recording_pob.py": {
+  "seconds": 0.003,
+  "tests": 3
+ },
+ "tests/test_reference_fixtures.py": {
+  "seconds": 30.376,
+  "tests": 1
+ },
+ "tests/test_release_manager_acl.py": {
+  "seconds": 0.0,
+  "tests": 1
+ },
+ "tests/test_reliquarian_ascendancy.py": {
+  "seconds": 30.953,
+  "tests": 4
+ },
+ "tests/test_replay_bench.py": {
+  "seconds": 0.009,
+  "tests": 8
+ },
+ "tests/test_replay_bench_save_builds.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_replay_mark_picked.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_report_format.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_request.py": {
+  "seconds": 0.02,
+  "tests": 10
+ },
+ "tests/test_request_forced.py": {
+  "seconds": 4.138,
+  "tests": 7
+ },
+ "tests/test_reshaping_inventory.py": {
+  "seconds": 0.98,
+  "tests": 19
+ },
+ "tests/test_rulebook_day1_floors.py": {
+  "seconds": 0.002,
+  "tests": 1
+ },
+ "tests/test_rulebook_rails_drift.py": {
+  "seconds": 0.049,
+  "tests": 34
+ },
+ "tests/test_rulebook_rebuild.py": {
+  "seconds": 0.016,
+  "tests": 1
+ },
+ "tests/test_screen_armour_forced.py": {
+  "seconds": 0.045,
+  "tests": 3
+ },
+ "tests/test_screen_forced.py": {
+  "seconds": 0.024,
+  "tests": 5
+ },
+ "tests/test_search_forced.py": {
+  "seconds": 0.034,
+  "tests": 22
+ },
+ "tests/test_search_seeds.py": {
+  "seconds": 0.001,
+  "tests": 10
+ },
+ "tests/test_search_trace_out.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_search_variant_screen.py": {
+  "seconds": 0.0,
+  "tests": 3
+ },
+ "tests/test_self_cost_per_candidate.py": {
+  "seconds": 0.028,
+  "tests": 8
+ },
+ "tests/test_shard_support.py": {
+  "seconds": 4.198,
+  "tests": 21
+ },
+ "tests/test_skeleton_from_xml.py": {
+  "seconds": 0.481,
+  "tests": 17
+ },
+ "tests/test_skeleton_slot_order.py": {
+  "seconds": 0.003,
+  "tests": 1
+ },
+ "tests/test_skeleton_socket_groups.py": {
+  "seconds": 0.0,
+  "tests": 2
+ },
+ "tests/test_snapshot.py": {
+  "seconds": 0.002,
+  "tests": 10
+ },
+ "tests/test_socket_colour_pob.py": {
+  "seconds": 5.247,
+  "tests": 1
+ },
+ "tests/test_socket_colours_pick.py": {
+  "seconds": 0.002,
+  "tests": 8
+ },
+ "tests/test_sockets.py": {
+  "seconds": 0.127,
+  "tests": 10
+ },
+ "tests/test_stack_options.py": {
+  "seconds": 67.314,
+  "tests": 14
+ },
+ "tests/test_state_cache.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_template_line_census.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_trace_forced.py": {
+  "seconds": 0.065,
+  "tests": 2
+ },
+ "tests/test_trace_gems.py": {
+  "seconds": 0.007,
+  "tests": 3
+ },
+ "tests/test_trace_greedy_path.py": {
+  "seconds": 0.001,
+  "tests": 2
+ },
+ "tests/test_trace_hooks.py": {
+  "seconds": 0.002,
+  "tests": 3
+ },
+ "tests/test_trace_results.py": {
+  "seconds": 0.98,
+  "tests": 5
+ },
+ "tests/test_trace_useful_lines.py": {
+  "seconds": 0.041,
+  "tests": 2
+ },
+ "tests/test_tree_cluster_links.py": {
+  "seconds": 0.018,
+  "tests": 6
+ },
+ "tests/test_tree_expansion_size.py": {
+  "seconds": 0.019,
+  "tests": 6
+ },
+ "tests/test_tree_hygiene.py": {
+  "seconds": 0.001,
+  "tests": 3
+ },
+ "tests/test_tree_optimizer_speed.py": {
+  "seconds": 0.069,
+  "tests": 40
+ },
+ "tests/test_tree_plan_b.py": {
+  "seconds": 0.019,
+  "tests": 20
+ },
+ "tests/test_tree_protected.py": {
+  "seconds": 19.634,
+  "tests": 21
+ },
+ "tests/test_trial_stats_item_parity_pob.py": {
+  "seconds": 29.285,
+  "tests": 5
+ },
+ "tests/test_unique_rails.py": {
+  "seconds": 0.599,
+  "tests": 2
+ },
+ "tests/test_unsupported_gems.py": {
+  "seconds": 21.416,
+  "tests": 2
+ },
+ "tests/test_utility_transfigured.py": {
+  "seconds": 0.003,
+  "tests": 2
+ },
+ "tests/test_wait_runs.py": {
+  "seconds": 0.027,
+  "tests": 23
+ },
+ "tests/test_weapon_base_move.py": {
+  "seconds": 0.102,
+  "tests": 7
+ },
+ "tests/test_wishlist_forced.py": {
+  "seconds": 0.011,
+  "tests": 5
+ },
+ "tests/test_wishlist_gear.py": {
+  "seconds": 0.552,
+  "tests": 68
+ },
+ "tests/test_wishlist_gear_best_set.py": {
+  "seconds": 0.004,
+  "tests": 6
+ },
+ "tests/test_wishlist_gear_flexible.py": {
+  "seconds": 0.019,
+  "tests": 13
+ },
+ "tests/test_wishlist_gear_offhand.py": {
+  "seconds": 0.002,
+  "tests": 6
+ },
+ "tests/test_wishlist_gear_pob.py": {
+  "seconds": 84.643,
+  "tests": 5
+ },
+ "tests/test_wishlist_gear_quiver.py": {
+  "seconds": 0.002,
+  "tests": 5
+ },
+ "tests/test_wishlist_two_line_price.py": {
+  "seconds": 0.04,
+  "tests": 6
+ }
+}
