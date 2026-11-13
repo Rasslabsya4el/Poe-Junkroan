@@ -16,8 +16,8 @@ from junkroan.optimizer.dead_implicit import IMPLICIT_SLOTS, dead_implicits, imp
 from junkroan.optimizer.objective import Objective
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-A1 = PROJECT_ROOT / "artifacts" / "search-contagion" / "20261015-0336" / "01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
-A2 = PROJECT_ROOT / "artifacts" / "search-contagion" / "20261015-0336" / "02 witch_occultist_void_sceptre.pob.txt"
+A1 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "search-contagion" / "20261015-0336" / "01 witch_occultist_no_iron_will_prophecy_wand.pob.txt"
+A2 = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "search-contagion" / "20261015-0336" / "02 witch_occultist_void_sceptre.pob.txt"
 OBJECTIVE = Objective(maximize="CombinedDPS")
 BASE = {"CombinedDPS": 1000.0, "TotalEHP": 5000.0}
 

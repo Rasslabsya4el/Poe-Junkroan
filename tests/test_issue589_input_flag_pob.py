@@ -11,7 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 LOCK = json.loads((PROJECT_ROOT / "locks" / "pob.lock.json").read_text(encoding="utf-8"))
 RUNTIME_ROOT = PROJECT_ROOT / "var" / "cache" / "pob" / LOCK["tag"] / LOCK["extract_subdir"]
 needs_pob = pytest.mark.skipif(not (RUNTIME_ROOT / "lua51.dll").is_file(), reason=f"pinned PoB runtime not present at {RUNTIME_ROOT}")
-SMITE = PROJECT_ROOT / "artifacts" / "proof-575" / "builds" / "smite-s4.pob.txt"
+SMITE = PROJECT_ROOT / "tests" / "fixtures" / "run_output" / "proof-575" / "builds" / "smite-s4.pob.txt"
 
 
 @pytest.mark.pob

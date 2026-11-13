@@ -48,7 +48,7 @@ def test_all_white(tmp_path):
 
 
 def test_trace_builds_runs():
-    d = ROOT / "artifacts" / "replay" / "20261002-2147-trace-437c" / "builds"
+    d = ROOT / "tests" / "fixtures" / "run_output" / "replay" / "20261002-2147-trace-437c" / "builds"
     script = ROOT / "scripts" / "check_coloured_sockets.py"
     r = subprocess.run([sys.executable, str(script), str(d)], capture_output=True, text=True)
     assert r.returncode in (0, 1)

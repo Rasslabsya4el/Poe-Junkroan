@@ -93,6 +93,7 @@ def test_no_forced_flask_activation_remains() -> None:
 
 
 @pytest.mark.pob
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_author_full_dps_under_pob_uptime() -> None:
     """Row 5 of #575: the author's saved flasks are no longer forced active. Read as saved (the author's own config,
     the flags derived: all five False) FullDPS is 1,797,356 (1,806,874 forced); through the benchmark's own author

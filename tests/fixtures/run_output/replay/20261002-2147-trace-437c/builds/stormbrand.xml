@@ -1,0 +1,4936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathOfBuilding>
+	<Build pantheonMinorGod="None" viewMode="IMPORT" mainSocketGroup="1" className="Templar" characterLevelAutoMode="false" bandit="None" level="77" ascendClassName="Inquisitor" targetVersion="3_0" pantheonMajorGod="None">
+		<PlayerStat value="54117.91648384" stat="AverageHit"/>
+		<PlayerStat value="54117.91648384" stat="AverageBurstDamage"/>
+		<PlayerStat value="2.8266666666667" stat="Speed"/>
+		<PlayerStat value="6.1056" stat="HitSpeed"/>
+		<PlayerStat value="89.395" stat="PreEffectiveCritChance"/>
+		<PlayerStat value="89.395" stat="CritChance"/>
+		<PlayerStat value="4.4" stat="CritMultiplier"/>
+		<PlayerStat value="100" stat="HitChance"/>
+		<PlayerStat value="660844.70176747" stat="TotalDPS"/>
+		<PlayerStat value="0" stat="TotalDot"/>
+		<PlayerStat value="660844.70176747" stat="WithBleedDPS"/>
+		<PlayerStat value="660844.70176747" stat="WithIgniteDPS"/>
+		<PlayerStat value="660844.70176747" stat="WithPoisonDPS"/>
+		<PlayerStat value="0" stat="TotalDotDPS"/>
+		<PlayerStat value="0" stat="CullingDPS"/>
+		<PlayerStat value="0" stat="ReservationDPS"/>
+		<PlayerStat value="660844.70176747" stat="CombinedDPS"/>
+		<PlayerStat value="0.7" stat="AreaOfEffectRadiusMetres"/>
+		<PlayerStat value="3.9" stat="BrandAttachmentRangeMetre"/>
+		<PlayerStat value="12" stat="BrandTicks"/>
+		<PlayerStat value="56" stat="ManaCost"/>
+		<PlayerStat value="0" stat="ManaPercentCost"/>
+		<PlayerStat value="0" stat="ManaPerSecondCost"/>
+		<PlayerStat value="0" stat="ManaPercentPerSecondCost"/>
+		<PlayerStat value="0" stat="LifeCost"/>
+		<PlayerStat value="0" stat="LifePercentCost"/>
+		<PlayerStat value="0" stat="LifePerSecondCost"/>
+		<PlayerStat value="0" stat="LifePercentPerSecondCost"/>
+		<PlayerStat value="0" stat="ESCost"/>
+		<PlayerStat value="158.29333333333" stat="ESPerSecondCost"/>
+		<PlayerStat value="0" stat="ESPercentPerSecondCost"/>
+		<PlayerStat value="0" stat="RageCost"/>
+		<PlayerStat value="0" stat="SoulCost"/>
+		<PlayerStat value="353" stat="Str"/>
+		<PlayerStat value="146" stat="ReqStr"/>
+		<PlayerStat value="109" stat="Dex"/>
+		<PlayerStat value="102" stat="ReqDex"/>
+		<PlayerStat value="372" stat="Int"/>
+		<PlayerStat value="152" stat="ReqInt"/>
+		<PlayerStat value="0" stat="Devotion"/>
+		<PlayerStat value="10994.00004481" stat="TotalEHP"/>
+		<PlayerStat value="5408" stat="PhysicalMaximumHitTaken"/>
+		<PlayerStat value="18839" stat="LightningMaximumHitTaken"/>
+		<PlayerStat value="18839" stat="FireMaximumHitTaken"/>
+		<PlayerStat value="18839" stat="ColdMaximumHitTaken"/>
+		<PlayerStat value="3379" stat="ChaosMaximumHitTaken"/>
+		<PlayerStat value="4297" stat="Life"/>
+		<PlayerStat value="131" stat="Spec:LifeInc"/>
+		<PlayerStat value="3873" stat="LifeUnreserved"/>
+		<PlayerStat value="3873" stat="LifeRecoverable"/>
+		<PlayerStat value="90.132650686525" stat="LifeUnreservedPercent"/>
+		<PlayerStat value="752.8" stat="LifeRegenRecovery"/>
+		<PlayerStat value="0" stat="LifeLeechGainRate"/>
+		<PlayerStat value="1174" stat="Mana"/>
+		<PlayerStat value="28" stat="Spec:ManaInc"/>
+		<PlayerStat value="587" stat="ManaUnreserved"/>
+		<PlayerStat value="50" stat="ManaUnreservedPercent"/>
+		<PlayerStat value="43.1" stat="ManaRegenRecovery"/>
+		<PlayerStat value="0" stat="ManaLeechGainRate"/>
+		<PlayerStat value="815" stat="EnergyShield"/>
+		<PlayerStat value="815" stat="EnergyShieldRecoveryCap"/>
+		<PlayerStat value="30" stat="Spec:EnergyShieldInc"/>
+		<PlayerStat value="842.83577" stat="EnergyShieldRegenRecovery"/>
+		<PlayerStat value="0" stat="EnergyShieldLeechGainRate"/>
+		<PlayerStat value="0" stat="Ward"/>
+		<PlayerStat value="0" stat="RageRegenRecovery"/>
+		<PlayerStat value="1109.45" stat="TotalBuildDegen"/>
+		<PlayerStat value="529.28577" stat="TotalNetRegen"/>
+		<PlayerStat value="87.13" stat="NetLifeRegen"/>
+		<PlayerStat value="43.1" stat="NetManaRegen"/>
+		<PlayerStat value="399.05577" stat="NetEnergyShieldRegen"/>
+		<PlayerStat value="18" stat="Evasion"/>
+		<PlayerStat value="0" stat="Spec:EvasionInc"/>
+		<PlayerStat value="0" stat="MeleeEvadeChance"/>
+		<PlayerStat value="0" stat="ProjectileEvadeChance"/>
+		<PlayerStat value="684" stat="Armour"/>
+		<PlayerStat value="20" stat="Spec:ArmourInc"/>
+		<PlayerStat value="6" stat="PhysicalDamageReduction"/>
+		<PlayerStat value="20" stat="EffectiveBlockChance"/>
+		<PlayerStat value="0" stat="EffectiveSpellBlockChance"/>
+		<PlayerStat value="0" stat="AttackDodgeChance"/>
+		<PlayerStat value="0" stat="SpellDodgeChance"/>
+		<PlayerStat value="0" stat="EffectiveSpellSuppressionChance"/>
+		<PlayerStat value="75" stat="FireResist"/>
+		<PlayerStat value="0" stat="FireResistOverCap"/>
+		<PlayerStat value="75" stat="ColdResist"/>
+		<PlayerStat value="4" stat="ColdResistOverCap"/>
+		<PlayerStat value="75" stat="LightningResist"/>
+		<PlayerStat value="7" stat="LightningResistOverCap"/>
+		<PlayerStat value="-32" stat="ChaosResist"/>
+		<PlayerStat value="0" stat="ChaosResistOverCap"/>
+		<PlayerStat value="1.23" stat="EffectiveMovementSpeedMod"/>
+		<PlayerStat value="1321689.4035349" stat="FullDPS"/>
+		<PlayerStat value="0" stat="FullDotDPS"/>
+		<FullDPSSkill source="" skillPart="" stat="2x Storm Brand" value="1321689.4035349"/>
+		<PlayerStat value="0" stat="PowerCharges"/>
+		<PlayerStat value="3" stat="PowerChargesMax"/>
+		<PlayerStat value="0" stat="FrenzyCharges"/>
+		<PlayerStat value="3" stat="FrenzyChargesMax"/>
+		<PlayerStat value="0" stat="EnduranceCharges"/>
+		<PlayerStat value="3" stat="EnduranceChargesMax"/>
+		<TimelessData socketFilterDistance="0" devotionVariant1="1" devotionVariant2="1" searchList="" searchListFallback=""/>
+	</Build>
+	<Tree activeSpec="1">
+		<Spec clusterHashFormatVersion="2" classId="5" secondaryAscendClassId="0" masteryEffects="{12125,34242},{9586,2987}" ascendClassId="1" treeVersion="3_29" nodes="4184,39841,7444,16743,57222,52407,53018,56716,48362,27203,54645,9586,32345,42760,41635,63447,53493,46842,36452,29861,8135,49254,49929,21958,4036,14151,11420,12536,47507,61471,36858,44824,19501,54694,61981,57362,6237,46340,27564,40776,63965,10153,41472,49605,1203,44529,12125,5296,1346,16790,51954,25757,32816,5456,60440,32710,39648,29033,58402,60405,61871,44184,37486,32431,17821,21330,33435,11128,1031,662,47306,44799,56075,9386,30225,15064,39790,33755,15973,58604,36949,36678,21389,64210,58218,34560,50382,48214,36121,42343,26866,14936,53884,10031,15228,34661,61525,6764,2292,14057,17735,33310,63398,34098,10635,40351,12852,4367,55647,60398,5743">
+			<URL>
+				https://www.pathofexile.com/passive-skill-tree/AAAABgUBbRBYm6EdFEFn34bMt88a3Yy86mpD1XUlcn5Zpwiio_fX0PW2-o5kdKUfx8BmwwlVxg_EN0csnDD4uZPwH4_6rxhMLdWm8h3gEhhdtQRrrJ9I-d0nqaIAwcUEs63xL10UsAVCQZbK8mSdgDAVUOwYf8aa4HFp5CLr9ayYkm5-r0WdU1KCmyt4BAcClrjKrv_bCySqdhE62Jtug9s-ZeTskFWPRlON-tLjaocAxM68Vo0ZpWdo8jpY0nwnLzt8h2UabAj0NulFR4Ie96aFMimLnZ8yNBEP2V_r7hZvAAILqyVyhcIvXQ==
+			</URL>
+			<Sockets/>
+			<Overrides/>
+		</Spec>
+	</Tree>
+	<Skills defaultGemQuality="0" showLegacyGems="false" defaultGemLevel="normalMaximum" activeSkillSet="1" showSupportGemTypes="ALL" sortGemsByDPS="true" sortGemsByDPSField="CombinedDPS">
+		<SkillSet id="1" title="Main">
+			<Skill mainActiveSkill="1" slot="Body Armour" label="Main" includeInFullDPS="true" mainActiveSkillCalcs="1" enabled="true">
+				<Gem count="2" nameSpec="Storm Brand" enabled="true" variantId="StormBrand" gemId="Metadata/Items/Gems/SkillGemStormBrand" quality="0" level="18" skillId="StormBrand" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Arcane Surge" enabled="true" variantId="SupportArcaneSurge" gemId="Metadata/Items/Gems/SupportGemArcaneSurge" quality="0" level="18" skillId="SupportArcaneSurge" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Concentrated Effect" enabled="true" variantId="SupportConcentratedEffect" gemId="Metadata/Items/Gems/SupportGemConcentratedEffect" quality="0" level="18" skillId="SupportConcentratedEffect" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Increased Critical Strikes" enabled="true" variantId="SupportIncreasedCriticalStrikes" gemId="Metadata/Items/Gems/SupportGemIncreasedCriticalStrikes" quality="0" level="18" skillId="SupportIncreasedCriticalStrikes" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Swiftbrand" enabled="true" variantId="SupportSwiftbrand" gemId="Metadata/Items/Gems/SupportGemSwiftbrand" quality="0" level="18" skillId="SupportSwiftbrand" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+			<Skill mainActiveSkill="1" slot="Weapon 1" label="Vitality" includeInFullDPS="false" mainActiveSkillCalcs="1" enabled="true">
+				<Gem count="1" nameSpec="Vitality" enabled="true" variantId="Vitality" gemId="Metadata/Items/Gems/SkillGemVitality" quality="0" level="18" skillId="Vitality" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Arrogance" enabled="true" variantId="SupportArrogance" gemId="Metadata/Items/Gems/SupportGemBloodMagic" quality="0" level="18" skillId="SupportArrogance" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Frostblink" enabled="true" variantId="Frostblink" gemId="Metadata/Items/Gems/SkillGemFrostblink" quality="0" level="18" skillId="Frostblink" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+			<Skill mainActiveSkill="1" slot="Weapon 2" label="Wrath" includeInFullDPS="false" mainActiveSkillCalcs="1" enabled="false">
+				<Gem count="1" nameSpec="Wrath" enabled="true" variantId="Wrath" gemId="Metadata/Items/Gems/SkillGemWrath" quality="0" level="18" skillId="Wrath" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="More Duration" enabled="true" variantId="SupportMoreDuration" gemId="Metadata/Items/Gems/SupportGemIncreasedDuration" quality="0" level="18" skillId="SupportMoreDuration" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Smite" enabled="true" variantId="Smite" gemId="Metadata/Items/Gems/SkillGemSmite" quality="0" level="18" skillId="Smite" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+			<Skill mainActiveSkill="1" slot="Gloves" label="Leap Slam" includeInFullDPS="false" mainActiveSkillCalcs="1" enabled="true">
+				<Gem count="1" nameSpec="Leap Slam" enabled="true" variantId="LeapSlam" gemId="Metadata/Items/Gems/SkillGemLeapSlam" quality="0" level="18" skillId="LeapSlam" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Faster Attacks" enabled="true" variantId="SupportFasterAttacks" gemId="Metadata/Items/Gems/SupportGemFasterAttack" quality="0" level="18" skillId="SupportFasterAttacks" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Momentum" enabled="true" variantId="SupportMomentum" gemId="Metadata/Items/Gems/SupportGemOnslaught" quality="0" level="18" skillId="SupportMomentum" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+			<Skill mainActiveSkill="1" slot="Boots" label="Flame Dash" includeInFullDPS="false" mainActiveSkillCalcs="1" enabled="true">
+				<Gem count="1" nameSpec="Flame Dash" enabled="true" variantId="FlameDash" gemId="Metadata/Items/Gems/SkillGemFlameDash" quality="0" level="18" skillId="FlameDash" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+			<Skill mainActiveSkill="1" slot="Helmet" label="Righteous Fire" includeInFullDPS="false" mainActiveSkillCalcs="1" enabled="true">
+				<Gem count="1" nameSpec="Righteous Fire" enabled="true" variantId="RighteousFire" gemId="Metadata/Items/Gems/SkillGemRighteousFire" quality="0" level="18" skillId="RighteousFire" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Zealotry" enabled="true" variantId="Zealotry" gemId="Metadata/Items/Gems/SkillGemSpellDamageAura" quality="0" level="18" skillId="Zealotry" enableGlobal1="true" enableGlobal2="false"/>
+				<Gem count="1" nameSpec="Assassin&apos;s Mark" enabled="true" variantId="AssassinsMark" gemId="Metadata/Items/Gems/SkillGemCriticalWeakness" quality="0" level="18" skillId="AssassinsMark" enableGlobal1="true" enableGlobal2="false"/>
+			</Skill>
+		</SkillSet>
+	</Skills>
+	<Config activeConfigSet="1">
+		<ConfigSet id="1" title="Baseline">
+			<Input name="buffArcaneSurge" boolean="true"/>
+			<Input name="conditionOnConsecratedGround" boolean="true"/>
+			<Input name="conditionEnemyChilled" boolean="true"/>
+			<Input name="conditionBeenHitRecently" boolean="true"/>
+			<Input name="conditionEnemyOnConsecratedGround" boolean="true"/>
+			<Input name="conditionTotemsHitRecently" boolean="true"/>
+			<Input name="conditionHitRecently" boolean="true"/>
+			<Input name="conditionUsedMovementSkillRecently" boolean="true"/>
+			<Placeholder name="multiplierEnemyHallowingFlame" number="1"/>
+			<Placeholder name="enemyFireResist" number="50"/>
+			<Placeholder name="enemyLevel" number="84"/>
+			<Placeholder name="sigilOfPowerStages" number="1"/>
+			<Placeholder name="enemySpeed" number="700"/>
+			<Placeholder name="enemyCritChance" number="5"/>
+			<Placeholder name="enemyCritDamage" number="30"/>
+			<Placeholder name="enemyLightningDamage" number="2241"/>
+			<Placeholder name="enemyLightningResist" number="50"/>
+			<Placeholder name="enemyArmour" number="61989"/>
+			<Placeholder name="enemyPhysicalDamage" number="2241"/>
+			<Placeholder name="multiplierWitheredStackCountSelf" number="15"/>
+			<Placeholder name="ShockStacks" number="1"/>
+			<Placeholder name="enemyFireDamage" number="2241"/>
+			<Placeholder name="enemyChaosDamage" number="896"/>
+			<Placeholder name="enemyChaosResist" number="30"/>
+			<Placeholder name="configSpectralTigerCount" number="5"/>
+			<Placeholder name="enemyLightningPen" number="3"/>
+			<Placeholder name="enemyColdPen" number="3"/>
+			<Placeholder name="projectileDistance" number="40"/>
+			<Placeholder name="ScorchStacks" number="1"/>
+			<Placeholder name="enemyEvasion" number="10143"/>
+			<Placeholder name="enemyColdResist" number="50"/>
+			<Placeholder name="enemyFirePen" number="3"/>
+			<Placeholder name="enemyDamageRollRange" number="70"/>
+			<Placeholder name="multiplierHallowingFlameStacksRemovedByAlly" number="1"/>
+			<Placeholder name="meleeDistance" number="15"/>
+			<Placeholder name="enemyColdDamage" number="2241"/>
+			<CustomModifierBlock enabled="true" title="Default">
+				
+			</CustomModifierBlock>
+		</ConfigSet>
+		<ConfigSet id="2" title="Conditional">
+			<Input name="conditionEnemyFullLife" boolean="true"/>
+			<Input name="usePowerCharges" boolean="true"/>
+			<Input name="useFrenzyCharges" boolean="true"/>
+			<Input name="useEnduranceCharges" boolean="true"/>
+			<Input name="conditionUsedMovementSkillRecently" boolean="true"/>
+			<Input name="buffFortification" boolean="true"/>
+			<Input name="conditionEnemyBlinded" boolean="true"/>
+			<Input name="buffOnslaught" boolean="true"/>
+			<Input name="conditionEnemyCoveredInAsh" boolean="true"/>
+			<Input name="conditionEnemyIntimidated" boolean="true"/>
+			<Input name="buffArcaneSurge" boolean="true"/>
+			<Input name="conditionBeenHitRecently" boolean="true"/>
+			<Input name="conditionEnemyCrushed" boolean="true"/>
+			<Input name="conditionEnemyChilled" boolean="true"/>
+			<Input name="buffTailwind" boolean="true"/>
+			<Input name="buffUnholyMight" boolean="true"/>
+			<Input name="buffChaoticMight" boolean="true"/>
+			<Input name="conditionEnemyBurning" boolean="true"/>
+			<Input name="conditionEnemyIgnited" boolean="true"/>
+			<Input name="conditionEnemyUnnerved" boolean="true"/>
+			<Input name="conditionEnemyFrozen" boolean="true"/>
+			<Input name="conditionEnemyShocked" boolean="true"/>
+			<Input name="conditionEnemyCoveredInFrost" boolean="true"/>
+			<Input name="conditionOnConsecratedGround" boolean="true"/>
+			<Input name="conditionEnemyOnConsecratedGround" boolean="true"/>
+			<Input name="conditionTotemsHitRecently" boolean="true"/>
+			<Input name="buffAdrenaline" boolean="true"/>
+			<Input name="conditionUsedWarcryRecently" boolean="true"/>
+			<Input name="conditionHitRecently" boolean="true"/>
+			<Placeholder name="ShockStacks" number="1"/>
+			<Placeholder name="multiplierEnemyHallowingFlame" number="1"/>
+			<Placeholder name="configSpectralTigerCount" number="5"/>
+			<Placeholder name="meleeDistance" number="15"/>
+			<Placeholder name="multiplierHallowingFlameStacksRemovedByAlly" number="1"/>
+			<Placeholder name="sigilOfPowerStages" number="1"/>
+			<Placeholder name="ScorchStacks" number="1"/>
+			<Placeholder name="enemyCritChance" number="5"/>
+			<Placeholder name="enemyCritDamage" number="30"/>
+			<Placeholder name="enemySpeed" number="700"/>
+			<Placeholder name="enemyDamageRollRange" number="70"/>
+			<Placeholder name="projectileDistance" number="40"/>
+			<Placeholder name="enemyPhysicalDamage" number="7"/>
+			<Placeholder name="multiplierWitheredStackCountSelf" number="15"/>
+			<CustomModifierBlock enabled="true" title="Default">
+				
+			</CustomModifierBlock>
+		</ConfigSet>
+	</Config>
+	<Items useSecondWeaponSet="false" showStatDifferences="true" activeItemSet="1">
+		<Item id="1">
+			Rarity: RARE
+Loath Roar
+Karui Sceptre
+Unique ID: f12ffa6bbc64f5a3424616cf0aea45decb583fa0d8e1992ed7b0fb77357eacd9
+Item Level: 76
+Quality: 0
+Sockets: R-R-B
+LevelReq: 56
+Implicits: 1
+26% increased Elemental Damage
+Adds 17 to 27 Physical Damage
+24% increased Fire Damage
+Adds 26 to 50 Fire Damage
+Adds 10 to 170 Lightning Damage to Spells
+27% chance to Freeze
+{crafted}15% increased Cast Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="2">
+			Rarity: RARE
+Tempest Crusher
+Blood Sceptre
+Unique ID: 24928cf623ad9ac6f7fb13fc33fe9ca4517c00ff7ee3218767dab0cf3eb0a8e5
+Item Level: 63
+Quality: 0
+Sockets: R-B-R
+LevelReq: 47
+Implicits: 1
+24% increased Elemental Damage
+52% increased Spell Damage
+Adds 34 to 72 Cold Damage to Spells
+35% increased Stun Duration on Enemies
+{crafted}17% increased Cast Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="3">
+			Rarity: NORMAL
+Goat&apos;s Horn
+Unique ID: c752cd844d812599543e6e4ed4cb446e768e0db61bb90e84003edf951dbb3bde
+Item Level: 6
+Quality: 0
+Sockets: B-B B
+LevelReq: 6
+Implicits: 1
+Adds 2 to 4 Fire Damage to Spells and Attacks
+			<ModRange id="1" range="0.5"/>
+		</Item>
+		<Item id="4">
+			Rarity: NORMAL
+Goat&apos;s Horn
+Unique ID: 2b8e088b1b6b8ef8ed807b98512a0172359a32ca70337bea4f11c564852769dc
+Item Level: 8
+Quality: 0
+Sockets: R B-G
+LevelReq: 6
+Implicits: 1
+Adds 2 to 4 Fire Damage to Spells and Attacks
+			<ModRange id="1" range="0.5"/>
+		</Item>
+		<Item id="5">
+			Rarity: MAGIC
+Condensed Divine Life Flask of Sealing
+Unique ID: ff2eeacb1ee09a54ae690f340e500aee93e8ca7e61a69629c1af9c5ebacef3a0
+Item Level: 66
+Quality: 0
+LevelReq: 60
+Implicits: 0
+59% increased Recovery rate
+Grants Immunity to Bleeding for 6 seconds if used while Bleeding
+Grants Immunity to Corrupted Blood for 6 seconds if used while affected by Corrupted Blood
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+		</Item>
+		<Item id="6">
+			Rarity: RARE
+Glyph Claw
+Vaal Gauntlets
+Armour: 452
+ArmourBasePercentile: 0.6117
+Unique ID: e3a081971f0d9ae7372b5748c7c0c6b2046edf19fde75cc657a80810fe53f182
+Searing Exarch Item
+Item Level: 75
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 1
+15% chance to Extinguish Enemies on Hit
+Adds 9 to 19 Fire Damage to Attacks
++111 to maximum Life
+13% increased Life Regeneration rate
++40% to Fire Resistance
++39% to Lightning Resistance
+{crafted}49% increased Armour
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="7">
+			Rarity: MAGIC
+Ebullient Divine Life Flask of Quelling
+Unique ID: cb4bee3586e8caec305a9a77f7191a4a2d314c08ebb82d90ca36c1673b8f7848
+Item Level: 66
+Quality: 0
+LevelReq: 60
+Implicits: 0
+50% reduced Amount Recovered
+135% increased Recovery rate
+50% of Recovery applied Instantly
+Grants Immunity to Ignite for 13 seconds if used while Ignited
+Removes all Burning when used
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="8">
+			Rarity: RARE
+Kraken Knot
+Two-Stone Ring
+Unique ID: a9254e683ea54b829fa35da2ad5c4f99075677807ae83da5798e19dcf1c5d4ed
+Item Level: 20
+LevelReq: 20
+Implicits: 1
++13% to Fire and Cold Resistances
++131 to Accuracy Rating
+10% increased Cast Speed
++9 to maximum Life
+{crafted}+19% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="9">
+			Rarity: MAGIC
+Stout Jade Amulet of Craft
+Unique ID: f74ad1d8f05e898a7418eaf527d9247078c13685937e293c99bde3efa5d60325
+Item Level: 62
+LevelReq: 19
+Implicits: 1
++23 to Dexterity
++64 to maximum Life
+{crafted}+20% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+		</Item>
+		<Item id="10">
+			Rarity: RARE
+Dread Slippers
+Goliath Greaves
+Armour: 342
+ArmourBasePercentile: 0.3387
+Unique ID: 98dd389f74f2b27d3466d8c3d75ab567ae987774c1fd72b7b8ac844fb8a22a4c
+Searing Exarch Item
+Item Level: 81
+Quality: 19
+Sockets: R R B
+LevelReq: 54
+Implicits: 1
+35% chance to Avoid being Ignited
+32% reduced Attribute Requirements
+53% increased Armour
++116 to maximum Life
+Regenerate 25.7 Life per second
+30% increased Movement Speed
+28% increased Stun and Block Recovery
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="11">
+			Rarity: RARE
+Hate Visage
+Necromancer Circlet
+Energy Shield: 115
+EnergyShieldBasePercentile: 0.1159
+Unique ID: 093c90f7d68aafc75553e309b1d0b927bbe17694fa9d75eb8c8f7057c7eacaab
+Searing Exarch Item
+Eater of Worlds Item
+Item Level: 75
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 2
+While a Pinnacle Atlas Boss is in your Presence, 58% reduced Ignite Duration on you
+4% increased Damage per Power Charge
++76 to maximum Life
+Regenerate 41.8 Life per second
++50 to maximum Mana
++21% to Fire Resistance
++42% to Cold Resistance
+{crafted}71% increased Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="12">
+			Rarity: RARE
+Empyrean Grip
+Two-Stone Ring
+Unique ID: 6e8f038ca3e0557a1a76f9291d03601cfe60fb1c307a3c7999c5b76bb2199f1d
+Item Level: 59
+LevelReq: 40
+Implicits: 1
++12% to Fire and Lightning Resistances
+12% increased Cast Speed
++95 to maximum Life
++29 to maximum Mana
+{crafted}+14% to Cold and Lightning Resistances
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="13">
+			Rarity: MAGIC
+Apprentice&apos;s Ruby Flask of the Plover
+Unique ID: 31e2de6ff09e55eabe71433ca9401f2b6389e7be899c0999a14f058e01465c54
+Item Level: 73
+Quality: 0
+LevelReq: 18
+Implicits: 0
+16% reduced Charges per use
+37% reduced Effect of Shock on you during Effect
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="14">
+			Rarity: MAGIC
+Medic&apos;s Diamond Flask of the Narwhal
+Unique ID: 3d998a9bbc5443a7f1fc8c3565e662f3a0550fb4dc562ff6598b4a483a348628
+Item Level: 74
+Quality: 0
+LevelReq: 33
+Implicits: 0
+15% chance to gain a Flask Charge when you deal a Critical Strike
+44% chance to Avoid being Chilled during Effect
+42% chance to Avoid being Frozen during Effect
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="15">
+			Rarity: RARE
+Doom Trap
+Rustic Sash
+Unique ID: a9ee850cb45691af3fdf8e250dd08a51209480d10a651f855fed2917ebac8808
+Item Level: 75
+LevelReq: 57
+Implicits: 1
+14% increased Global Physical Damage
++98 to maximum Life
++52 to maximum Mana
++45% to Fire Resistance
++26% to Lightning Resistance
+25% increased Stun and Block Recovery
+29% increased Flask Life Recovery rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="16">
+			Rarity: RARE
+Gale Shroud
+Savant&apos;s Robe
+Energy Shield: 166
+EnergyShieldBasePercentile: 0.4902
+Unique ID: 3766754756af33275f1faeb9f98612f401265e06b8c27d0138a8eb99cd066d30
+Searing Exarch Item
+Eater of Worlds Item
+Item Level: 72
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 2
+10% of Physical Damage from Hits taken as Cold Damage
+9% increased effect of Non-Curse Auras from your Skills
++29 to Intelligence
++15 to maximum Energy Shield
++119 to maximum Life
++34 to maximum Mana
++42% to Cold Resistance
+{crafted}+13% to Fire and Cold Resistances
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="17">
+			Rarity: MAGIC
+Terrified Divine Life Flask of Entropy
+Unique ID: 6ba54bd4f367c64a590a19ea61862e2165639c960644713d5a786c638a760764
+Item Level: 63
+Quality: 0
+LevelReq: 60
+Implicits: 0
+15% reduced Amount Recovered
+Instant Recovery when on Low Life
+Grants Immunity to Chill for 12 seconds if used while Chilled
+Grants Immunity to Freeze for 12 seconds if used while Frozen
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="18">
+			Rarity: MAGIC
+Terrified Divine Life Flask of Entropy
+Unique ID: 6ba54bd4f367c64a590a19ea61862e2165639c960644713d5a786c638a760764
+Item Level: 63
+Quality: 0
+LevelReq: 60
+Implicits: 0
+15% reduced Amount Recovered
+Instant Recovery when on Low Life
+Grants Immunity to Chill for 12 seconds if used while Chilled
+Grants Immunity to Freeze for 12 seconds if used while Frozen
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="19">
+			Rarity: MAGIC
+Medic&apos;s Diamond Flask of the Narwhal
+Unique ID: 3d998a9bbc5443a7f1fc8c3565e662f3a0550fb4dc562ff6598b4a483a348628
+Item Level: 74
+Quality: 0
+LevelReq: 33
+Implicits: 0
+15% chance to gain a Flask Charge when you deal a Critical Strike
+44% chance to Avoid being Chilled during Effect
+42% chance to Avoid being Frozen during Effect
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="20">
+			Rarity: MAGIC
+Apprentice&apos;s Ruby Flask of the Plover
+Unique ID: 31e2de6ff09e55eabe71433ca9401f2b6389e7be899c0999a14f058e01465c54
+Item Level: 73
+Quality: 0
+LevelReq: 18
+Implicits: 0
+16% reduced Charges per use
+37% reduced Effect of Shock on you during Effect
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="21">
+			Rarity: MAGIC
+Condensed Divine Life Flask of Sealing
+Unique ID: ff2eeacb1ee09a54ae690f340e500aee93e8ca7e61a69629c1af9c5ebacef3a0
+Item Level: 66
+Quality: 0
+LevelReq: 60
+Implicits: 0
+59% increased Recovery rate
+Grants Immunity to Bleeding for 6 seconds if used while Bleeding
+Grants Immunity to Corrupted Blood for 6 seconds if used while affected by Corrupted Blood
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+		</Item>
+		<Item id="22">
+			Rarity: MAGIC
+Ebullient Divine Life Flask of Quelling
+Unique ID: cb4bee3586e8caec305a9a77f7191a4a2d314c08ebb82d90ca36c1673b8f7848
+Item Level: 66
+Quality: 0
+LevelReq: 60
+Implicits: 0
+50% reduced Amount Recovered
+135% increased Recovery rate
+50% of Recovery applied Instantly
+Grants Immunity to Ignite for 13 seconds if used while Ignited
+Removes all Burning when used
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="23">
+			Rarity: RARE
+Random 204
+Karui Sceptre
+Crafted: true
+Prefix: {range:0.817}LocalAddedLightningDamage6
+Prefix: {range:0.087}LightningDamagePrefixOnWeapon4
+Prefix: {range:0.869}SpellAddedColdDamage6_
+Suffix: {range:0.17}ChanceToShock2__
+Suffix: {range:0.897}Strength7
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 56
+Implicits: 1
+26% increased Elemental Damage
+{tags:attribute}{suffix}+42 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{prefix}41% increased Lightning Damage
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 7 to 128 Lightning Damage
+{tags:elemental_damage,caster_damage,damage,elemental,cold,caster}{prefix}Adds 30 to 53 Cold Damage to Spells
+{tags:elemental,lightning,ailment}{suffix}26% chance to Shock
+{crafted}+28 to Dexterity
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="24">
+			Rarity: RARE
+Random 267
+Blood Sceptre
+Crafted: true
+Prefix: {range:0.529}SpellDamageOnWeapon6
+Prefix: None
+Prefix: None
+Suffix: {range:0.482}LocalIncreasedAttackSpeed6
+Suffix: {range:0.221}Strength7
+Suffix: {range:0.869}Intelligence7
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 52
+Implicits: 1
+24% increased Elemental Damage
+{tags:attribute}{suffix}+39 to Strength
+{tags:attribute}{suffix}+41 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}77% increased Spell Damage
+{tags:attack,speed}{suffix}21% increased Attack Speed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="25">
+			Rarity: RARE
+Random 94
+Savant&apos;s Robe
+Energy Shield: 279
+EnergyShieldBasePercentile: 1
+Searing Exarch Item
+Eater of Worlds Item
+Crafted: true
+Prefix: {range:0.343}IncreasedMana4
+Prefix: {range:0.404}AttackerTakesDamage1
+Prefix: {range:0.717}LocalIncreasedEnergyShieldPercent5
+Suffix: {range:0.602}LightningResist6
+Suffix: {range:0.224}FireResist5
+Suffix: {range:0.759}ColdResist6
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 2
+10% of Physical Damage from Hits taken as Cold Damage
+9% increased effect of Non-Curse Auras from your Skills
+{tags:defences,energy_shield}{prefix}76% increased Energy Shield
+{tags:resource,mana}{prefix}+31 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+31% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+40% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+39% to Lightning Resistance
+{tags:physical_damage,damage,physical}{prefix}Reflects 2 Physical Damage to Melee Attackers
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="26">
+			Rarity: RARE
+Random 404
+Necromancer Circlet
+Energy Shield: 147
+EnergyShieldBasePercentile: 1
+Searing Exarch Item
+Eater of Worlds Item
+Crafted: true
+Prefix: {range:0.025}LocalIncreasedEnergyShield7
+Prefix: {range:0.885}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.413}IncreasedLife8
+Suffix: {range:0.414}ColdResist6
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 2
+While a Pinnacle Atlas Boss is in your Presence, 58% reduced Ignite Duration on you
+4% increased Damage per Power Charge
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}19% increased Energy Shield
+{tags:resource,life}{prefix}+121 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:defences,energy_shield}{prefix}9% increased Stun and Block Recovery
+{crafted}+15% to Fire and Cold Resistances
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="27">
+			Rarity: RARE
+Random 541
+Vaal Gauntlets
+Armour: 429
+ArmourBasePercentile: 1
+Searing Exarch Item
+Crafted: true
+Prefix: {range:0.361}LocalIncreasedPhysicalDamageReductionRatingPercentAndStunRecovery2
+Prefix: {range:0.581}LocalBaseArmourAndLife2
+Prefix: {range:0.835}IncreasedLife1
+Suffix: {range:0.395}ColdResist6
+Suffix: {range:0.181}LightningResist4
+Suffix: {range:0.27}FireResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 1
+15% chance to Extinguish Enemies on Hit
+{tags:resource,life,defences,armour}{prefix}+42 to Armour
+{tags:defences,armour}{prefix}16% increased Armour
+{tags:resource,life,defences,armour}{prefix}+48 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+19% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{tags:defences,armour}{prefix}8% increased Stun and Block Recovery
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="28">
+			Rarity: RARE
+Random 92
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Energy Shield: 24
+EnergyShieldBasePercentile: 1
+Searing Exarch Item
+Crafted: true
+Prefix: {range:0.764}IncreasedLife8
+Prefix: {range:0.402}MovementVelocity3
+Prefix: None
+Suffix: {range:0.17}LifeRegeneration5
+Suffix: {range:0.577}Strength5
+Suffix: {range:0.788}ItemFoundRarityIncrease2
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 1
+35% chance to Avoid being Ignited
+{tags:attribute}{suffix}+30 to Strength
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 25.5 Life per second
+{tags:drop}{suffix}13% increased Rarity of Items found
+{tags:speed}{prefix}20% increased Movement Speed
+{crafted}+20 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="29">
+			Rarity: RARE
+Random 590
+Rustic Sash
+Crafted: true
+Prefix: {range:0.402}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.868}FireResist6
+Suffix: {range:0.051}Strength2
+Suffix: {range:0.718}LightningResist4
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:attribute}{suffix}+13 to Strength
+{tags:resource,life}{prefix}+91 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+40% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+28% to Lightning Resistance
+{crafted}+128 to Armour
+{crafted}+13 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="30">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="31">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="32">
+			Rarity: RARE
+Random 531
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.63}IncreasedLife7
+Prefix: {range:0.944}IncreasedMana9
+Prefix: None
+Suffix: {range:0.875}Strength6
+Suffix: {range:0.337}LightningResist1
+Suffix: {range:0.24}Intelligence2
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+37 to Strength
+{tags:attribute}{suffix}+14 to Intelligence
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:resource,mana}{prefix}+59 to maximum Mana
+{tags:elemental,lightning,resistance}{suffix}+8% to Lightning Resistance
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="33">
+			Rarity: RARE
+Random 204
+Karui Sceptre
+Crafted: true
+Prefix: {range:0.817}LocalAddedLightningDamage6
+Prefix: {range:0.087}LightningDamagePrefixOnWeapon4
+Prefix: {range:0.869}SpellAddedColdDamage6_
+Suffix: {range:0.17}ChanceToShock2__
+Suffix: {range:0.897}Strength7
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 56
+Implicits: 1
+26% increased Elemental Damage
+{tags:attribute}{suffix}+42 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{prefix}41% increased Lightning Damage
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 7 to 128 Lightning Damage
+{tags:elemental_damage,caster_damage,damage,elemental,cold,caster}{prefix}Adds 30 to 53 Cold Damage to Spells
+{tags:elemental,lightning,ailment}{suffix}26% chance to Shock
+{crafted}+28 to Dexterity
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="34">
+			Rarity: RARE
+Random 11
+Blood Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 52
+Implicits: 1
+24% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="35">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Searing Exarch Item
+Eater of Worlds Item
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 2
+10% of Physical Damage from Hits taken as Cold Damage
+9% increased effect of Non-Curse Auras from your Skills
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="36">
+			Rarity: RARE
+Random 404
+Necromancer Circlet
+Energy Shield: 147
+EnergyShieldBasePercentile: 1
+Searing Exarch Item
+Eater of Worlds Item
+Crafted: true
+Prefix: {range:0.025}LocalIncreasedEnergyShield7
+Prefix: {range:0.885}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.413}IncreasedLife8
+Suffix: {range:0.414}ColdResist6
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 2
+While a Pinnacle Atlas Boss is in your Presence, 58% reduced Ignite Duration on you
+4% increased Damage per Power Charge
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}19% increased Energy Shield
+{tags:resource,life}{prefix}+121 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:defences,energy_shield}{prefix}9% increased Stun and Block Recovery
+{crafted}+15% to Fire and Cold Resistances
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="37">
+			Rarity: RARE
+Random 547
+Vaal Gauntlets
+Armour: 510
+ArmourBasePercentile: 1
+Searing Exarch Item
+Crafted: true
+Prefix: {range:0.416}IncreasedLife5
+Prefix: {range:0.465}LocalIncreasedPhysicalDamageReductionRating2
+Prefix: {range:0.322}LocalIncreasedPhysicalDamageReductionRatingPercent3
+Suffix: {range:0.5}LightningResist2
+Suffix: {range:0.484}ColdResist6
+Suffix: {range:0.424}Dexterity5
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 1
+15% chance to Extinguish Enemies on Hit
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:defences,armour}{prefix}+23 to Armour
+{tags:defences,armour}{prefix}47% increased Armour
+{tags:resource,life}{prefix}+76 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+15% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="38">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Searing Exarch Item
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 1
+35% chance to Avoid being Ignited
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="39">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="40">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="41">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="42">
+			Rarity: RARE
+Random 483
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.133}IncreasedMana6
+Prefix: {range:0.625}IncreasedLife7
+Prefix: None
+Suffix: {range:0.493}LifeRegeneration7
+Suffix: {range:0.568}LifeGainedFromEnemyDeath4
+Suffix: {range:0.363}AllResistances4
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 55.9 Life per second
+{tags:resource,mana}{prefix}+41 to maximum Mana
+{tags:elemental,resistance}{suffix}+13% to all Elemental Resistances
+{tags:resource,life}{suffix}Gain 40 Life per Enemy Killed
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="43">
+			Rarity: RARE
+Random 204
+Karui Sceptre
+Crafted: true
+Prefix: {range:0.817}LocalAddedLightningDamage6
+Prefix: {range:0.087}LightningDamagePrefixOnWeapon4
+Prefix: {range:0.869}SpellAddedColdDamage6_
+Suffix: {range:0.17}ChanceToShock2__
+Suffix: {range:0.897}Strength7
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 56
+Implicits: 1
+26% increased Elemental Damage
+{tags:attribute}{suffix}+42 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{prefix}41% increased Lightning Damage
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 7 to 128 Lightning Damage
+{tags:elemental_damage,caster_damage,damage,elemental,cold,caster}{prefix}Adds 30 to 53 Cold Damage to Spells
+{tags:elemental,lightning,ailment}{suffix}26% chance to Shock
+{crafted}+28 to Dexterity
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="44">
+			Rarity: RARE
+Random 11
+Blood Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 52
+Implicits: 1
+24% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="45">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="46">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="47">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="48">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="49">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="50">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="51">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="52">
+			Rarity: RARE
+Random 483
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.133}IncreasedMana6
+Prefix: {range:0.625}IncreasedLife7
+Prefix: None
+Suffix: {range:0.493}LifeRegeneration7
+Suffix: {range:0.568}LifeGainedFromEnemyDeath4
+Suffix: {range:0.363}AllResistances4
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 55.9 Life per second
+{tags:resource,mana}{prefix}+41 to maximum Mana
+{tags:elemental,resistance}{suffix}+13% to all Elemental Resistances
+{tags:resource,life}{suffix}Gain 40 Life per Enemy Killed
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="53">
+			Rarity: RARE
+Random 101
+Karui Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 56
+Implicits: 1
+26% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="54">
+			Rarity: RARE
+Random 11
+Blood Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 52
+Implicits: 1
+24% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="55">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="56">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="57">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="58">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="59">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="60">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="61">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="62">
+			Rarity: RARE
+Random 483
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.133}IncreasedMana6
+Prefix: {range:0.625}IncreasedLife7
+Prefix: None
+Suffix: {range:0.493}LifeRegeneration7
+Suffix: {range:0.568}LifeGainedFromEnemyDeath4
+Suffix: {range:0.363}AllResistances4
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 55.9 Life per second
+{tags:resource,mana}{prefix}+41 to maximum Mana
+{tags:elemental,resistance}{suffix}+13% to all Elemental Resistances
+{tags:resource,life}{suffix}Gain 40 Life per Enemy Killed
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="63">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="64">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="65">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="66">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="67">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="68">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="69">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="70">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="71">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="72">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="73">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="74">
+			Rarity: RARE
+Random 483
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.133}IncreasedMana6
+Prefix: {range:0.625}IncreasedLife7
+Prefix: None
+Suffix: {range:0.493}LifeRegeneration7
+Suffix: {range:0.568}LifeGainedFromEnemyDeath4
+Suffix: {range:0.363}AllResistances4
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 55.9 Life per second
+{tags:resource,mana}{prefix}+41 to maximum Mana
+{tags:elemental,resistance}{suffix}+13% to all Elemental Resistances
+{tags:resource,life}{suffix}Gain 40 Life per Enemy Killed
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="75">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="76">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="77">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="78">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="79">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="80">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="81">
+			Rarity: RARE
+Random 245
+Jade Amulet
+Crafted: true
+Prefix: {range:0.774}IncreasedLife8
+Prefix: {range:0.573}AddedFireDamage3
+Prefix: {range:0.298}IncreasedEnergyShield10
+Suffix: {range:0.572}Dexterity5
+Suffix: {range:0.012}FireResist5
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+30 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 6 to 12 Fire Damage to Attacks
+{tags:defences,energy_shield}{prefix}+39 to maximum Energy Shield
+{tags:resource,life}{prefix}+126 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+30% to Fire Resistance
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="82">
+			Rarity: RARE
+Random 553
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.742}IncreasedLife7
+Prefix: {range:0.071}IncreasedEnergyShield5
+Prefix: {range:0.517}IncreasedEvasionRating3
+Suffix: {range:0.94}LightningResist5
+Suffix: {range:0.353}Dexterity1
+Suffix: {range:0.031}FireResist3
+Item Level: 70
+Quality: 20
+LevelReq: 39
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+9 to Dexterity
+{tags:defences,evasion}{prefix}+48 to Evasion Rating
+{tags:defences,energy_shield}{prefix}+16 to maximum Energy Shield
+{tags:resource,life}{prefix}+110 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+18% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+35% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="83">
+			Rarity: RARE
+Random 483
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.133}IncreasedMana6
+Prefix: {range:0.625}IncreasedLife7
+Prefix: None
+Suffix: {range:0.493}LifeRegeneration7
+Suffix: {range:0.568}LifeGainedFromEnemyDeath4
+Suffix: {range:0.363}AllResistances4
+Item Level: 70
+Quality: 20
+LevelReq: 54
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+109 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 55.9 Life per second
+{tags:resource,mana}{prefix}+41 to maximum Mana
+{tags:elemental,resistance}{suffix}+13% to all Elemental Resistances
+{tags:resource,life}{suffix}Gain 40 Life per Enemy Killed
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="84">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="85">
+			Rarity: RARE
+Random 137
+Jade Amulet
+Crafted: true
+Prefix: {range:0.812}IncreasedLife4
+Prefix: {range:0.555}AddedFireDamage8
+Prefix: {range:0.26}IncreasedMana7
+Suffix: {range:0.641}Dexterity6
+Suffix: {range:0.103}AllResistances2
+Suffix: {range:0.208}ManaLeechPermyriadSuffix2
+Item Level: 70
+Quality: 20
+LevelReq: 56
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+36 to Dexterity
+{tags:elemental_damage,damage,elemental,fire,attack}{prefix}Adds 19 to 35 Fire Damage to Attacks
+{tags:resource,life}{prefix}+66 to maximum Life
+{tags:resource,mana}{prefix}+46 to maximum Mana
+{tags:elemental,resistance}{suffix}+6% to all Elemental Resistances
+{tags:resource,mana,physical,attack}{suffix}0.64% of Physical Attack Damage Leeched as Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="86">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="87">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="88">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="89">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="90">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="91">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="92">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="93">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="94">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="95">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="96">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="97">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="98">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="99">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="100">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="101">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="102">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="103">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="104">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="105">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="106">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="107">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="108">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="109">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="110">
+			Rarity: RARE
+Random 280
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.39}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.23}Strength2
+Suffix: {range:0.694}LifeRegeneration1
+Suffix: {range:0.355}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+14 to Strength
+{tags:resource,life}{prefix}+90 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 1.7 Life per second
+{tags:elemental,cold,resistance}{suffix}+20% to Cold Resistance
+{crafted}+50 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="111">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="112">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="113">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="114">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="115">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="116">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="117">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="118">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="119">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="120">
+			Rarity: RARE
+Random 73
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.601}IncreasedLife7
+Prefix: {range:0.161}AddedLightningDamage2
+Prefix: None
+Suffix: {range:0.55}ColdResist2
+Suffix: {range:0.225}LightningResist3
+Suffix: {range:0.391}Strength6
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+35 to Strength
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 1 to 14 Lightning Damage to Attacks
+{tags:resource,life}{prefix}+108 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+15% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+19% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="121">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="122">
+			Rarity: RARE
+Random 599
+Rustic Sash
+Crafted: true
+Prefix: {range:0.054}IncreasedEnergyShield1
+Prefix: {range:0.83}IncreasedLife7
+Prefix: {range:0.385}IncreasedMana1
+Suffix: {range:0.991}LightningResist3
+Suffix: {range:0.471}ColdResist6
+Suffix: {range:0.834}FireResist1
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+112 to maximum Life
+{tags:resource,mana}{prefix}+17 to maximum Mana
+{tags:elemental,fire,resistance}{suffix}+10% to Fire Resistance
+{tags:elemental,cold,resistance}{suffix}+38% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+23% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="123">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="124">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="125">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="126">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="127">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="128">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="129">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="130">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="131">
+			Rarity: RARE
+Random 45
+Rustic Sash
+Crafted: true
+Prefix: {range:0.118}IncreasedEnergyShield1
+Prefix: {range:0.635}IncreasedLife5
+Prefix: None
+Suffix: {range:0.846}ColdResist6
+Suffix: {range:0.527}StunDuration4
+Suffix: {range:0.466}Strength2
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:attribute}{suffix}+15 to Strength
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+79 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+40% to Cold Resistance
+{suffix}28% increased Stun Duration on Enemies
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="132">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="133">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="134">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="135">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="136">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="137">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="138">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="139">
+			Rarity: RARE
+Random 73
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.601}IncreasedLife7
+Prefix: {range:0.161}AddedLightningDamage2
+Prefix: None
+Suffix: {range:0.55}ColdResist2
+Suffix: {range:0.225}LightningResist3
+Suffix: {range:0.391}Strength6
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+35 to Strength
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 1 to 14 Lightning Damage to Attacks
+{tags:resource,life}{prefix}+108 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+15% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+19% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="140">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="141">
+			Rarity: RARE
+Random 45
+Rustic Sash
+Crafted: true
+Prefix: {range:0.118}IncreasedEnergyShield1
+Prefix: {range:0.635}IncreasedLife5
+Prefix: None
+Suffix: {range:0.846}ColdResist6
+Suffix: {range:0.527}StunDuration4
+Suffix: {range:0.466}Strength2
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:attribute}{suffix}+15 to Strength
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+79 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+40% to Cold Resistance
+{suffix}28% increased Stun Duration on Enemies
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="142">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="143">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="144">
+			Rarity: RARE
+Random 183
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.695}IncreasedMana2
+Prefix: {range:0.656}IncreasedLife1
+Prefix: {range:0.677}IncreasedEvasionRating1
+Suffix: {range:0.863}Strength3
+Suffix: {range:0.906}IncreasedCastSpeed2
+Suffix: {range:0.445}LightningDamagePercent1
+Item Level: 70
+Quality: 20
+LevelReq: 20
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+21 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}11% increased Lightning Damage
+{tags:caster,speed}{suffix}12% increased Cast Speed
+{tags:defences,evasion}{prefix}+8 to Evasion Rating
+{tags:resource,life}{prefix}+19 to maximum Life
+{tags:resource,mana}{prefix}+23 to maximum Mana
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="145">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.995}SpellDamageOnWeapon4
+Prefix: None
+Prefix: None
+Suffix: {range:0.43}LifeGainedFromEnemyDeath3
+Suffix: {range:0.987}IncreasedCastSpeed5
+Suffix: {range:0.592}SpellCriticalStrikeChance3
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,damage,caster}{prefix}54% increased Spell Damage
+{tags:caster,speed}{suffix}24% increased Cast Speed
+{tags:caster,critical}{suffix}65% increased Spell Critical Strike Chance
+{tags:resource,life}{suffix}Gain 27 Life per Enemy Killed
+{crafted}Adds 7 to 120 Lightning Damage to Spells
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="146">
+			Rarity: RARE
+Crafted Item
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.477}SpellAddedLightningDamage7
+Prefix: {range:0.064}SpellDamageOnWeapon5
+Prefix: {range:0.755}LocalIncreasedPhysicalDamagePercentAndAccuracyRating1
+Suffix: {range:0.665}Strength7
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+41 to Strength
+{tags:caster_damage,damage,caster}{prefix}56% increased Spell Damage
+{tags:physical_damage,damage,physical,attack}{prefix}18% increased Physical Damage
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 6 to 135 Lightning Damage to Spells
+{tags:physical_damage,damage,physical,attack}{prefix}+19 to Accuracy Rating
+{crafted}+12 to all Attributes
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="147">
+			Rarity: RARE
+Random 265
+Savant&apos;s Robe
+Energy Shield: 355
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.342}LocalIncreasedEnergyShield8
+Prefix: {range:0.269}LocalIncreasedEnergyShieldPercent4
+Prefix: None
+Suffix: {range:0.103}LightningResist4
+Suffix: {range:0.19}FireResist4
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: B-B-B-B-B
+LevelReq: 56
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+54 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}59% increased Energy Shield
+{tags:elemental,fire,resistance}{suffix}+25% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+25% to Lightning Resistance
+{crafted}Regenerate 90 Energy Shield per second while a Rare or Unique Enemy is Nearby
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="148">
+			Rarity: RARE
+Random 527
+Necromancer Circlet
+Energy Shield: 105
+EnergyShieldBasePercentile: 1
+Crafted: true
+Prefix: {range:0.055}LocalIncreasedEnergyShieldPercentAndStunRecovery2
+Prefix: {range:0.738}IncreasedLife9
+Prefix: {range:0.196}LocalIncreasedEnergyShield3
+Suffix: {range:0.205}ColdResist1
+Suffix: {range:0.915}ChaosResist3
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-B-B
+LevelReq: 54
+Implicits: 0
+{tags:defences,energy_shield}{prefix}+13 to maximum Energy Shield
+{tags:defences,energy_shield}{prefix}14% increased Energy Shield
+{tags:resource,life}{prefix}+140 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+7% to Cold Resistance
+{tags:chaos,resistance}{suffix}+20% to Chaos Resistance
+{tags:defences,energy_shield}{prefix}8% increased Stun and Block Recovery
+{crafted}8% increased Life Regeneration rate
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="149">
+			Rarity: RARE
+Random 73
+Vaal Gauntlets
+Armour: 319
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.601}IncreasedLife7
+Prefix: {range:0.161}AddedLightningDamage2
+Prefix: None
+Suffix: {range:0.55}ColdResist2
+Suffix: {range:0.225}LightningResist3
+Suffix: {range:0.391}Strength6
+Item Level: 70
+Quality: 20
+Sockets: G-R-R-G
+LevelReq: 63
+Implicits: 0
+{tags:attribute}{suffix}+35 to Strength
+{tags:elemental_damage,damage,elemental,lightning,attack}{prefix}Adds 1 to 14 Lightning Damage to Attacks
+{tags:resource,life}{prefix}+108 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+15% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+19% to Lightning Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="150">
+			Rarity: RARE
+Random 525
+Goliath Greaves
+Armour: 251
+ArmourBasePercentile: 1
+Crafted: true
+Prefix: {range:0.16}ItemFoundRarityIncreasePrefix1
+Prefix: {range:0.495}IncreasedLife8
+Prefix: {range:0.761}MovementVelocity3
+Suffix: {range:0.066}LightningResist2
+Suffix: {range:0.827}LifeRegenerationRate2
+Suffix: {range:0.011}ColdResist3
+Item Level: 70
+Quality: 20
+Sockets: R R B
+LevelReq: 54
+Implicits: 0
+{tags:resource,life}{prefix}+122 to maximum Life
+{tags:resource,life}{suffix}14% increased Life Regeneration rate
+{tags:drop}{prefix}9% increased Rarity of Items found
+{tags:elemental,cold,resistance}{suffix}+18% to Cold Resistance
+{tags:elemental,lightning,resistance}{suffix}+12% to Lightning Resistance
+{tags:speed}{prefix}20% increased Movement Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="151">
+			Rarity: RARE
+Random 45
+Rustic Sash
+Crafted: true
+Prefix: {range:0.118}IncreasedEnergyShield1
+Prefix: {range:0.635}IncreasedLife5
+Prefix: None
+Suffix: {range:0.846}ColdResist6
+Suffix: {range:0.527}StunDuration4
+Suffix: {range:0.466}Strength2
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:attribute}{suffix}+15 to Strength
+{tags:defences,energy_shield}{prefix}+1 to maximum Energy Shield
+{tags:resource,life}{prefix}+79 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+40% to Cold Resistance
+{suffix}28% increased Stun Duration on Enemies
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+		</Item>
+		<Item id="152">
+			Rarity: RARE
+Random 28
+Jade Amulet
+Crafted: true
+Prefix: {range:0.222}IncreasedLife6
+Prefix: {range:0.22}SpellDamage4
+Prefix: None
+Suffix: {range:0.536}IncreasedCastSpeed4
+Suffix: {range:0.319}Intelligence1
+Suffix: {range:0.532}LifeRegeneration4
+Item Level: 70
+Quality: 20
+LevelReq: 44
+Implicits: 1
++25 to Dexterity
+{tags:attribute}{suffix}+9 to Intelligence
+{tags:caster_damage,damage,caster}{prefix}19% increased Spell Damage
+{tags:caster,speed}{suffix}19% increased Cast Speed
+{tags:resource,life}{prefix}+88 to maximum Life
+{tags:flat_life_regen,resource,life}{suffix}Regenerate 20.3 Life per second
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="153">
+			Rarity: RARE
+Random 149
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.064}WeaponElementalDamage1
+Prefix: {range:0.772}IncreasedLife6
+Prefix: None
+Suffix: {range:0.811}LifeGainPerTarget1
+Suffix: {range:0.211}FireResist6
+Suffix: {range:0.959}LightningResist6
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:resource,life}{prefix}+96 to maximum Life
+{tags:elemental,fire,resistance}{suffix}+37% to Fire Resistance
+{tags:elemental,lightning,resistance}{suffix}+41% to Lightning Resistance
+{tags:resource,life,attack}{suffix}Gain 2 Life per Enemy Hit with Attacks
+{tags:elemental_damage,damage,elemental,attack}{prefix}5% increased Elemental Damage with Attack Skills
+{crafted}+28 to maximum Energy Shield
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+		</Item>
+		<Item id="154">
+			Rarity: RARE
+Random 73
+Two-Stone Ring
+Crafted: true
+Prefix: {range:0.343}WeaponElementalDamage4
+Prefix: {range:0.969}IncreasedLife2
+Prefix: None
+Suffix: {range:0.871}Strength6
+Suffix: {range:0.757}LightningDamagePercent3
+Suffix: {range:0.253}IncreasedCastSpeed2
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
++14% to Fire and Cold Resistances
+{tags:attribute}{suffix}+36 to Strength
+{tags:elemental_damage,damage,elemental,lightning}{suffix}18% increased Lightning Damage
+{tags:caster,speed}{suffix}10% increased Cast Speed
+{tags:resource,life}{prefix}+39 to maximum Life
+{tags:elemental_damage,damage,elemental,attack}{prefix}33% increased Elemental Damage with Attack Skills
+{crafted}Adds 7 to 10 Fire Damage
+{crafted}Adds 1 to 15 Lightning Damage
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+			<ModRange id="6" range="0.5"/>
+			<ModRange id="7" range="0.5"/>
+			<ModRange id="8" range="0.5"/>
+		</Item>
+		<Item id="155">
+			Rarity: RARE
+Random 13
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.606}IncreasedManaWeapon10
+Prefix: {range:0.775}SpellDamageAndManaOnWeapon3
+Prefix: None
+Suffix: None
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-R-B
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:caster_damage,resource,mana,damage,caster}{prefix}23% increased Spell Damage
+{tags:resource,mana}{prefix}+152 to maximum Mana
+{crafted}+28 to Strength
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<Item id="156">
+			Rarity: RARE
+Random 195
+Opal Sceptre
+Crafted: true
+Prefix: {range:0.948}IncreasedManaWeapon4
+Prefix: {range:0.964}SpellAddedLightningDamage8
+Prefix: None
+Suffix: {range:0.445}Strength4
+Suffix: None
+Suffix: None
+Item Level: 70
+Quality: 20
+Sockets: R-B-R
+LevelReq: 60
+Implicits: 1
+40% increased Elemental Damage
+{tags:attribute}{suffix}+25 to Strength
+{tags:elemental_damage,caster_damage,damage,elemental,lightning,caster}{prefix}Adds 14 to 179 Lightning Damage to Spells
+{tags:resource,mana}{prefix}+69 to maximum Mana
+{crafted}16% increased Cast Speed
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+			<ModRange id="5" range="0.5"/>
+		</Item>
+		<Item id="157">
+			Rarity: RARE
+Random 17
+Rustic Sash
+Crafted: true
+Prefix: {range:0.968}IncreasedLife6
+Prefix: None
+Prefix: None
+Suffix: {range:0.762}Strength6
+Suffix: {range:0.944}ColdResist6
+Suffix: None
+Item Level: 70
+Quality: 20
+LevelReq: 48
+Implicits: 1
+18% increased Global Physical Damage
+{tags:attribute}{suffix}+36 to Strength
+{tags:resource,life}{prefix}+99 to maximum Life
+{tags:elemental,cold,resistance}{suffix}+41% to Cold Resistance
+			<ModRange id="1" range="0.5"/>
+			<ModRange id="2" range="0.5"/>
+			<ModRange id="3" range="0.5"/>
+			<ModRange id="4" range="0.5"/>
+		</Item>
+		<ItemSet id="1" useSecondWeaponSet="false">
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Helmet Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Body Armour Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Gloves Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Boots Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Belt Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="3" name="Weapon 1 Swap"/>
+			<Slot itemPbURL="" itemId="157" name="Belt"/>
+			<Slot itemPbURL="" itemId="4" name="Weapon 2 Swap"/>
+			<Slot itemPbURL="" itemId="0" name="Graft 1"/>
+			<Slot itemPbURL="" itemId="0" name="Graft 2"/>
+			<Slot itemPbURL="" itemId="18" name="Flask 5"/>
+			<Slot itemPbURL="" itemId="22" name="Flask 1"/>
+			<Slot itemPbURL="" itemId="19" name="Flask 2"/>
+			<Slot itemPbURL="" itemId="20" name="Flask 3"/>
+			<Slot itemPbURL="" itemId="21" name="Flask 4"/>
+			<Slot itemPbURL="" itemId="148" name="Helmet"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="147" name="Body Armour"/>
+			<Slot itemPbURL="" itemId="150" name="Boots"/>
+			<Slot itemPbURL="" itemId="155" name="Weapon 1"/>
+			<Slot itemPbURL="" itemId="152" name="Amulet"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="156" name="Weapon 2"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="149" name="Gloves"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="153" name="Ring 1"/>
+			<Slot itemPbURL="" itemId="154" name="Ring 2"/>
+			<Slot itemPbURL="" itemId="0" name="Ring 3"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Swap Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 3"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 4"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 5"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 1 Abyssal Socket 6"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 1"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 2"/>
+			<Slot itemPbURL="" itemId="0" name="Weapon 2 Swap Abyssal Socket 3"/>
+		</ItemSet>
+		<TradeSearchWeights/>
+	</Items>
+	<Import lastRealm="PC" lastLeague="Solo Self-Found" lastCharacterHash="5af28ea4d78860dae437897535b47f8f7e810f97" lastAccountHash="e9ffc364efd76719f9cbaecd40d1b4ad63906d5d" exportParty="false"/>
+	<Calcs>
+		<Input name="skill_number" number="2"/>
+		<Input name="misc_buffMode" string="EFFECTIVE"/>
+		<Section id="SkillSelect" collapsed="false" subsection="ViewSkillDetails"/>
+		<Section id="HitDamage" collapsed="false" subsection="SkillHitDamage"/>
+		<Section id="Warcries" collapsed="false" subsection="ExertingWarcries"/>
+		<Section id="Pacts" collapsed="false" subsection="EmpoweredSpells"/>
+		<Section id="Dot" collapsed="false" subsection="SkillDamageoverTime"/>
+		<Section id="Speed" collapsed="false" subsection="AttackCastRate"/>
+		<Section id="Crit" collapsed="false" subsection="Crits"/>
+		<Section id="Impale" collapsed="false" subsection="Impale"/>
+		<Section id="SkillTypeStats" collapsed="false" subsection="SkilltypespecificStats"/>
+		<Section id="HitChance" collapsed="false" subsection="Accuracy"/>
+		<Section id="Bleed" collapsed="false" subsection="Bleed"/>
+		<Section id="Poison" collapsed="false" subsection="Poison"/>
+		<Section id="Ignite" collapsed="false" subsection="Ignite"/>
+		<Section id="Decay" collapsed="false" subsection="Decay"/>
+		<Section id="LeechGain" collapsed="false" subsection="LeechGainonHit"/>
+		<Section id="EleAilments" collapsed="false" subsection="NonDamagingAilments"/>
+		<Section id="MiscEffects" collapsed="false" subsection="OtherEffects"/>
+		<Section id="Attributes" collapsed="false" subsection="Attributes"/>
+		<Section id="Life" collapsed="false" subsection="Life"/>
+		<Section id="Mana" collapsed="false" subsection="Mana"/>
+		<Section id="EnergyShield" collapsed="false" subsection="EnergyShield"/>
+		<Section id="Ward" collapsed="false" subsection="Ward"/>
+		<Section id="Resist" collapsed="false" subsection="Resists"/>
+		<Section id="Armour" collapsed="false" subsection="Armour"/>
+		<Section id="Evasion" collapsed="false" subsection="Evasion"/>
+		<Section id="DamageAvoidance" collapsed="false" subsection="DamageAvoidance"/>
+		<Section id="DamageAvoidance" collapsed="false" subsection="Block"/>
+		<Section id="DamageAvoidance" collapsed="false" subsection="Dodge"/>
+		<Section id="DamageAvoidance" collapsed="false" subsection="SpellSuppression"/>
+		<Section id="Flasks" collapsed="false" subsection="Flasks"/>
+		<Section id="Flasks" collapsed="true" subsection="UtilityFlasks"/>
+		<Section id="Flasks" collapsed="true" subsection="LifeFlasks"/>
+		<Section id="Flasks" collapsed="true" subsection="ManaFlasks"/>
+		<Section id="Flasks" collapsed="true" subsection="Tinctures"/>
+		<Section id="Rage" collapsed="true" subsection="Rage"/>
+		<Section id="Charges" collapsed="true" subsection="Charges"/>
+		<Section id="Charges" collapsed="true" subsection="Endurance"/>
+		<Section id="Charges" collapsed="true" subsection="Frenzy"/>
+		<Section id="Charges" collapsed="true" subsection="Power"/>
+		<Section id="MiscDefences" collapsed="false" subsection="OtherDefences"/>
+		<Section id="MiscDefences" collapsed="false" subsection="Fortification"/>
+		<Section id="MiscDefences" collapsed="false" subsection="StunDuration"/>
+		<Section id="MiscDefences" collapsed="true" subsection="OtherAvoidance"/>
+		<Section id="MiscDefences" collapsed="true" subsection="OtherAilmentDefences"/>
+		<Section id="DamageTaken" collapsed="false" subsection="DamageTaken"/>
+		<Section id="DamageTaken" collapsed="false" subsection="DamagingHits"/>
+		<Section id="DamageTaken" collapsed="false" subsection="EffectiveHealthPool"/>
+		<Section id="DamageTaken" collapsed="false" subsection="MaximumHitTaken"/>
+		<Section id="DamageTaken" collapsed="true" subsection="RecoupandHitTakenOverTime"/>
+		<Section id="DamageTaken" collapsed="false" subsection="DotsandBuildDegens"/>
+		<Section id="DamageTaken" collapsed="true" subsection="EnemyDegens"/>
+	</Calcs>
+	<Party ShowAdvanceTools="false" destination="All" append="false"/>
+	<Notes>
+		
+	</Notes>
+	<TreeView zoomLevel="3" zoomX="0" zoomY="0" showStatDifferences="true" searchStr=""/>
+</PathOfBuilding>

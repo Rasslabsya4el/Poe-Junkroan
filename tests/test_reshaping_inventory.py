@@ -20,9 +20,9 @@ import reshaping_inventory as inv  # noqa: E402
 from junkroan.keystone_parse import classify_keystone  # noqa: E402
 
 FIXTURE = ROOT / "tests" / "fixtures" / "issue1030_keystone_parse.json"
-ARTIFACTS = ROOT / "artifacts" / "keystone_flip"
+ARTIFACTS = ROOT / "tests" / "fixtures" / "run_output" / "keystone_flip"
 HAVE_ARTIFACTS = all((ARTIFACTS / f"{n}.json").exists() for n in ("parse", *inv.BUILDS))
-needs_artifacts = pytest.mark.skipif(not HAVE_ARTIFACTS, reason="artifacts/keystone_flip/*.json not present")
+needs_artifacts = pytest.mark.skipif(not HAVE_ARTIFACTS, reason="tests/fixtures/run_output/keystone_flip/*.json not present")
 
 BASE = {"Life": 4000, "Mana": 900, "ManaUnreserved": 50, "EnergyShield": 300, "FireResist": 75, "ColdResist": 75, "LightningResist": 75}
 RAILS = {"floors": {"Life": 4500}, "tree": {"forbidden_text": []}}
@@ -155,7 +155,7 @@ def test_unique_mod_effect_reads_the_parsed_mod_not_the_words() -> None:
 
 @needs_artifacts
 def test_regeneration_gives_the_committed_table_to_the_byte() -> None:
-    text = inv.render(*inv.load_inputs())
+    text = inv.render(*inv.load_inputs(ARTIFACTS))
     committed = inv.OUT_PATH.read_text(encoding="utf-8")
     differing = [(a, b) for a, b in zip(text.splitlines(), committed.splitlines()) if a != b]
     assert len(text.splitlines()) == len(committed.splitlines())
@@ -165,7 +165,7 @@ def test_regeneration_gives_the_committed_table_to_the_byte() -> None:
 
 @needs_artifacts
 def test_every_keystone_of_the_parse_is_in_exactly_one_table() -> None:
-    parse, flips, rails, ids = inv.load_inputs()
+    parse, flips, rails, ids = inv.load_inputs(ARTIFACTS)
     rows, excluded = inv.keystone_rows(parse, flips, rails, ids)
     names = [r.choice for r in rows] + [e.choice for e in excluded]
     assert sorted(names) == sorted(e["keystone"] for e in parse)
@@ -174,7 +174,7 @@ def test_every_keystone_of_the_parse_is_in_exactly_one_table() -> None:
 
 @needs_artifacts
 def test_three_sanity_rows_on_the_real_numbers() -> None:
-    rows, excluded = inv.keystone_rows(*inv.load_inputs())
+    rows, excluded = inv.keystone_rows(*inv.load_inputs(ARTIFACTS))
     by = {r.choice: r for r in rows}
     ci = by["Chaos Inoculation"]
     assert (ci.kind, ci.parse_kind, ci.floors) == ("keystone", "zero", ("Life",))
@@ -191,7 +191,7 @@ def test_three_sanity_rows_on_the_real_numbers() -> None:
 @needs_artifacts
 def test_blood_magic_floor_is_read_from_the_real_keystone_row() -> None:
     # #1065 rule 2 on the real numbers: the floor the two Blood Magic support uniques take is the keystone row's own
-    parse, flips, rails, ids = inv.load_inputs()
+    parse, flips, rails, ids = inv.load_inputs(ARTIFACTS)
     floors = inv.blood_magic_keystone_floors(inv.keystone_rows(parse, flips, rails, ids)[0])
     assert floors == BLOOD_MAGIC_FLOORS == ("ManaUnreserved",)
     by = {r.choice: r for r in inv.unique_rows(inv.load_corpora(), rails, floors)[0]}

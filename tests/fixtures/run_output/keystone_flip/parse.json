@@ -1,0 +1,2700 @@
+[
+ {
+  "keystone": "Acrobatics",
+  "lines": [
+   {
+    "text": "Modifiers to Chance to Suppress Spell Damage instead apply to Chance to Dodge Spell Hits at 50% of their value",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ConvertSpellSuppressionToSpellDodge",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellSuppressionChance",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 0
+     }
+    ]
+   },
+   {
+    "text": "Maximum Chance to Dodge Spell Hits is 75%",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellDodgeChanceMax",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 75
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Ancestral Bond",
+  "lines": [
+   {
+    "text": "You can't deal Damage with Skills yourself",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoDamage",
+      "tags": [
+       {
+        "neg": true,
+        "skillTypeList": {
+         "1": 26,
+         "2": 36,
+         "3": 33
+        },
+        "type": "SkillType"
+       },
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "usedByMirage"
+       }
+      ],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "+1 to maximum number of Summoned Totems",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ActiveTotemLimit",
+      "tags": [],
+      "type": "BASE",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Arrow Dancing",
+  "lines": [
+   {
+    "text": "Evasion Rating is Doubled against Projectile Attacks",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ProjectileEvasion",
+      "tags": [],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "25% less Evasion Rating against Melee Attacks",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MeleeEvasion",
+      "tags": [],
+      "type": "MORE",
+      "value": -25
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Arsenal of Vengeance",
+  "lines": [
+   {
+    "text": "Damaging Retaliation Skills become Usable every sixth Hit from Enemies instead",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Avatar of Fire",
+  "lines": [
+   {
+    "text": "50% of Physical, Cold and Lightning Damage Converted to Fire Damage",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "PhysicalDamageConvertToFire",
+      "tags": [],
+      "type": "BASE",
+      "value": 50
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "LightningDamageConvertToFire",
+      "tags": [],
+      "type": "BASE",
+      "value": 50
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ColdDamageConvertToFire",
+      "tags": [],
+      "type": "BASE",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "text": "Deal no Non-Fire Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoPhysical",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoLightning",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoCold",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoChaos",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "redirect",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Bitter Frost",
+  "lines": [
+   {
+    "text": "Enemies Chilled by your Hits have Cold Damage taken increased by Chill Effect",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ChillEffectIncColdDamageTaken",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Enemies in your Chilling Areas have Cold Damage taken increased by Chill Effect",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ChillingAreaIncColdDamageTaken",
+      "tags": [
+       {
+        "actor": "enemy",
+        "type": "ActorCondition",
+        "var": "InChillingArea"
+       }
+      ],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Cannot deal non-Cold Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoPhysical",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoLightning",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoFire",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoChaos",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Blood Magic",
+  "lines": [
+   {
+    "text": "Removes all mana",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Mana",
+      "tags": [],
+      "type": "MORE",
+      "value": -100
+     }
+    ]
+   },
+   {
+    "text": "10% more maximum Life",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Life",
+      "tags": [],
+      "type": "MORE",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "text": "Skills Cost Life instead of Mana",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CostLifeInsteadOfMana",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Skills Reserve Life instead of Mana",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BloodMagicReserved",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "redirect",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Bloodsoaked Blade",
+  "lines": [
+   {
+    "text": "Tinctures inflict Weeping Wounds instead of Mana Burn",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:WeepingWoundsInsteadOfManaBurn",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Effects that interact with Mana Burn interact with Weeping Wounds instead",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Call to Arms",
+  "lines": [
+   {
+    "text": "Your Warcries do not grant Buffs or Charges to You",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotGainWarcryBuffs",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "100% more Warcry Duration",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [
+       "Warcry"
+      ],
+      "name": "Duration",
+      "tags": [],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Chaos Inoculation",
+  "lines": [
+   {
+    "text": "Maximum Life becomes 1, Immune to Chaos Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ChaosInoculation",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ChaosDamageTaken",
+      "tags": [],
+      "type": "MORE",
+      "value": -100
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Conduit",
+  "lines": [
+   {
+    "text": "Share Endurance, Frenzy and Power Charges with nearby party members",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Crimson Dance",
+  "lines": [
+   {
+    "text": "You can inflict Bleeding on an Enemy up to 8 times",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BleedStacksMax",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 8
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:HaveCrimsonDance",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Your Bleeding does not deal extra Damage while the Enemy is moving and cannot be Aggravated",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:NoExtraBleedDamageToMovingEnemy",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:CannotAggravate",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "50% less Damage with Bleeding",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [
+       "Bleed"
+      ],
+      "name": "Damage",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Disciple of Kitava",
+  "lines": [
+   {
+    "text": "Every second, Consume a nearby Corpse to Recover 5% of Life and Mana",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "10% more Damage taken if you haven't Consumed a Corpse Recently",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DamageTaken",
+      "tags": [
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "ConsumedCorpseRecently"
+       }
+      ],
+      "type": "MORE",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Divine Shield",
+  "lines": [
+   {
+    "text": "Cannot Recover Energy Shield to above Armour",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ArmourESRecoveryCap",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "3% of Physical Damage prevented from Hits Recently is Regenerated as Energy Shield per second",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "PhysicalDamageMitigatedEnergyShieldPseudoRecoup",
+      "tags": [],
+      "type": "BASE",
+      "value": 12
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Eldritch Battery",
+  "lines": [
+   {
+    "text": "Spend Energy Shield before Mana for Skill Mana Costs",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "Energy Shield protects Mana instead of Life",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EnergyShieldProtectsMana",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "50% less Energy Shield Recharge Rate",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EnergyShieldRecharge",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "redirect",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Elemental Equilibrium",
+  "lines": [
+   {
+    "text": "Hits that deal Elemental Damage remove Exposure to those Elements and inflict Exposure to other Elements",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "Exposure inflicted this way applies -25% to Resistances",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Elemental Overload",
+  "lines": [
+   {
+    "text": "Skills that have dealt a Critical Strike in the past 8 seconds deal 40% more Elemental Damage with Hits and Ailments",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [
+       "Ailment",
+       "Hit"
+      ],
+      "name": "ElementalDamage",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "CritInPast8Sec"
+       }
+      ],
+      "type": "MORE",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "text": "Your Critical Strikes do not deal extra Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoCritMultiplier",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Ailments never count as being from Critical Strikes",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "AilmentsAreNeverFromCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Eternal Youth",
+  "lines": [
+   {
+    "text": "50% less Life Regeneration Rate",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "LifeRegen",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   },
+   {
+    "text": "50% less maximum Total Life Recovery per Second from Leech",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MaxLifeLeechRate",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   },
+   {
+    "text": "Energy Shield Recharge instead applies to Life",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EnergyShieldRechargeAppliesToLife",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "redirect"
+  ]
+ },
+ {
+  "keystone": "Ghost Dance",
+  "lines": [
+   {
+    "text": "Cannot Recover Energy Shield to above Evasion Rating",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EvasionESRecoveryCap",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Every 2 seconds, gain a Ghost Shroud, up to a maximum of 3",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "When Hit, lose a Ghost Shroud to Recover Energy Shield equal to 3% of your Evasion Rating",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Ghost Reaver",
+  "lines": [
+   {
+    "text": "Leech Energy Shield instead of Life",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "GhostReaver",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Maximum total Energy Shield Recovery per second from Leech is doubled",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MaxEnergyShieldLeechRate",
+      "tags": [
+       {
+        "globalLimit": 100,
+        "globalLimitKey": "MaxEnergyShieldLeechRateDoubledLimit",
+        "type": "Multiplier",
+        "var": "MaxEnergyShieldLeechRateDoubled"
+       }
+      ],
+      "type": "MORE",
+      "value": 100
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Multiplier:MaxEnergyShieldLeechRateDoubled",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "text": "Cannot Recharge Energy Shield",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoEnergyShieldRecharge",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Glancing Blows",
+  "lines": [
+   {
+    "text": "Chance to Block Attack Damage is doubled",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BlockChance",
+      "tags": [],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "Chance to Block Spell Damage is doubled",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellBlockChance",
+      "tags": [],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "You take 65% of Damage from Blocked Hits",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BlockEffect",
+      "tags": [],
+      "type": "BASE",
+      "value": 65
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Hex Master",
+  "lines": [
+   {
+    "text": "Your Hexes have infinite Duration",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Duration",
+      "tags": [
+       {
+        "skillType": 69,
+        "type": "SkillType"
+       }
+      ],
+      "type": "BASE",
+      "value": null
+     }
+    ]
+   },
+   {
+    "text": "20% less Effect of your Curses",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CurseEffect",
+      "tags": [],
+      "type": "MORE",
+      "value": -20
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Hollow Palm Technique",
+  "lines": [
+   {
+    "text": "You count as Dual Wielding while you are Unencumbered",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:DualWielding",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "Unencumbered"
+       }
+      ],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "40% more Attack Speed with Melee Skills while you are Unencumbered",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Attack"
+      ],
+      "keyword_flags": [],
+      "name": "Speed",
+      "tags": [
+       {
+        "skillType": 20,
+        "type": "SkillType"
+       },
+       {
+        "type": "Condition",
+        "var": "Unencumbered"
+       }
+      ],
+      "type": "MORE",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "text": "Adds 14 to 20 Attack Physical Damage to Melee Skills per 10 Dexterity while you are Unencumbered",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Melee"
+      ],
+      "keyword_flags": [
+       "Attack"
+      ],
+      "name": "PhysicalMin",
+      "tags": [
+       {
+        "div": 10,
+        "stat": "Dex",
+        "type": "PerStat"
+       },
+       {
+        "type": "Condition",
+        "var": "Unencumbered"
+       }
+      ],
+      "type": "BASE",
+      "value": 14
+     },
+     {
+      "flags": [
+       "Melee"
+      ],
+      "keyword_flags": [
+       "Attack"
+      ],
+      "name": "PhysicalMax",
+      "tags": [
+       {
+        "div": 10,
+        "stat": "Dex",
+        "type": "PerStat"
+       },
+       {
+        "type": "Condition",
+        "var": "Unencumbered"
+       }
+      ],
+      "type": "BASE",
+      "value": 20
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Imbalanced Guard",
+  "lines": [
+   {
+    "text": "100% chance to Defend with 200% of Armour",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ArmourDefense",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "ArmourMax"
+       }
+      ],
+      "type": "MAX",
+      "value": 100
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ArmourDefense",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "ArmourAvg"
+       }
+      ],
+      "type": "MAX",
+      "value": 100
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ArmourDefense",
+      "tags": [
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "ArmourMax"
+       },
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "ArmourAvg"
+       }
+      ],
+      "type": "MAX",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "Maximum Damage Reduction for any Damage Type is 50%",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DamageReductionMax",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 50
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Iron Grip",
+  "lines": [
+   {
+    "text": "Strength's Damage bonus applies to Projectile Attack Damage as well as Melee Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IronGrip",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Iron Reflexes",
+  "lines": [
+   {
+    "text": "Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoDexBonusToEvasion",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IronReflexes",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Iron Will",
+  "lines": [
+   {
+    "text": "Strength's Damage bonus applies to all Spell Damage as well",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IronWill",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Kineticism",
+  "lines": [
+   {
+    "text": "Attack Projectiles always inflict Bleeding and Maim, and Knock Back Enemies",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Attack",
+       "Projectile"
+      ],
+      "keyword_flags": [],
+      "name": "BleedChance",
+      "tags": [],
+      "type": "BASE",
+      "value": 100
+     },
+     {
+      "flags": [
+       "Attack",
+       "Projectile"
+      ],
+      "keyword_flags": [],
+      "name": "EnemyKnockbackChance",
+      "tags": [],
+      "type": "BASE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "Projectiles cannot Pierce, Fork or Chain",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [
+       "Projectile"
+      ],
+      "keyword_flags": [],
+      "name": "CannotPierce",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [
+       "Projectile"
+      ],
+      "keyword_flags": [],
+      "name": "CannotChain",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [
+       "Projectile"
+      ],
+      "keyword_flags": [],
+      "name": "CannotFork",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Lethe Shade",
+  "lines": [
+   {
+    "text": "Take 50% less Damage over Time if you've started taking Damage over Time in the past second",
+    "kind": "unparsed",
+    "mods": [
+     {
+      "flags": [
+       "Dot"
+      ],
+      "keyword_flags": [],
+      "name": "DamageTaken",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   },
+   {
+    "text": "100% more Duration of Ailments on you",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SelfAilmentDuration",
+      "tags": [],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Lone Messenger",
+  "lines": [
+   {
+    "text": "You can only have one Herald",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "50% more Effect of Herald Buffs on you",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BuffEffect",
+      "tags": [
+       {
+        "skillType": 52,
+        "type": "SkillType"
+       }
+      ],
+      "type": "MORE",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "text": "100% more Damage with Hits from Herald Skills",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [
+       "Hit"
+      ],
+      "name": "Damage",
+      "tags": [
+       {
+        "skillType": 52,
+        "type": "SkillType"
+       }
+      ],
+      "type": "MORE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "50% more Damage Over Time with Herald Skills",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Dot"
+      ],
+      "keyword_flags": [],
+      "name": "Damage",
+      "tags": [
+       {
+        "skillType": 52,
+        "type": "SkillType"
+       }
+      ],
+      "type": "MORE",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "text": "Minions from Herald Skills deal 25% more Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MinionModifier",
+      "tags": [
+       {
+        "skillType": 52,
+        "type": "SkillType"
+       }
+      ],
+      "type": "LIST",
+      "value": {
+       "mod": {
+        "flags": 0,
+        "keywordFlags": 0,
+        "name": "Damage",
+        "type": "MORE",
+        "value": 25
+       }
+      }
+     }
+    ]
+   },
+   {
+    "text": "Your Aura Skills are Disabled",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DisableSkill",
+      "tags": [
+       {
+        "skillType": 39,
+        "type": "SkillType"
+       }
+      ],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Magebane",
+  "lines": [
+   {
+    "text": "Dexterity provides no inherent bonus to Evasion Rating",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoDexBonusToEvasion",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "+1% Chance to Suppress Spell Damage per 15 Dexterity",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellSuppressionChance",
+      "tags": [
+       {
+        "div": 15,
+        "stat": "Dex",
+        "type": "PerStat"
+       }
+      ],
+      "type": "BASE",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Mind Over Matter",
+  "lines": [
+   {
+    "text": "40% of Damage is taken from Mana before Life",
+    "kind": "redirect",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DamageTakenFromManaBeforeLife",
+      "tags": [],
+      "type": "BASE",
+      "value": 40
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "redirect"
+  ]
+ },
+ {
+  "keystone": "Minion Instability",
+  "lines": [
+   {
+    "text": "Minions Explode when reduced to Low Life, dealing 33% of their Life as Fire Damage to surrounding Enemies",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ExtraMinionSkill",
+      "tags": [],
+      "type": "LIST",
+      "value": {
+       "skillId": "MinionInstability"
+      }
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Nature's Patience",
+  "lines": [
+   {
+    "text": "Gain 2 Grasping Vines each second while stationary",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Multiplier:GraspingVinesCount",
+      "tags": [
+       {
+        "limit": 10,
+        "limitTotal": true,
+        "type": "Multiplier",
+        "var": "StationarySeconds"
+       },
+       {
+        "type": "Condition",
+        "var": "Stationary"
+       }
+      ],
+      "type": "BASE",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "text": "2% chance to deal Double Damage per Grasping Vine",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DoubleDamageChance",
+      "tags": [
+       {
+        "type": "Multiplier",
+        "var": "GraspingVinesCount"
+       }
+      ],
+      "type": "BASE",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "text": "1% less Damage taken per Grasping Vine",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DamageTaken",
+      "tags": [
+       {
+        "type": "Multiplier",
+        "var": "GraspingVinesCount"
+       }
+      ],
+      "type": "MORE",
+      "value": -1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Necromantic Aegis",
+  "lines": [
+   {
+    "text": "All bonuses from an Equipped Shield apply to your Minions instead of you",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Pain Attunement",
+  "lines": [
+   {
+    "text": "30% more Spell Damage when on Low Life",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Spell"
+      ],
+      "keyword_flags": [],
+      "name": "Damage",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "LowLife"
+       }
+      ],
+      "type": "MORE",
+      "value": 30
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Perfect Agony",
+  "lines": [
+   {
+    "text": "Damage over Time Multiplier for Ailments is equal to Critical Strike Multiplier",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DotMultiplierIsCritMultiplier",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Critical Strikes do not deal extra Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoCritMultiplier",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Non-Critical Strikes cannot inflict Ailments",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "AilmentsOnlyFromCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Pitfighter",
+  "lines": [
+   {
+    "text": "1% increased Fishing Line Strength",
+    "kind": "unparsed",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Str",
+      "tags": [],
+      "type": "INC",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Point Blank",
+  "lines": [
+   {
+    "text": "Projectile Attack Hits deal up to 30% more Damage to targets at the start of their movement, dealing less Damage to targets as the projectile travels farther",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "PointBlank",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Precise Technique",
+  "lines": [
+   {
+    "text": "40% more Attack Damage if Accuracy Rating is higher than Maximum Life",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Attack"
+      ],
+      "keyword_flags": [],
+      "name": "Damage",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "MainHandAccRatingHigherThanMaxLife"
+       },
+       {
+        "type": "Condition",
+        "var": "MainHandAttack"
+       }
+      ],
+      "type": "MORE",
+      "value": 40
+     },
+     {
+      "flags": [
+       "Attack"
+      ],
+      "keyword_flags": [],
+      "name": "Damage",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "OffHandAccRatingHigherThanMaxLife"
+       },
+       {
+        "type": "Condition",
+        "var": "OffHandAttack"
+       }
+      ],
+      "type": "MORE",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "text": "Never deal Critical Strikes",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NeverCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:NeverCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Resolute Technique",
+  "lines": [
+   {
+    "text": "Your hits can't be Evaded",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotBeEvaded",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Never deal Critical Strikes",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NeverCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:NeverCrit",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Roiling Tempest",
+  "lines": [
+   {
+    "text": "25% more Maximum Lightning Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MaxLightningDamage",
+      "tags": [],
+      "type": "MORE",
+      "value": 25
+     }
+    ]
+   },
+   {
+    "text": "50% less Minimum Lightning Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "MinLightningDamage",
+      "tags": [],
+      "type": "MORE",
+      "value": -50
+     }
+    ]
+   },
+   {
+    "text": "Cannot deal non-Lightning Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoPhysical",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoCold",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoFire",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoChaos",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Runebinder",
+  "lines": [
+   {
+    "text": "-1 to maximum number of Summoned Totems",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ActiveTotemLimit",
+      "tags": [],
+      "type": "BASE",
+      "value": -1
+     }
+    ]
+   },
+   {
+    "text": "You can have an additional Brand Attached to an Enemy",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BrandsAttachedLimit",
+      "tags": [],
+      "type": "BASE",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Secrets of Suffering",
+  "lines": [
+   {
+    "text": "Cannot Ignite, Chill, Freeze or Shock",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotIgnite",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotChill",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotFreeze",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotShock",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Critical Strikes inflict Scorch, Brittle and Sapped",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CritAlwaysAltAilments",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Solipsism",
+  "lines": [
+   {
+    "text": "Intelligence provides no inherent bonus to Energy Shield",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoIntBonusToES",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "2% reduced Duration of Elemental Ailments on you per 15 Intelligence",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SelfElementalAilmentDuration",
+      "tags": [
+       {
+        "div": 15,
+        "stat": "Int",
+        "type": "PerStat"
+       }
+      ],
+      "type": "INC",
+      "value": -2
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Supreme Ego",
+  "lines": [
+   {
+    "text": "Auras from your Skills can only affect you",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SelfAurasOnlyAffectYou",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Aura Skills have 1% more Aura Effect per 2% of maximum Mana they Reserve",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "AuraEffect",
+      "tags": [
+       {
+        "skillType": 39,
+        "type": "SkillType"
+       },
+       {
+        "div": 2,
+        "stat": "ManaReservedPercent",
+        "type": "PerStat"
+       }
+      ],
+      "type": "MORE",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "text": "40% more Mana Reservation of Aura Skills",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ManaReserved",
+      "tags": [
+       {
+        "skillType": 39,
+        "type": "SkillType"
+       }
+      ],
+      "type": "MORE",
+      "value": 40
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "The Agnostic",
+  "lines": [
+   {
+    "text": "Removes all Energy Shield",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EnergyShield",
+      "tags": [],
+      "type": "MORE",
+      "value": -100
+     }
+    ]
+   },
+   {
+    "text": "While not on Full Life, Sacrifice 20% of Mana per Second to Recover that much Life",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ManaDegenPercent",
+      "tags": [
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "FullLife"
+       }
+      ],
+      "type": "BASE",
+      "value": 20
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "LifeRecovery",
+      "tags": [
+       {
+        "percent": 20,
+        "stat": "Mana",
+        "type": "PercentStat"
+       },
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "FullLife"
+       }
+      ],
+      "type": "BASE",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "The Impaler",
+  "lines": [
+   {
+    "text": "When your Hits Impale Enemies, also Impale other Enemies near them",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "Inflict 5 additional Impales on Enemies you Impale",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "For 5 seconds after you Impale Enemies, they cannot be Impaled again, and Impales cannot be Called from them",
+    "kind": "unparsed",
+    "mods": []
+   }
+  ],
+  "kinds": [
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Unwavering Stance",
+  "lines": [
+   {
+    "text": "Cannot Evade enemy Attacks",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotEvade",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   },
+   {
+    "text": "Cannot be Stunned",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "StunImmune",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Vaal Pact",
+  "lines": [
+   {
+    "text": "Life Leech from Melee Damage is Instant",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [
+       "Melee"
+      ],
+      "keyword_flags": [],
+      "name": "InstantLifeLeech",
+      "tags": [],
+      "type": "BASE",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "text": "Cannot Recover Life other than from Leech",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "CannotRecoverLifeOutsideLeech",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "NoLifeRegen",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Versatile Combatant",
+  "lines": [
+   {
+    "text": "-10% to maximum Chance to Block Attack Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "BlockChanceMax",
+      "tags": [],
+      "type": "BASE",
+      "value": -10
+     }
+    ]
+   },
+   {
+    "text": "-10% to maximum Chance to Block Spell Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellBlockChanceMax",
+      "tags": [],
+      "type": "BASE",
+      "value": -10
+     }
+    ]
+   },
+   {
+    "text": "+2% Chance to Block Spell Damage for each 1% Overcapped Chance to Block Attack Damage",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "SpellBlockChance",
+      "tags": [
+       {
+        "div": 1,
+        "stat": "BlockChanceOverCap",
+        "type": "PerStat"
+       }
+      ],
+      "type": "BASE",
+      "value": 2
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Veteran's Awareness",
+  "lines": [
+   {
+    "text": "+10% to all Elemental Resistances and maximum Elemental Resistances while affected by a Non-Vaal Guard Skill",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ElementalResist",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "AffectedByNonVaalGuardSkill"
+       }
+      ],
+      "type": "BASE",
+      "value": 10
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ElementalResistMax",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "AffectedByNonVaalGuardSkill"
+       }
+      ],
+      "type": "BASE",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "text": "20% additional Physical Damage Reduction while affected by a Non-Vaal Guard Skill",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "PhysicalDamageReduction",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "AffectedByNonVaalGuardSkill"
+       }
+      ],
+      "type": "BASE",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "text": "20% more Damage taken if a Non-Vaal Guard Buff was lost Recently",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DamageTaken",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "LostNonVaalBuffRecently"
+       }
+      ],
+      "type": "MORE",
+      "value": 20
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Voracious Flame",
+  "lines": [
+   {
+    "text": "You can inflict an additional Ignite on each Enemy",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IgniteCanStack",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IgniteStacks",
+      "tags": [],
+      "type": "BASE",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "text": "Base Ignite Duration is 1 second",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "IgniteDurationBase",
+      "tags": [],
+      "type": "OVERRIDE",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "text": "25% less Damage with Ignite",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [
+       "Ignite"
+      ],
+      "name": "Damage",
+      "tags": [],
+      "type": "MORE",
+      "value": -25
+     }
+    ]
+   },
+   {
+    "text": "Cannot deal non-Fire Damage",
+    "kind": "zero",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoPhysical",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoLightning",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoCold",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     },
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "DealNoChaos",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "zero"
+  ]
+ },
+ {
+  "keystone": "Wicked Ward",
+  "lines": [
+   {
+    "text": "Energy Shield Recharge is not interrupted by Damage if Recharge began Recently",
+    "kind": "unparsed",
+    "mods": []
+   },
+   {
+    "text": "40% less Energy Shield Recharge Rate",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EnergyShieldRecharge",
+      "tags": [],
+      "type": "MORE",
+      "value": -40
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add",
+   "unparsed"
+  ]
+ },
+ {
+  "keystone": "Wind Dancer",
+  "lines": [
+   {
+    "text": "20% less Attack Damage taken if you haven't been Hit by an Attack Recently",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "AttackDamageTaken",
+      "tags": [
+       {
+        "neg": true,
+        "type": "Condition",
+        "var": "BeenHitByAttackRecently"
+       }
+      ],
+      "type": "MORE",
+      "value": -20
+     }
+    ]
+   },
+   {
+    "text": "10% more chance to Evade Attacks if you have been Hit by an Attack Recently",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "EvadeChance",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "BeenHitByAttackRecently"
+       }
+      ],
+      "type": "MORE",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "text": "20% more Attack Damage taken if you have been Hit by an Attack Recently",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "AttackDamageTaken",
+      "tags": [
+       {
+        "type": "Condition",
+        "var": "BeenHitByAttackRecently"
+       }
+      ],
+      "type": "MORE",
+      "value": 20
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Worship the Blightheart",
+  "lines": [
+   {
+    "text": "Create Fungal Ground instead of Consecrated Ground",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "Condition:CreateFungalGround",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ },
+ {
+  "keystone": "Zealot's Oath",
+  "lines": [
+   {
+    "text": "Life Regeneration is applied to Energy Shield instead",
+    "kind": "add",
+    "mods": [
+     {
+      "flags": [],
+      "keyword_flags": [],
+      "name": "ZealotsOath",
+      "tags": [],
+      "type": "FLAG",
+      "value": true
+     }
+    ]
+   }
+  ],
+  "kinds": [
+   "add"
+  ]
+ }
+]

@@ -19,7 +19,7 @@ from test_skeleton_from_xml import _synthetic, _with_vitality, _written_levels  
 
 from junkroan.optimizer.rails import Rails  # noqa: E402
 
-SAVED = ROOT / "artifacts" / "benchmark" / "20261013-0101-P2-core-3" / "absolution_minions-s4.pob.txt"
+SAVED = ROOT / "tests" / "fixtures" / "run_output" / "benchmark" / "20261013-0101-P2-core-3" / "absolution_minions-s4.pob.txt"
 RUNTIME = ROOT / "var" / "cache" / "pob"
 
 

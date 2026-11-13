@@ -12,7 +12,7 @@ from junkroan.optimizer.audit import audit_xml
 from junkroan.optimizer.rails import Rails
 from junkroan.pob.session import decode_import_code
 
-REAL = Path(__file__).resolve().parents[1] / "artifacts/benchmark/20261005-1220-gate-20261005/absolution_minions-s4.pob.txt"
+REAL = Path(__file__).resolve().parents[1] / "tests/fixtures/run_output/benchmark/20261005-1220-gate-20261005/absolution_minions-s4.pob.txt"
 
 
 def _rails_on() -> Rails:

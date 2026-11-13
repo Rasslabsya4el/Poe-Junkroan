@@ -7,8 +7,8 @@ import pytest
 from junkroan.recording_pob import _canonical_xml, _digest
 
 ROOT = Path(__file__).resolve().parent.parent
-TRY2 = ROOT / "artifacts/probe-896/try-2/first-load-2.xml"
-TRY3 = ROOT / "artifacts/probe-896/try-3/first-load-2.xml"
+TRY2 = ROOT / "tests/fixtures/run_output/probe-896/try-2/first-load-2.xml"
+TRY3 = ROOT / "tests/fixtures/run_output/probe-896/try-3/first-load-2.xml"
 
 
 def _xml(sockets: str, nodes: str = '<Node id="1"/><Node id="2"/>') -> str:
@@ -21,7 +21,7 @@ B = '<Socket nodeId="2491" itemId="19"/><Socket nodeId="10532" itemId="20"/>'
 
 def test_probe_files_equal():
     if not (TRY2.exists() and TRY3.exists()):
-        pytest.skip("artifacts/probe-896 absent")
+        pytest.skip("tests/fixtures/run_output/probe-896 absent")
     a = _canonical_xml(TRY2.read_text(encoding="utf-8"))
     b = _canonical_xml(TRY3.read_text(encoding="utf-8"))
     assert a == b and _digest(a) == _digest(b)
