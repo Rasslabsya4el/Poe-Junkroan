@@ -60,6 +60,8 @@ def _patch_benchmark_main(monkeypatch, tmp_path: Path) -> tuple[Path, str]:
     stamp = "20260926-1200"
     run_stamp = f"{stamp}-durable"
     monkeypatch.setattr(benchmark, "ROOT", root)
+    # never the real pobb.in: its answer (a link, HTTP 400 or 429 with a minute's wait) would decide the rows
+    monkeypatch.setattr(benchmark, "upload_code", lambda code: "https://pobb.in/test-link")
     monkeypatch.setattr(benchmark, "ProcessPoolExecutor", ThreadPoolExecutor)
     monkeypatch.setattr(benchmark.time, "strftime", lambda _format: stamp)
     pob_dir = tmp_path / "pob" / "Junkroan" / "benchmark"

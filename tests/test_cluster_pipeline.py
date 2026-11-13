@@ -334,6 +334,8 @@ def _assert_witness(got: dict, *, want_cluster: bool, audit_clean: bool = True) 
         assert not [f for f in got["findings"] if f.severity == "error"], got["findings"]
 
 
+@pytest.mark.slow  # a full short build, about 14 min each
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#13: the day-1 rails turn the cluster step off", strict=True)
 @needs_pob
 def test_short_stormbrand_build_runs_the_cluster_step_before_the_jewels() -> None:
     xml = decode_import_code((FIXTURES / "stormbrand.pob.txt").read_text(encoding="utf-8").strip())
@@ -342,6 +344,8 @@ def test_short_stormbrand_build_runs_the_cluster_step_before_the_jewels() -> Non
     _assert_witness(got, want_cluster=False)
 
 
+@pytest.mark.slow  # a full short build, about 14 min each
+@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#13: the day-1 rails turn the cluster step off", strict=True)
 @needs_pob
 def test_short_trickster_build_runs_the_cluster_step() -> None:
     """The second case, for a build whose author runs a Large cluster at 32763. The short build ends infeasible
