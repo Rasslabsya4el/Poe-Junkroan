@@ -1,6 +1,6 @@
 # 2026-10-02 D114. The prototype is `junkroan build` on a custom day-1 request; references are the debugging set
 
-Status: Accepted; amended by D114 amd 1, D114 amd 2, D114 amd 3
+Status: Accepted; amended by D114 amd 1, D114 amd 2, D114 amd 3, D119
 
 charted the map). Supersedes the acceptance reading of 2026-09-18 (the Tuadh benchmark as the yardstick:
 "every reference at or above the author, best of 3 seeds") as the finish line; the benchmark stays as the debugging
