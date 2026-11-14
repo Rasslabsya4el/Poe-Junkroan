@@ -38,7 +38,7 @@ from junkroan.search.hypothesis import ascendancies, load_hypotheses, normalize_
 from junkroan.report_format import human_duration  # noqa: E402
 from junkroan.search.request import DEFAULT_SEEDS, full_done_line, mutation_done_line, prepared_line, rig_supports_line, screen_done_line, total_line  # noqa: E402
 from junkroan.search.trace_out import write_trace_out  # noqa: E402
-from junkroan.search.runner import apply_unique_picks, best_by_seed, format_seeds, optimize, pick_unique_variant, prepare_candidate, seed_jobs, seed_spread, unique_pick_ok, variant_screen_line, weapon_alternative_ok  # noqa: E402
+from junkroan.search.runner import recording, transcript_name, apply_unique_picks, best_by_seed, format_seeds, optimize, pick_unique_variant, prepare_candidate, seed_jobs, seed_spread, unique_pick_ok, variant_screen_line, weapon_alternative_ok  # noqa: E402
 from junkroan.search.skeleton import Skeleton  # noqa: E402
 from junkroan.bounded_pool import limited_completions  # noqa: E402
 
@@ -47,7 +47,7 @@ def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")
 
 
-def rig_supports(rig: Skeleton, rails: Rails, *, log=print) -> list[str]:
+def rig_supports(rig: Skeleton, rails: Rails, *, log=print, record_calls: str | None = None) -> list[str]:
     """Supports for the screen, chosen once by PoB on a rig: bases, ascendancy, cheap gear
     and half a tree first (a bare rig deals ~200 DPS, so flat-damage supports such as Decay
     win every time and multipliers never show their value)."""
@@ -55,7 +55,7 @@ def rig_supports(rig: Skeleton, rails: Rails, *, log=print) -> list[str]:
     from junkroan.optimizer.loot_gear import LootGear
     from junkroan.optimizer.tree_optimizer import TreeOptimizer
 
-    with PobSession(run_id=f"search-rig-{os.getpid()}") as pob:
+    with PobSession(run_id=f"search-rig-{os.getpid()}") as session, recording(session, record_calls, "rig") as pob:
         gen = SkeletonGenerator(pob, rails, objective=objective_for(rails, rig.main_link[0], mode=rig.mode).without_sustain(), log=log)
         rig.apply(pob, gem_level=rails.gems.level, gem_quality=rails.gems.quality, main_quality=rails.gems.main_quality)
         gen.refresh_castability()
@@ -134,6 +134,7 @@ def main() -> int:
     ap.add_argument("--no-unique-variants", action="store_true")
     ap.add_argument("--reopt-rounds", type=int, default=2, help="no-op since D58: the loop is the pipeline")
     ap.add_argument("--no-mutation", action="store_true", help="skip the second round (unique variants of the finished builds)")
+    ap.add_argument("--record-calls", metavar="DIR", help="#16: record every PoB call of each session to DIR/<job>.calls.jsonl (junkroan.recording_pob)")
     ap.add_argument("--trace-out", help="write the summed trace counters (move x class x generated/evaluated, plus a total) as JSON to this path")
     args = ap.parse_args()
     if args.full_ranks:
@@ -178,7 +179,7 @@ def main() -> int:
         if wants_probe:
             from junkroan.search.modes import probe_composition
 
-            with PobSession(run_id="composition") as pob:
+            with PobSession(run_id="composition") as session, recording(session, args.record_calls, "composition") as pob:
                 composition = probe_composition(pob, req.skill, rails)
         exp = expand(req, rails, composition=composition, unique_variants=not args.no_unique_variants, mutation=not args.no_mutation)
         print(echo_line(exp.echo, run_dir), flush=True)
@@ -219,14 +220,14 @@ def main() -> int:
     if need_supports:
         t0 = time.perf_counter()
         rig = Skeleton.from_json(need_supports[0].to_json())
-        shared_supports = rig_supports(rig, rails, log=lambda m: print("  rig:", m, flush=True))
+        shared_supports = rig_supports(rig, rails, log=lambda m: print("  rig:", m, flush=True), record_calls=args.record_calls)
         say(rig_supports_line(rig.class_name, rig.ascendancy, time.perf_counter() - t0, shared_supports))
 
     # -- 3. prepare in parallel ---------------------------------------------------------
     t0 = time.perf_counter()
     prepared: list[Skeleton] = []
     with ProcessPoolExecutor(max_workers=args.workers) as pool:  # #958: one skeleton per worker, gives way to the yield
-        for fut, sk in limited_completions(lambda sk: pool.submit(prepare_candidate, sk.to_json(), log_path=str(logs / f"prepare-{sk.ascendancy}.log"), shared_supports=shared_supports, gear_mode=args.gear), skeletons, args.workers):
+        for fut, sk in limited_completions(lambda sk: pool.submit(prepare_candidate, sk.to_json(), log_path=str(logs / f"prepare-{sk.ascendancy}.log"), shared_supports=shared_supports, gear_mode=args.gear, record_calls=args.record_calls), skeletons, args.workers):
             res = fut.result()
             considered_parts.append(res.get("considered"))
             if not res["ok"]:
@@ -245,7 +246,7 @@ def main() -> int:
     t0 = time.perf_counter()
     screened: list[dict] = []
     with ProcessPoolExecutor(max_workers=args.workers) as pool:  # #958: one skeleton per worker, gives way to the yield
-        for fut, sk in limited_completions(lambda sk: pool.submit(optimize, sk.to_json(), log_path=str(logs / f"screen-{sk.ascendancy}.log"), screen=True, gear_mode=args.gear, unique_screen=not args.no_unique_variants and sk.unique_slots != "none"), prepared, args.workers):
+        for fut, sk in limited_completions(lambda sk: pool.submit(optimize, sk.to_json(), log_path=str(logs / f"screen-{sk.ascendancy}.log"), screen=True, gear_mode=args.gear, unique_screen=not args.no_unique_variants and sk.unique_slots != "none", record_calls=args.record_calls, transcript=transcript_name("screen", sk.to_json(), sk.ascendancy)), prepared, args.workers):
             res = fut.result()
             considered_parts.append(res.get("considered"))
             if not res["ok"]:
@@ -299,7 +300,7 @@ def main() -> int:
         def full_kwargs(sk: Skeleton, tag: str, seed: int) -> dict:
             kwargs = {"log_path": str(logs / f"full-{tag}-s{seed}.log"), "screen": False, "seed": seed,
                       "gear_mode": args.gear, "repick_supports": len(sk.fixed_supports) < 5,
-                      "unique_screen": not args.no_mutation and sk.unique_slots != "none"}
+                      "unique_screen": not args.no_mutation and sk.unique_slots != "none", "record_calls": args.record_calls}
             if args.loop_seconds is not None:
                 kwargs["loop_seconds"] = args.loop_seconds
             return kwargs
@@ -414,7 +415,7 @@ def main() -> int:
             floor_value = 0.5 * max((r["value"] for r in screened[: args.top]), default=0.0)
             kept: list[tuple[Skeleton, str, int]] = []
             with ProcessPoolExecutor(max_workers=args.workers) as pool:
-                for fut, (sk, tag, sd) in limited_completions(lambda job: pool.submit(optimize, job[0].to_json(), log_path=str(logs / f"screen-{job[1]}.log"), screen=True, seed=job[2], gear_mode=args.gear), batch, args.workers):  # #958
+                for fut, (sk, tag, sd) in limited_completions(lambda job: pool.submit(optimize, job[0].to_json(), log_path=str(logs / f"screen-{job[1]}.log"), screen=True, seed=job[2], gear_mode=args.gear, record_calls=args.record_calls), batch, args.workers):  # #958
                     res = fut.result()
                     considered_parts.append(res.get("considered"))
                     if not res["ok"]:

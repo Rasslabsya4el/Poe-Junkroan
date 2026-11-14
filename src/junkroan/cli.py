@@ -149,6 +149,8 @@ def search_argv(args: argparse.Namespace, request_path: Path | str, skill: str) 
         argv += ["--gear", str(args.gear)]
     if getattr(args, "trace_out", None):
         argv += ["--trace-out", str(args.trace_out)]
+    if getattr(args, "record_calls", None):
+        argv += ["--record-calls", str(args.record_calls)]
     return argv
 
 
@@ -177,6 +179,7 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("--top", type=int); b.add_argument("--seeds", type=int, help="full builds per finalist skeleton, the best delivered (default 3)")
     b.add_argument("--full-ranks", dest="full_ranks", help="one-based screen ranks to optimize in full, e.g. 1,3,9; disables variants")
     b.add_argument("--trace-out", dest="trace_out", help="write the search's summed trace counters as JSON to this path")
+    b.add_argument("--record-calls", dest="record_calls", metavar="DIR", help="record every PoB call of the search to DIR/<job>.calls.jsonl (refactor proofs)")
     b.add_argument("--loop-seconds", dest="loop_seconds", type=float, help="maximum seconds for each full improvement loop")
     b.add_argument("--workers", type=int); b.add_argument("--max-builds", dest="max_builds", type=int); b.add_argument("--gear", choices=("loot", "wishlist"), default=None, help="day-1 gear model")
     b.add_argument("--dry-run", action="store_true", help="print how the request was understood and stop")

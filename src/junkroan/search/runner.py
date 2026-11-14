@@ -9,6 +9,7 @@ import os
 import time
 import traceback
 from collections.abc import Iterable, Sequence
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +34,33 @@ def _log_to(path: Path):
         handle.flush()
 
     return log
+
+
+@contextmanager
+def recording(session, record_calls: str | None, name: str):
+    """The session, wrapped in a `RecordingPob` writing `record_calls/<name>.calls.jsonl` when a directory is given
+    (the refactor proof of a search change, #16), the transcript closed on the way out; without it, the session itself."""
+
+    if not record_calls:
+        yield session
+        return
+    from junkroan.recording_pob import RecordingPob
+
+    recorder = RecordingPob(session, Path(record_calls) / f"{name}.calls.jsonl")
+    try:
+        yield recorder
+    finally:
+        recorder.close_recording()
+
+
+def transcript_name(stage: str, skeleton_json: str, ascendancy: str) -> str:
+    """A transcript's file name for one prepare or screen job: the stage, the ascendancy and the hash of the job's
+    input skeleton, so two skeletons of one ascendancy never share a file and the name does not depend on the order
+    the pool finished the jobs in."""
+
+    import hashlib
+
+    return f"{stage}-{ascendancy}-{hashlib.sha256(skeleton_json.encode('utf-8')).hexdigest()[:8]}"
 
 
 def forced_violations(sk: Skeleton) -> list[str]:
@@ -198,7 +226,8 @@ def variant_screen_line(tag: str, result: dict[str, Any], floor_value: float) ->
     return kept, f"  variant screen {tag}: {result['value']:,.0f} (viol {result['violation']:.3f}) in {human_duration(result['seconds'])} -> {verdict}"
 
 
-def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: list[str] | None, n_supports: int | None = None, points: int = 8, gear_mode: str = "loot") -> dict[str, Any]:
+def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: list[str] | None, n_supports: int | None = None, points: int = 8, gear_mode: str = "loot",
+                      record_calls: str | None = None) -> dict[str, Any]:
     """Fill a skeleton's blanks by PoB: bases, ascendancy nodes, and supports
     (unless a shared link is given). Returns the completed skeleton JSON.
 
@@ -213,7 +242,8 @@ def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: lis
     rails = Rails.load()
     n_supports = rails.gems.main_link_max - 1 if n_supports is None else min(n_supports, rails.gems.main_link_max - 1)
     try:
-        with PobSession(run_id=f"prep-{sk.ascendancy}-{os.getpid()}") as pob:
+        with (PobSession(run_id=f"prep-{sk.ascendancy}-{os.getpid()}") as session,
+              recording(session, record_calls, transcript_name("prepare", skeleton_json, sk.ascendancy)) as pob):
             gen = SkeletonGenerator(pob, rails, objective=objective_for(rails, sk.main_link[0], mode=sk.mode, forced_keystones=forced_keystones_of(sk)), log=log, gear_mode=gear_mode)
             sk.apply(pob, gem_level=rails.gems.level, gem_quality=rails.gems.quality, main_quality=rails.gems.main_quality)
             gen.refresh_castability()
@@ -241,8 +271,10 @@ def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: lis
 
 
 def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, unique_screen: bool = False,
-             repick_supports: bool = False, gear_mode: str = "loot", loop_seconds: float | None = None) -> dict[str, Any]:
-    """Run the pipeline on one skeleton; screen=True for the cheap ranking pass."""
+             repick_supports: bool = False, gear_mode: str = "loot", loop_seconds: float | None = None,
+             record_calls: str | None = None, transcript: str | None = None) -> dict[str, Any]:
+    """Run the pipeline on one skeleton; screen=True for the cheap ranking pass. `record_calls`: a directory the
+    session's PoB calls are recorded to, as `<transcript>.calls.jsonl` (default: the log's stem)."""
 
     t0 = time.perf_counter()
     log = _log_to(Path(log_path))
@@ -251,7 +283,8 @@ def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, 
     check_forced(sk)
     rails = Rails.load()
     try:
-        with PobSession(run_id=f"{'screen' if screen else 'full'}-{sk.ascendancy}-{os.getpid()}-{int(time.time() * 1000) % 100000}") as pob:
+        with (PobSession(run_id=f"{'screen' if screen else 'full'}-{sk.ascendancy}-{os.getpid()}-{int(time.time() * 1000) % 100000}") as session,
+              recording(session, record_calls, transcript or Path(log_path).stem) as pob):
             pipeline = BuildPipeline(pob, rails, log=log)
             run_args = {"seed": seed, "screen": screen, "repick_supports": repick_supports, "gear_mode": gear_mode}
             if loop_seconds is not None:
