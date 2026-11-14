@@ -210,6 +210,35 @@ def test_a_search_where_every_screen_crashed_delivers_nothing_and_fails(tmp_path
     assert outcome.exit_code == EXIT_LOST_BUILD and outcome.builds == [] and len(outcome.failures) == 3
 
 
+def test_a_crashed_prepare_is_named_and_the_others_go_on(tmp_path):
+    full = {("Inquisitor", 1): 1000.0, ("Hierophant", 1): 900.0}
+    b = ScriptedBuilder(screen=SCREEN, full=full, crash={("prepare", "Elementalist")})
+    outcome, _ = _run(tmp_path, b, top=2, seeds=1, no_unique_variants=True, no_mutation=True)
+    assert outcome.exit_code == EXIT_OK and [(f.stage, f.what) for f in outcome.failures] == [("prepare", "Witch/Elementalist")]
+    assert not any(c[0] == "screen" and c[1] == "Elementalist" for c in b.calls)
+    assert "prepare failed Witch/Elementalist" in outcome.report[3]
+
+
+def test_a_crashed_mutation_variant_is_named_but_does_not_fail_the_run(tmp_path):
+    uniques = {"Inquisitor": [{"slot": "Body Armour", "name": "Hyrri's Ire", "gain": 0.3}]}
+    full = {("Inquisitor", 1): 1000.0, ("Hierophant", 1): 900.0}
+    b = ScriptedBuilder(screen=SCREEN, full=full, uniques=uniques, variant_screen={"Inquisitor-mut0": 200.0})
+    original = b.run
+
+    def run_with_variant_crash(jobs, workers):
+        for job, res in original(jobs, workers):
+            if job.tag == "Inquisitor-mut0" and not job.kwargs["screen"]:
+                res = {"ok": False, "error": "RuntimeError: scripted variant crash", "considered": {}}
+            yield job, res
+
+    b.run = run_with_variant_crash
+    outcome, _ = _run(tmp_path, b, top=2, seeds=1, no_unique_variants=True)
+    assert outcome.exit_code == EXIT_OK and outcome.lost == []
+    assert [(f.stage, f.what, f.seed) for f in outcome.failures] == [("full", "Inquisitor-mut0", 1)]
+    assert outcome.report[2] == "**FAILED: 1 job(s) crashed**"
+    assert [r["tag"] for r in outcome.builds] == ["Inquisitor-0", "Hierophant-1"]
+
+
 # -- output under $OUT_DIR, nothing outside -------------------------------------------------------------
 
 

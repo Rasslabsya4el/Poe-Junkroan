@@ -8,7 +8,7 @@ import pytest
 from junkroan.report_format import human_duration
 from junkroan.search.request import full_done_line, mutation_done_line, prepared_line, rig_supports_line, screen_done_line, total_line
 
-SEARCH = Path(__file__).resolve().parents[1] / "scripts" / "search.py"
+SEARCH = Path(__file__).resolve().parents[1] / "src" / "junkroan" / "search" / "flow.py"  # #16: the search moved here
 
 LINES = [
     (rig_supports_line("Marauder", "Chieftain", 156, ["A"]), 156),

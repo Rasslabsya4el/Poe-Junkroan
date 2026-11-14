@@ -712,7 +712,7 @@ class SearchOutcome:
 
     builds: list[dict]
     failures: list[Failure]
-    lost: list[str]  # finalist tags with no surviving seed
+    lost: list[str]  # finalist tags (first full round) with no surviving seed; a crashed mutation variant is only a Failure
     report: list[str]
     exit_code: int
     paths: OutputPaths | None = None
@@ -800,9 +800,8 @@ def run(opts: SearchOptions, builder: Builder | None = None, *, rails: Any = Non
             kept = screen_variants(batch, variant_floor(screened, opts.top), opts, builder, ledger, paths.logs)
             if kept:  # a variant is one build on its parent's winning seed: the seeds were spent on the finalists
                 second = full_round(kept, opts, builder, ledger, paths.logs)
-                finals += second.winners
+                finals += second.winners  # a crashed variant is a named Failure, not a lost finalist: its parent was delivered
                 spares += second.spares
-                lost += second.lost
             ledger.say(mutation_done_line(clock() - t0, len(kept), len(batch)))
 
     # -- 7. ranking, files, report
