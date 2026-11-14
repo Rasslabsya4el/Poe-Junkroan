@@ -52,6 +52,17 @@ def flask_base_of(lines: list[str]) -> FlaskBase | None:
     return max(found, key=lambda b: len(b.name), default=None)
 
 
+def worn_flask_forbidden(lines: list[str], flask_rails) -> FlaskBase | None:
+    """#20: the base of a worn non-unique flask or tincture `gear.flasks` does not allow (`flask_base_allowed`), else None.
+    A unique is not crafted and is judged elsewhere; an item of no flask base is not a flask. One test for the reference's
+    flasks a rebuilt skeleton keeps (`skeleton_from_xml`), the flask step's trace and the audit (`audit_flask_bases`)."""
+
+    if lines and lines[0].strip().endswith("UNIQUE"):
+        return None
+    base = flask_base_of(lines)
+    return None if base is None or flask_base_allowed(base, flask_rails) else base
+
+
 @dataclass(frozen=True, slots=True)
 class FlaskMod:
     id: str

@@ -558,6 +558,21 @@ def _filtered_uniques(uniques: dict[str, str], unique_item_bases: dict[str, str]
         emit(f"fixture unique dropped from our skeleton: {slot}: {name} ({reason})")
 
 
+def _filtered_flasks(flasks: dict[str, str], rails: Rails, emit) -> None:
+    """#20: a non-unique flask or tincture of the author's that `gear.flasks` does not allow (`worn_flask_forbidden`; day 1: a
+    utility flask, `flask_utility_crafting` off) leaves the skeleton, one log line each. Carried, it stayed in Flask 2..N (the
+    day-1 flask step trials Flask 1 only) and the audit judged it ours. The AUTHOR's own build is loaded from raw XML, untouched."""
+
+    from junkroan.optimizer.flask_lines import worn_flask_forbidden
+
+    for slot in list(flasks):
+        lines = flasks[slot].splitlines()
+        base = worn_flask_forbidden(lines, rails.gear.flasks)
+        if base is not None:
+            del flasks[slot]
+            emit(f"fixture flask {slot} '{lines[1] if len(lines) > 1 else base.name}' dropped: a {base.kind} flask the rails do not craft")
+
+
 def skeleton_from_xml(xml: str, pob: PobSession | None = None, log=None, *, rails: Rails | None = None,
                        ascendancy_node_names: dict[int, str] | None = None,
                        allocated_after_convert: set[int] | None = None) -> Skeleton:
@@ -675,6 +690,7 @@ def skeleton_from_xml(xml: str, pob: PobSession | None = None, log=None, *, rail
             if socket_line:
                 sockets[name] = socket_line
     _filtered_uniques(uniques, unique_item_bases, bases, rails or Rails.load(), emit)
+    _filtered_flasks(flasks, rails or Rails.load(), emit)
     skeleton = Skeleton(
         class_name=build.get("className"), ascendancy=ascendancy, level=int(build.get("level") or 77),
         ascendancy_nodes=asc_nodes, keystones=keystones, main_link=main_link, main_slot=main_slot, extra_groups=extra,

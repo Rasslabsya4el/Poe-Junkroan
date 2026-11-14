@@ -1065,7 +1065,7 @@ def render_report(results: list[dict], *, stamp: str, workers: int | None = None
         if row.get("author_note"):
             name += f" ({row['author_note']})"
         chosen = best_of.get((str(row.get("slug")), row.get("seed"))) is row
-        if chosen and not counted_row(row):
+        if not counted_row(row):  # #20: every row the counted total leaves out for its own fault, variant rows included
             name += " (infeasible, not counted)" if last_stage_violation(row) > 1e-9 else " (audit error, not counted)"
         audit_findings = row.get("audit") or []
         audit = f"{len(audit_errors(row))} errors / {max(0, len(audit_findings) - len(audit_errors(row)))} warnings" if audit_findings or row.get("audit_errors") else "clean"

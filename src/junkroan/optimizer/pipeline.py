@@ -27,10 +27,10 @@ from junkroan.optimizer.explain import explain
 from junkroan.optimizer.cluster_lines import ClusterCandidate, DAY1_PASSIVES, cluster_enchants, cluster_notables
 from junkroan.optimizer.cluster_step import PlacedCluster, cluster_log_line, run_cluster_step
 from junkroan.optimizer.cluster_trace import TracingClusterProbe, count_generated as count_generated_clusters, count_inner_skipped
-from junkroan.optimizer.flask_lines import FlaskCandidate, flask_base, flask_base_allowed, flask_bases, flask_mods
+from junkroan.optimizer.flask_lines import FlaskCandidate, flask_base, flask_base_allowed, flask_bases, flask_mods, worn_flask_forbidden
 from junkroan.optimizer.flask_probe import PobFlaskProbe
 from junkroan.optimizer.flask_step import SLOTS as FLASK_SLOTS, flask_log_line, run_flask_step
-from junkroan.optimizer.flask_trace import DIVINE_BASE, NO_DIVINE_CLASS, TracingFlaskProbe, count_generated as count_flasks_generated
+from junkroan.optimizer.flask_trace import CARRIED_FORBIDDEN_CLASS, DIVINE_BASE, NO_DIVINE_CLASS, TracingFlaskProbe, count_generated as count_flasks_generated
 from junkroan.optimizer.jewel_lines import jewel_line_candidates
 from junkroan.optimizer.jewel_probe import PobJewelProbe, cluster_links_of, scalar
 from junkroan.optimizer.jewel_trace import TracingJewelProbe, count_generated
@@ -1890,7 +1890,14 @@ class BuildPipeline:
         fixed = None
         if not pure_es:
             fixed = {FLASK_SLOTS[0]: flask_base(DIVINE_BASE)}
+        held = pob.equipped_item_raws() if callable(getattr(pob, "equipped_item_raws", None)) else {}
+        carried = [s for s in FLASK_SLOTS if s not in slots and held.get(s)
+                   and worn_flask_forbidden([ln.strip() for ln in held[s].splitlines() if ln.strip()], rails) is not None]
+        if carried:
+            self.log(f"flasks: {carried} hold a flask the rails do not allow, carried in from the skeleton (#20)")
         with TRACE.move("flask"):
+            TRACE.add_generated([CARRIED_FORBIDDEN_CLASS], 0)
+            TRACE.add_evaluated([CARRIED_FORBIDDEN_CLASS], len(carried))
             step = run_flask_step(probe, bases, lambda b: flask_mods(b, item_level), make, slots=slots,
                                   item_level=item_level, base_level_max=base_level_max, fixed=fixed)
             count_flasks_generated(made)
