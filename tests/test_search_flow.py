@@ -221,7 +221,7 @@ def test_a_crashed_prepare_is_named_and_the_others_go_on(tmp_path):
 
 def test_a_crashed_mutation_variant_is_named_but_does_not_fail_the_run(tmp_path):
     uniques = {"Inquisitor": [{"slot": "Body Armour", "name": "Hyrri's Ire", "gain": 0.3}]}
-    full = {("Inquisitor", 1): 1000.0, ("Hierophant", 1): 900.0}
+    full = {("Inquisitor", 1): 1000.0, ("Hierophant", 1): 900.0, ("mut", 1): 1100.0}  # the variant's value, replaced by the crash below
     b = ScriptedBuilder(screen=SCREEN, full=full, uniques=uniques, variant_screen={"Inquisitor-mut0": 200.0})
     original = b.run
 
