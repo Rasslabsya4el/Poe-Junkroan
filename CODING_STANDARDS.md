@@ -39,7 +39,7 @@ in parentheses.
 - `src/junkroan/pob/` is stable: a feature lands there only through a ticket about the harness, and never as a gate or a ledger. (docs/LAYOUT.md)
 - v1 concepts (rails reports, decision ledgers, proof packets, skill passports) are not resurrected. (D1)
 - Every new kind of error becomes an audit check and a general rule, never a patch for one build. (GLOSSARY.md, "Reading"; D31)
-- Every search run writes its ranked set into its own dated folder `artifacts/search-<skill>/<YYYYMMDD-HHMM>/`; a later run deletes nothing of it. (docs/LAYOUT.md)
+- Every search run writes its ranked set into its own dated folder `artifacts/search-<skill>/<YYYYMMDD-HHMM>/` (under `$OUT_DIR` when it is set) and writes nothing outside it; a later run deletes nothing of it. (docs/LAYOUT.md)
 - Fast tests need no PoB; a test that opens a PobSession or the PoB runtime carries the mark `pob` and skips when the runtime is missing. (docs/LAYOUT.md; pytest.ini)
 
 ## 4. The test of a change's kind

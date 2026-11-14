@@ -70,7 +70,7 @@ TEXT: dict[str, Description] = {
             "Otherwise the new link stays, and the picks are written into the build's pick list with their scores."),
         when_skipped=(
             "Skipped when repick_supports is off or for a screen run. "
-            "scripts/search.py turns it on for a full run when the skeleton has fewer than 5 fixed supports; what other callers pass is not established."),
+            "The search (`junkroan.search.flow.full_round`) turns it on for a full run when the skeleton has fewer than 5 fixed supports; what other callers pass is not established."),
         where="pipeline.py:run (search in search/generator.py:pick_supports)",
     ),
     "utility links": Description(

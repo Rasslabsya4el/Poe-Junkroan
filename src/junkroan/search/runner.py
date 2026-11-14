@@ -22,6 +22,7 @@ from junkroan.search.forced import forced_of
 from junkroan.search.generator import TWO_HAND_TYPES, SkeletonGenerator, forced_slots
 from junkroan.search.hypothesis import item_bases, uniques_by_name
 from junkroan.report_format import human_duration
+from junkroan.search.result import BuildRecord
 from junkroan.search.skeleton import Skeleton
 
 
@@ -295,20 +296,8 @@ def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, 
             if unique_screen:
                 gen = SkeletonGenerator(pob, rails, objective=pipeline.objective, log=log)
                 uniques = [{"slot": s, "name": n, "value": sc.value, "gain": g} for s, n, sc, g in gen.screen_uniques(top=8, fixed=forced_slots(sk))]
-        return {
-            "ok": True, "skeleton": sk.to_json(), "screen": screen, "seed": seed, "value": score.value, "violation": score.violation, "feasible": score.feasible,
-            "final": res.final_stats, "optimistic": res.optimistic_stats.get("CombinedDPS"), "optimistic_stats": res.saved_optimistic(), "import_code": res.import_code, "xml": res.xml,
-            "stages": [{"name": s.name, "seconds": s.seconds, "value": s.score_value, "violation": s.violation, "notes": s.notes} for s in res.stages],
-            "config_reasons": res.config_reasons, "uniques": uniques, "seconds": time.perf_counter() - t0, "summary": res.summary(),
-            "audit": [str(f) for f in res.audit], "audit_errors": sum(1 for f in res.audit if f.severity == "error"), "floors_missed": res.floors_missed, "floors_missed": res.floors_missed, "keystones": res.keystones, "explanation": res.explanation, "picks": res.picks,
-            "castability_calls": res.castability_calls, "castability_seconds": res.castability_seconds,
-            "dropped_moves": res.dropped_moves, "moves": res.moves, "move_rows": res.moves,
-            "pob_calls": res.pob_calls, "tree_churn": res.tree_churn,
-            "ledger_construction_value": res.ledger_construction_value,
-            "ledger_value_before_final_lanes": res.ledger_value_before_final_lanes,
-            "ledger_identity_error": res.ledger_identity_error,
-            "considered": TRACE.considered(),
-        }
+        return {"ok": True, "skeleton": sk.to_json(), "screen": screen, "seed": seed, "value": score.value, "violation": score.violation, "feasible": score.feasible,
+                **BuildRecord.from_result(res).to_json(), "uniques": uniques, "seconds": time.perf_counter() - t0, "considered": TRACE.considered()}
     except Exception as exc:
         return {"ok": False, "error": f"{type(exc).__name__}: {exc}", "trace": traceback.format_exc(), "skeleton": skeleton_json, "screen": screen, "seed": seed, "seconds": time.perf_counter() - t0, "considered": TRACE.considered()}
 

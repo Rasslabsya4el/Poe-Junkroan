@@ -9,8 +9,8 @@
     junkroan benchmark --seeds 3 --no-variants
 
 `build` turns the flags into a request (every flag is a checklist item of
-docs/REQUEST.md) and hands it to scripts/search.py; the other commands are
-thin wrappers. Without installing the package: `python -m junkroan.cli ...`.
+docs/REQUEST.md) and runs the search in this process (`junkroan.search.flow`);
+the other commands are thin wrappers over their scripts. Without installing the package: `python -m junkroan.cli ...`.
 """
 
 from __future__ import annotations
@@ -19,7 +19,6 @@ import argparse
 import json
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -128,13 +127,13 @@ def check_level(req: dict) -> None:
         raise SystemExit(f"--level {level} is outside {lo}-{hi}, the day-1 level range of rulebook row c-level")
 
 
-def search_argv(args: argparse.Namespace, request_path: Path | str, skill: str) -> list[str]:
-    """The `scripts/search.py` command line a `build` invocation runs. Every budget knob
-    of the request travels in the request file (top, seeds, workers, max_builds); the ones
-    that are search-level are passed as flags too, and a flag wins over the file (`--seeds`
-    reaches the echo through the request and the run through the flag)."""
+def search_argv(args: argparse.Namespace, skill: str) -> list[str]:
+    """The search command line (`junkroan.search.flow.search_parser`) a `build` invocation runs; the request
+    itself is handed over in-process. Every budget knob of the request travels in the request (top, seeds,
+    workers, max_builds); the ones that are search-level are passed as flags too, and a flag wins over the
+    request (`--seeds` reaches the echo through the request and the run through the flag)."""
 
-    argv = [str(skill), "--request", str(request_path)]
+    argv = [str(skill)]
     if args.dry_run:
         argv.append("--dry-run")
     if getattr(args, "seeds", None):  # full builds per finalist; the request file carries it too, the flag wins
@@ -152,6 +151,15 @@ def search_argv(args: argparse.Namespace, request_path: Path | str, skill: str) 
     if getattr(args, "record_calls", None):
         argv += ["--record-calls", str(args.record_calls)]
     return argv
+
+
+def _search(argv: list[str], req: dict) -> int:
+    """The search, in this process (#16): the request goes over as data, the rest as its command line."""
+
+    from junkroan.search.flow import main as search_main
+    from junkroan.search.request import BuildRequest
+
+    return search_main(argv, request=BuildRequest.from_dict(json.loads(json.dumps(req))))
 
 
 def _run(script: str, argv: list[str]) -> int:
@@ -197,9 +205,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.print_request:
             print(json.dumps(req, ensure_ascii=False, indent=2))
             return 0
-        tmp = Path(tempfile.gettempdir()) / f"junkroan-request-{abs(hash(json.dumps(req, sort_keys=True)))}.json"
-        tmp.write_text(json.dumps(req, ensure_ascii=False, indent=2), encoding="utf-8")
-        return _run("search.py", search_argv(args, tmp, str(req["skill"])))
+        return _search(search_argv(args, str(req["skill"])), req)
     script = {"probe": "probe_modes.py", "audit": "audit_build.py", "describe": "describe_build.py", "benchmark": "benchmark.py"}[args.command]
     return _run(script, list(args.args))
 
