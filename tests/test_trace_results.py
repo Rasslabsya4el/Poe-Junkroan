@@ -55,6 +55,7 @@ def test_output_from_xml_exact_counts() -> None:
         "flask-bare-base-output": 0,
         "flask-duplicate-base-output": 0,
         "flask-divine-life": 0,
+        "flask-forbidden-carried": 1,  # #20: the magic Quicksilver Flask is a utility flask the day-1 rails forbid
         "flask-slot-empty": 4,
         "node-kind:unknown": 3,
         "node:100": 1,

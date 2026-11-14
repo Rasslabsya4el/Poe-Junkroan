@@ -28,6 +28,7 @@ from junkroan.optimizer.pipeline import BuildPipeline  # noqa: E402
 from junkroan.optimizer.rails import Rails  # noqa: E402
 from junkroan.optimizer.trace import TRACE  # noqa: E402
 from junkroan.pob.session import decode_import_code  # noqa: E402
+from junkroan.search.skeleton import Skeleton  # noqa: E402
 from tests.test_benchmark_counted_rows import full_row  # noqa: E402
 from tests.test_flask_step import FakeProbe  # noqa: E402
 
@@ -73,6 +74,65 @@ def test_day1_unique_flask_stays_and_magic_utility_leaves() -> None:
     assert _names(sk.flasks).get("Flask 2") == "Blood of the Karui"
     assert "Flask 3" not in sk.flasks
     assert not [s for s, t in sk.flasks.items() if worn_flask_forbidden(t.splitlines(), _rails(False).gear.flasks)]
+
+
+# ---- delivery: the session that held the author's build wears what the skeleton holds -----------------------------------
+
+class _HeldSession:
+    """A PoB session stand-in that already wears the author's items (the benchmark loads the author's build first): `equip`
+    writes or (None) empties a slot, every other call `Skeleton.apply` makes is a no-op."""
+
+    def __init__(self, held: dict[str, str]) -> None:
+        self.held = dict(held)
+
+    def equip(self, items: dict[str, str | None], **_kw) -> dict:
+        for slot, raw in items.items():
+            if raw is None:
+                self.held.pop(slot, None)
+            else:
+                self.held[slot] = raw
+        return {}
+
+    def unique_item(self, name: str) -> dict:
+        return {"raw": f"Rarity: UNIQUE\n{name}"}
+
+    def __getattr__(self, _name: str):
+        return lambda *a, **k: {}
+
+
+def _delivered(monkeypatch, slug: str, utility: bool) -> dict[str, str]:
+    xml = _xml(slug)
+    author = skeleton_from_xml(xml, rails=_rails(True)).flasks  # every Flask slot the author wears
+    sk = skeleton_from_xml(xml, rails=_rails(utility))
+    monkeypatch.setattr(Skeleton, "apply_skills", lambda *a, **k: None)
+    pob = _HeldSession(author)
+    sk.apply(pob)
+    return {slot: raw for slot, raw in pob.held.items() if slot.startswith("Flask ")}
+
+
+@needs_skill_source
+def test_day1_session_that_held_the_author_build_wears_no_utility_flask(monkeypatch) -> None:
+    worn = _delivered(monkeypatch, "stormbrand", False)
+    assert sorted(worn) == ["Flask 1", "Flask 4", "Flask 5"]
+    assert not [s for s, raw in worn.items() if worn_flask_forbidden(raw.splitlines(), _rails(False).gear.flasks)]
+
+
+@needs_skill_source
+def test_rail_on_session_keeps_the_author_utility_flasks(monkeypatch) -> None:
+    worn = _delivered(monkeypatch, "stormbrand", True)
+    assert _names(worn)["Flask 2"] == "Medic's Diamond Flask of the Narwhal"
+    assert _names(worn)["Flask 3"] == "Apprentice's Ruby Flask of the Plover"
+
+
+@needs_skill_source
+def test_output_count_of_forbidden_flasks_in_the_delivered_build() -> None:
+    from junkroan.optimizer.trace_output import trace_output_from_xml
+
+    assert trace_output_from_xml(_xml("stormbrand"))[CARRIED_FORBIDDEN_CLASS] == 2  # the author's own: Flask 2, Flask 3
+    xml = ('<PathOfBuilding><Items activeItemSet="1"><Item id="1">Rarity: MAGIC\nCondensed Divine Life Flask of Sealing</Item>'
+           '<Item id="2">Rarity: UNIQUE\nBottled Faith\nSulphur Flask</Item>'
+           '<ItemSet id="1"><Slot name="Flask 1" itemId="1"/><Slot name="Flask 2" itemId="2"/></ItemSet></Items></PathOfBuilding>')
+    assert trace_output_from_xml(xml)[CARRIED_FORBIDDEN_CLASS] == 0
 
 
 # ---- the author's own build is judged as before (D115) -----------------------------------------------------------------

@@ -6,7 +6,7 @@ import functools
 import re
 from xml.etree import ElementTree as ET
 
-from junkroan.optimizer.flask_trace import MANA_FLASK_MARKERS, UTILITY_CRAFT_CLASS
+from junkroan.optimizer.flask_trace import CARRIED_FORBIDDEN_CLASS, MANA_FLASK_MARKERS, UTILITY_CRAFT_CLASS
 from junkroan.optimizer.trace import output_counts
 
 
@@ -169,6 +169,15 @@ def _is_utility(raw: str) -> bool:
     return base is not None and _flask_base_kinds().get(base) == "utility"
 
 
+def _day1_forbidden(raw: str) -> bool:
+    from types import SimpleNamespace
+
+    from junkroan.optimizer.flask_lines import worn_flask_forbidden
+
+    lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
+    return worn_flask_forbidden(lines, SimpleNamespace(tinctures=True, flask_utility_crafting=False)) is not None
+
+
 def _flask_counts(slots, by_id, uptimes) -> dict[str, int]:
     """#575: `flask-active` = Flask slots holding an item with active="true"; `flask-active-uptime-below-100` = those
     active while `uptimes[slot]["full"]` is False; written (0 included) only when a Flask slot holds an item, the
@@ -194,6 +203,9 @@ def _flask_counts(slots, by_id, uptimes) -> dict[str, int]:
             dup += base in seen
             seen.add(base)
     counts["flask-duplicate-base-output"] = dup
+    # #20: held non-unique flasks the day-1 rails forbid (`worn_flask_forbidden` with flask_utility_crafting off: a utility flask
+    # or a tincture); always written. On day 1 the evaluated side of the class is the flask step's carried count
+    counts[CARRIED_FORBIDDEN_CLASS] = sum(1 for s in held if _day1_forbidden(by_id[s.get("itemId")]))
     if not held:
         return counts
     active = [s for s in held if (s.get("active") or "").lower() == "true"]
