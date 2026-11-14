@@ -42,7 +42,6 @@ def _lines(pob) -> dict[str, str | None]:
 
 @pytest.mark.pob
 @needs_pob
-@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_s4_saved_active_flasks_are_all_inactive_once_derived(tmp_path: Path) -> None:
     from junkroan.pob.session import PobSession
 
@@ -50,9 +49,10 @@ def test_stormbrand_s4_saved_active_flasks_are_all_inactive_once_derived(tmp_pat
         pob.load_xml(_xml(STORMBRAND))
         assert pob.flasks_active() == dict.fromkeys(FLASKS, True), "the delivery saved all 5 active"
         as_saved = pob.calc()["FullDPS"]  # the snapshot reads the flags as the slots hold them
-        assert round(as_saved) == 1_753_896
+        # Storm Brand is count 1 at the PoB boundary (#963), so FullDPS counts its 2 attached brands once, not twice (#1)
+        assert round(as_saved) == 876_948
         derived = pob.stats(["FullDPS"])["FullDPS"]
-        assert round(derived) == 1_552_665
+        assert round(derived) == 776_332  # 1,552,665 before #963, the brand counted twice
         print(f"FullDPS as saved {as_saved:,.0f} -> derived {derived:,.0f}")
         assert pob.flasks_active() == dict.fromkeys(FLASKS, False)
         up = pob.flask_uptimes()
@@ -140,7 +140,6 @@ def test_a_cached_read_state_before_a_stats_read_does_not_go_stale_on_a_derived_
 
 @pytest.mark.pob
 @needs_pob
-@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_active_skill_stats_derives_and_agrees_with_stats_on_the_main_skill(tmp_path: Path) -> None:
     from junkroan.optimizer.castability import _skill_entries
     from junkroan.pob.session import PobSession
@@ -155,4 +154,5 @@ def test_active_skill_stats_derives_and_agrees_with_stats_on_the_main_skill(tmp_
         derived = pob.stats(list(keys))
         assert pob.read_state()["items_state"]["flasks_active"] == dict.fromkeys(FLASKS, False)
         assert any(row.get("CombinedDPS") == derived["CombinedDPS"] and row.get("FullDPS") == derived["FullDPS"] for row in rows.values()), (rows, derived)
-        assert round(derived["FullDPS"]) == 1_552_665
+        # Storm Brand is count 1 at the PoB boundary (#963), so FullDPS counts its 2 attached brands once, not twice (#1)
+        assert round(derived["FullDPS"]) == 776_332
