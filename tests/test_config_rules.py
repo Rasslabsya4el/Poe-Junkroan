@@ -105,8 +105,9 @@ def test_stormbrand_gearloot_channelling_generator_is_off_and_isolated_toggle_is
     """The isolated mutation keeps every original config input except Power Charges.
 
     The pinned runtime measures 915,822.6 here: Storm Brand enters PoB at count 1 (#963), so FullDPS counts its
-    attached brands once; the 1,831,645 recorded before that counted them twice (#1). The historical 1,611,848 target also
-    needs `conditionEnemyOnConsecratedGround` off; this test intentionally preserves it.
+    attached brands once; the 1,831,645 recorded before that counted them twice (#1). The historical 1,611,848 target
+    (also counted twice, about 805,924 at count 1) also needs `conditionEnemyOnConsecratedGround` off; this test
+    intentionally preserves it.
     """
 
     with PobSession(run_id="test-config-stormbrand-gearloot", artifacts_root=tmp_path) as pob:
