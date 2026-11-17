@@ -154,13 +154,15 @@ def audit_flask_bases(xml: str, rails: Rails) -> list[Finding]:
     """#1169: a crafted flask or tincture the rails do not allow (`flask_base_allowed`, the flask step's own pool test; #1162 on day 1:
     no utility flask is crafted, only Life, Mana or Hybrid). A unique is not crafted and is judged elsewhere."""
 
-    from junkroan.optimizer.flask_lines import flask_base_allowed
+    from junkroan.optimizer.flask_lines import worn_flask_forbidden
 
     flasks = rails.gear.flasks
     out = []
-    for slot, name, unique, base in _worn_flasks(xml):
-        if unique or flask_base_allowed(base, flasks):
+    for slot, lines in _items(xml):
+        base = worn_flask_forbidden(lines, flasks) if slot.startswith("Flask ") else None
+        if base is None:
             continue
+        name = lines[1] if len(lines) > 1 else base.name
         why = ("the rails allow no tinctures (gear.flasks.tinctures is off)" if base.kind == "tincture" and not flasks.tinctures
                else "the rails craft only Life, Mana or Hybrid flasks (gear.flasks.flask_utility_crafting is off)")
         out.append(Finding("error", "flask-utility-crafted", f"{slot}: {name} ({base.name}, a {base.kind} flask) is crafted; {why}"))

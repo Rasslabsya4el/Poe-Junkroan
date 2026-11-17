@@ -669,6 +669,9 @@ class Skeleton:
                 raw = pob.unique_item(name)["raw"]
             items[slot] = raw
         items.update(self.flasks)
+        # #20: the skeleton holds the build's whole flask set; a Flask slot it leaves empty is emptied in PoB too, else a flask
+        # the session held before (the benchmark loads the author's own build first) stays worn past every step
+        items.update({f"Flask {n}": None for n in range(1, 6) if f"Flask {n}" not in self.flasks})
         items.update(self.jewels)
         if items:
             pob.equip(items)

@@ -30,6 +30,10 @@ MANA_FLASK_MARKERS = ("Mana Flask", "Hybrid Flask")
 # #1162: a craft trial of a utility flask (every flask base that is not Life / Mana / Hybrid). The day-1 rail
 # `gear.flasks.flask_utility_crafting` is false, so the step builds none: evaluated 0 there. Written 0/0 by count_generated.
 UTILITY_CRAFT_CLASS = "utility-flask-craft"
+# #20: a non-unique flask the rails do not allow (`worn_flask_forbidden`) worn, when the step starts, in a slot the step does not
+# trial (day 1: Flask 2..N), so the build carried it through every PoB read before and is delivered with it. Written generated 0,
+# evaluated the count of such slots: 0 once the skeleton no longer carries the reference's own utility flasks.
+CARRIED_FORBIDDEN_CLASS = "flask-forbidden-carried"
 
 
 def flask_classes(candidate: Any) -> list[str]:
