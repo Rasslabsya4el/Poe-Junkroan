@@ -128,6 +128,14 @@ optimizer budget, keep top-K, fully optimize, then optionally mutate the top
 results (swap one component) for another round. Evolutionary in spirit,
 bounded in compute.
 
+The search is the module `junkroan.search.flow` (#16): one entry `run(SearchOptions) -> SearchOutcome` (the
+ranked builds, the failures, the exit code), its stages functions over data (`candidates`, `prepare`, `screen`,
+`choose_finalists`, `full_round`, `mutation_batch`, `final_order`, `ranking_lines`). Every PoB call goes through
+a `Builder` (the process pool in production, a scripted one in `tests/test_search_flow.py`). `junkroan build` calls
+it in-process; `scripts/search.py` only parses arguments. Output: `$OUT_DIR/search-<skill>/<stamp>/` when
+`OUT_DIR` is set, else `artifacts/search-<skill>/<stamp>/`. A crashed prepare, screen or seed opens the report;
+a finalist with no surviving seed exits 2.
+
 **Ranking.** Pareto front over the objective components, not a single scalar,
 because PoB does not model clear speed, uptime or comfort. Every reported
 build carries its optimizer trace: which nodes/affixes were chosen and the

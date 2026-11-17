@@ -101,12 +101,13 @@ def _without_baseline_power_charges(xml: str) -> str:
     return ET.tostring(root, encoding="unicode")
 
 
-@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_gearloot_channelling_generator_is_off_and_isolated_toggle_is_measured(tmp_path: Path) -> None:
     """The isolated mutation keeps every original config input except Power Charges.
 
-    The pinned runtime measures 1,831,645 here. The historical 1,611,848 target also
-    needs `conditionEnemyOnConsecratedGround` off; this test intentionally preserves it.
+    The pinned runtime measures 915,822.6 here: Storm Brand enters PoB at count 1 (#963), so FullDPS counts its
+    attached brands once; the 1,831,645 recorded before that counted them twice (#1). The historical 1,611,848 target
+    (also counted twice, about 805,924 at count 1) also needs `conditionEnemyOnConsecratedGround` off; this test
+    intentionally preserves it.
     """
 
     with PobSession(run_id="test-config-stormbrand-gearloot", artifacts_root=tmp_path) as pob:
@@ -120,7 +121,7 @@ def test_stormbrand_gearloot_channelling_generator_is_off_and_isolated_toggle_is
         pob.load_xml(_without_baseline_power_charges(original))
         assert pob.config_inputs() == {key: value for key, value in inputs.items() if key != "usePowerCharges"}
         full_dps = pob.calc("baseline")["FullDPS"]
-        assert full_dps == pytest.approx(1_831_645, rel=0.005)
+        assert full_dps == pytest.approx(915_822.6, rel=0.005)
 
 
 def test_stormbrand_gearloot_original_baseline_fails_generator_audit(tmp_path: Path) -> None:

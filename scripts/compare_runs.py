@@ -75,7 +75,7 @@ def summarize(rows: list[dict]) -> dict[str, dict]:
 
 
 def _max_pass(row: dict) -> int:
-    passes = [m["pass"] for m in row.get("move_rows") or [] if isinstance(m, dict) and isinstance(m.get("pass"), int)]
+    passes = [m["pass"] for m in (row.get("moves") or row.get("move_rows") or []) if isinstance(m, dict) and isinstance(m.get("pass"), int)]
     return max(passes) if passes else 0
 
 

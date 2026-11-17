@@ -25,6 +25,6 @@ def test_total_sums_over_moves(tmp_path):
 
 def test_cli_passes_trace_out():
     ns = argparse.Namespace(dry_run=False, no_variants=False, trace_out="x/t.json")
-    argv = search_argv(ns, "/tmp/r.json", "Fireball")
+    argv = search_argv(ns, "Fireball")
     assert argv[argv.index("--trace-out") + 1] == "x/t.json"
-    assert "--trace-out" not in search_argv(argparse.Namespace(dry_run=False, no_variants=False), "/tmp/r.json", "Fireball")
+    assert "--trace-out" not in search_argv(argparse.Namespace(dry_run=False, no_variants=False), "Fireball")

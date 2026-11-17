@@ -51,6 +51,7 @@ from junkroan.optimizer.trace import TRACE
 import junkroan.optimizer.trace_600  # noqa: F401  (#600 classes: boots-with/without-30-movement)
 from junkroan.optimizer.trace_output import trace_output_from_xml
 from junkroan.optimizer.move_ledger import aggregate_move_tables, reentry_line, render_move_rows
+from junkroan.search.result import BuildRecord
 from junkroan.report_format import human_duration
 
 FIXTURES = ROOT / "tests" / "fixtures" / "tuadh_329"
@@ -951,19 +952,9 @@ def _run_one_inner(slug: str, *, log_path: str, seed: int, gear_mode: str, const
             "author_mana_unreserved": prepared.author_lane.get("ManaUnreserved"), "ours_mana_unreserved": ours.get("ManaUnreserved"), "aura_levels": res.skeleton.aura_levels,
             "ours": ours.get(prepared.stat), "ours_optimistic": res.optimistic_stats.get(prepared.stat), "ours_life": ours.get("Life"), "ours_ehp": ours.get("TotalEHP"),
             "ours_ramp": ours.get("RampSeconds"), "ratio_lane": (ours.get(prepared.stat) or 0) / max(1.0, prepared.author_lane[prepared.stat]), "ratio_raw": (ours.get(prepared.stat) or 0) / max(1.0, prepared.author_raw[prepared.stat]),
-            "keystones": res.keystones, "audit": [str(f) for f in res.audit], "audit_errors": sum(1 for f in res.audit if f.severity == "error"),
-            "loop_stop": res.loop_stop,  # #38: "converged" or "time" (BuildPipeline.run, pipeline.py)
-            "fixed_point_gain": res.fixed_point_gain, "fixed_point_note": res.fixed_point_note,
-            "castability_calls": res.castability_calls, "castability_seconds": res.castability_seconds,
-            "dropped_moves": res.dropped_moves, "moves": res.moves, "move_rows": res.moves,
             "considered": TRACE.considered(), "output": trace_output_from_xml(res.xml),
-            "pob_calls": res.pob_calls, "tree_churn": res.tree_churn,
-            "ledger_construction_value": res.ledger_construction_value,
-            "ledger_value_before_final_lanes": res.ledger_value_before_final_lanes,
-            "ledger_identity_error": res.ledger_identity_error,
-            "stages": [{"name": s.name, "seconds": s.seconds, "value": s.score_value, "violation": s.violation, "notes": s.notes} for s in res.stages],
             "author_regime": AUTHOR_REGIME, "author_note": prepared.author_note,
-            "summary": res.summary(), "import_code": res.import_code, "xml": res.xml,
+            **BuildRecord.from_result(res).to_json(),
         }
     except Exception as exc:  # one broken reference must not kill the benchmark
         return {"ok": False, "slug": slug, "seed": seed, "gear_mode": gear_mode, "variant": variant_label(forbid_keystones or [], force_keystones or []), "error": f"{type(exc).__name__}: {exc}", "trace": traceback.format_exc(), "seconds": time.perf_counter() - t0}

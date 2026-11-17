@@ -8,7 +8,7 @@ unknown name is rejected with a message, never guessed. Before anything
 runs, the request is echoed back: how each item was understood, how many
 builds it expands to, and roughly how long that takes.
 
-The JSON form (`scripts/search.py --request file.json`) mirrors the list, and so
+The JSON form (`junkroan build file.json`, or `scripts/search.py <skill> --request file.json`) mirrors the list, and so
 do the flags of `junkroan build` (`python scripts/junkroan.py build --skill ... --mode ...
 --ascendancy A,B --unique "Body Armour=Hyrri's Ire" --scaling Int:0.4 --dry-run`;
 `junkroan build` / `python -m junkroan.cli build` need `pip install -e .`);
