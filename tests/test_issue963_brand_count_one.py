@@ -162,3 +162,26 @@ def test_row3_ignite_penance_brand_s4_fulldps() -> None:
     stats = _load_as_the_replay_bench_does("ignite_penance_brand-s4", ("AttachedBrandCount", "FullDPS"))
     assert stats["AttachedBrandCount"] == 2
     assert stats["FullDPS"] == pytest.approx(1_278_027, rel=1e-3), "main: 1,480,854 (counted for four brands)"
+
+
+@needs_runtime
+@pytest.mark.pob
+def test_tuadh_stormbrand_fulldps_halves_at_count_one_and_attached_brands_stay_two(monkeypatch) -> None:
+    """Rasslabsya4el/Poe-Junkroan#1: the four stormbrand tests read half their old numbers because of this rule, not a
+    defect. The same fixture loaded through `load_xml` (count 1) and with the rewrite bypassed (count 2 as saved)."""
+
+    import junkroan.pob.session as session
+
+    xml = decode_import_code((FIXTURES / "tuadh_329" / "stormbrand.pob.txt").read_text(encoding="utf-8").strip())
+    assert _brand_counts(xml) == {"Storm Brand": 2}
+    keys = ["AttachedBrandCount", "CombinedDPS", "FullDPS"]
+    with PobSession(run_id="test-issue1-stormbrand", artifacts_root=PROJECT_ROOT / "artifacts" / "test-runs") as pob:
+        pob.load_xml(xml)
+        at_one = pob.stats(keys)
+        monkeypatch.setattr(session, "brand_gems_at_count_one_xml", lambda text: text)
+        pob.load_xml(xml)
+        as_saved = pob.stats(keys)
+    assert at_one["AttachedBrandCount"] == as_saved["AttachedBrandCount"] == 2
+    assert round(at_one["FullDPS"]) == 898_678 == round(at_one["CombinedDPS"])
+    assert round(as_saved["FullDPS"]) == 1_797_356
+    assert as_saved["FullDPS"] == pytest.approx(2 * at_one["FullDPS"], rel=1e-12)

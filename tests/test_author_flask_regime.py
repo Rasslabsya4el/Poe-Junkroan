@@ -93,11 +93,11 @@ def test_no_forced_flask_activation_remains() -> None:
 
 
 @pytest.mark.pob
-@pytest.mark.xfail(reason="known open defect, Rasslabsya4el/Poe-Junkroan#1: stormbrand reads half the expected value", strict=True)
 def test_stormbrand_author_full_dps_under_pob_uptime() -> None:
     """Row 5 of #575: the author's saved flasks are no longer forced active. Read as saved (the author's own config,
-    the flags derived: all five False) FullDPS is 1,797,356 (1,806,874 forced); through the benchmark's own author
-    path (gem normalisation, buff gems off, main group flagged) it is 1,721,800 (1,730,917 forced, before #575)."""
+    the flags derived: all five False) FullDPS is 898,678; through the benchmark's own author path (gem normalisation,
+    buff gems off, main group flagged) it is 860,900. Storm Brand enters PoB at count 1 (#963), so FullDPS counts its
+    2 attached brands once; the 1,797,356 and 1,721,800 recorded before that counted them twice (#1)."""
     from junkroan.pob.session import PobSession, decode_import_code
 
     with PobSession(run_id="flask-uptime-stormbrand") as pob:
@@ -108,5 +108,5 @@ def test_stormbrand_author_full_dps_under_pob_uptime() -> None:
     full = prepared.author_raw["FullDPS"]
     print(f"stormbrand author FullDPS as saved {raw:,.0f}, benchmark path {full:,.0f}")
     assert not any(flags.values())
-    assert round(raw) == 1_797_356
-    assert round(full) == 1_721_800
+    assert round(raw) == 898_678
+    assert round(full) == 860_900
