@@ -34,7 +34,7 @@ def test_recorded_rows_the_seeded_moves_were_drawn_and_left_nothing(slug: str) -
     assert [r["seed"] for r in rows] == list(SEEDS)  # (a) the seeds the rows record differ: the seed was given
     assert len({r["ours"] for r in rows}) == 1  # and the three finals are one number
     for row in rows:
-        kicks = [m for m in row["move_rows"] if m["move"].startswith("kick")]
+        kicks = [m for m in (row.get("moves") or row["move_rows"]) if m["move"].startswith("kick")]
         assert len(kicks) == 7  # (b) 3 kick tree + 4 kick joint, the only moves that took a stream
         assert all(m["before"] == m["after"] and not m["kept"] for m in kicks)  # drawn, then discarded
 

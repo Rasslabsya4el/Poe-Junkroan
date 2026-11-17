@@ -44,7 +44,8 @@ request only, `--no-variants` is the cheapest run. Anything past a quick local c
 bench) runs as a heavy run (`CLAUDE.md`, "Heavy runs"; `docs/ci.md`).
 
 Every search run writes its ranked set (`NN *.pob.txt`, `.json`, `report.md`) into its own dated folder
-`artifacts/search-<skill>/<YYYYMMDD-HHMM>/`; a later run deletes nothing of it. The skill root keeps one `report.md`,
+`artifacts/search-<skill>/<YYYYMMDD-HHMM>/` (`$OUT_DIR/search-<skill>/<YYYYMMDD-HHMM>/` when `OUT_DIR` is set, as in a heavy run;
+nothing outside these, #16); a later run deletes nothing of it. The skill root keeps one `report.md`,
 the latest run's, whose first line names the folder (`Latest run: <path>`). The request echo prints the folder
 (`results: <path>`).
 

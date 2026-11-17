@@ -1,11 +1,7 @@
 """#526: every search run writes into its own dated folder; a later run deletes nothing."""
 from __future__ import annotations
 
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-import search  # noqa: E402
+from junkroan.search import flow as search
 
 
 def _build(i: int) -> dict:

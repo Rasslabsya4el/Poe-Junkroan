@@ -9,6 +9,7 @@ import os
 import time
 import traceback
 from collections.abc import Iterable, Sequence
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +22,7 @@ from junkroan.search.forced import forced_of
 from junkroan.search.generator import TWO_HAND_TYPES, SkeletonGenerator, forced_slots
 from junkroan.search.hypothesis import item_bases, uniques_by_name
 from junkroan.report_format import human_duration
+from junkroan.search.result import BuildRecord
 from junkroan.search.skeleton import Skeleton
 
 
@@ -33,6 +35,33 @@ def _log_to(path: Path):
         handle.flush()
 
     return log
+
+
+@contextmanager
+def recording(session, record_calls: str | None, name: str):
+    """The session, wrapped in a `RecordingPob` writing `record_calls/<name>.calls.jsonl` when a directory is given
+    (the refactor proof of a search change, #16), the transcript closed on the way out; without it, the session itself."""
+
+    if not record_calls:
+        yield session
+        return
+    from junkroan.recording_pob import RecordingPob
+
+    recorder = RecordingPob(session, Path(record_calls) / f"{name}.calls.jsonl")
+    try:
+        yield recorder
+    finally:
+        recorder.close_recording()
+
+
+def transcript_name(stage: str, skeleton_json: str, ascendancy: str) -> str:
+    """A transcript's file name for one prepare or screen job: the stage, the ascendancy and the hash of the job's
+    input skeleton, so two skeletons of one ascendancy never share a file and the name does not depend on the order
+    the pool finished the jobs in."""
+
+    import hashlib
+
+    return f"{stage}-{ascendancy}-{hashlib.sha256(skeleton_json.encode('utf-8')).hexdigest()[:8]}"
 
 
 def forced_violations(sk: Skeleton) -> list[str]:
@@ -198,7 +227,8 @@ def variant_screen_line(tag: str, result: dict[str, Any], floor_value: float) ->
     return kept, f"  variant screen {tag}: {result['value']:,.0f} (viol {result['violation']:.3f}) in {human_duration(result['seconds'])} -> {verdict}"
 
 
-def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: list[str] | None, n_supports: int | None = None, points: int = 8, gear_mode: str = "loot") -> dict[str, Any]:
+def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: list[str] | None, n_supports: int | None = None, points: int = 8, gear_mode: str = "loot",
+                      record_calls: str | None = None) -> dict[str, Any]:
     """Fill a skeleton's blanks by PoB: bases, ascendancy nodes, and supports
     (unless a shared link is given). Returns the completed skeleton JSON.
 
@@ -213,7 +243,8 @@ def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: lis
     rails = Rails.load()
     n_supports = rails.gems.main_link_max - 1 if n_supports is None else min(n_supports, rails.gems.main_link_max - 1)
     try:
-        with PobSession(run_id=f"prep-{sk.ascendancy}-{os.getpid()}") as pob:
+        with (PobSession(run_id=f"prep-{sk.ascendancy}-{os.getpid()}") as session,
+              recording(session, record_calls, transcript_name("prepare", skeleton_json, sk.ascendancy)) as pob):
             gen = SkeletonGenerator(pob, rails, objective=objective_for(rails, sk.main_link[0], mode=sk.mode, forced_keystones=forced_keystones_of(sk)), log=log, gear_mode=gear_mode)
             sk.apply(pob, gem_level=rails.gems.level, gem_quality=rails.gems.quality, main_quality=rails.gems.main_quality)
             gen.refresh_castability()
@@ -241,8 +272,10 @@ def prepare_candidate(skeleton_json: str, *, log_path: str, shared_supports: lis
 
 
 def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, unique_screen: bool = False,
-             repick_supports: bool = False, gear_mode: str = "loot", loop_seconds: float | None = None) -> dict[str, Any]:
-    """Run the pipeline on one skeleton; screen=True for the cheap ranking pass."""
+             repick_supports: bool = False, gear_mode: str = "loot", loop_seconds: float | None = None,
+             record_calls: str | None = None, transcript: str | None = None) -> dict[str, Any]:
+    """Run the pipeline on one skeleton; screen=True for the cheap ranking pass. `record_calls`: a directory the
+    session's PoB calls are recorded to, as `<transcript>.calls.jsonl` (default: the log's stem)."""
 
     t0 = time.perf_counter()
     log = _log_to(Path(log_path))
@@ -251,7 +284,8 @@ def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, 
     check_forced(sk)
     rails = Rails.load()
     try:
-        with PobSession(run_id=f"{'screen' if screen else 'full'}-{sk.ascendancy}-{os.getpid()}-{int(time.time() * 1000) % 100000}") as pob:
+        with (PobSession(run_id=f"{'screen' if screen else 'full'}-{sk.ascendancy}-{os.getpid()}-{int(time.time() * 1000) % 100000}") as session,
+              recording(session, record_calls, transcript or Path(log_path).stem) as pob):
             pipeline = BuildPipeline(pob, rails, log=log)
             run_args = {"seed": seed, "screen": screen, "repick_supports": repick_supports, "gear_mode": gear_mode}
             if loop_seconds is not None:
@@ -262,20 +296,8 @@ def optimize(skeleton_json: str, *, log_path: str, screen: bool, seed: int = 1, 
             if unique_screen:
                 gen = SkeletonGenerator(pob, rails, objective=pipeline.objective, log=log)
                 uniques = [{"slot": s, "name": n, "value": sc.value, "gain": g} for s, n, sc, g in gen.screen_uniques(top=8, fixed=forced_slots(sk))]
-        return {
-            "ok": True, "skeleton": sk.to_json(), "screen": screen, "seed": seed, "value": score.value, "violation": score.violation, "feasible": score.feasible,
-            "final": res.final_stats, "optimistic": res.optimistic_stats.get("CombinedDPS"), "optimistic_stats": res.saved_optimistic(), "import_code": res.import_code, "xml": res.xml,
-            "stages": [{"name": s.name, "seconds": s.seconds, "value": s.score_value, "violation": s.violation, "notes": s.notes} for s in res.stages],
-            "config_reasons": res.config_reasons, "uniques": uniques, "seconds": time.perf_counter() - t0, "summary": res.summary(),
-            "audit": [str(f) for f in res.audit], "audit_errors": sum(1 for f in res.audit if f.severity == "error"), "floors_missed": res.floors_missed, "floors_missed": res.floors_missed, "keystones": res.keystones, "explanation": res.explanation, "picks": res.picks,
-            "castability_calls": res.castability_calls, "castability_seconds": res.castability_seconds,
-            "dropped_moves": res.dropped_moves, "moves": res.moves, "move_rows": res.moves,
-            "pob_calls": res.pob_calls, "tree_churn": res.tree_churn,
-            "ledger_construction_value": res.ledger_construction_value,
-            "ledger_value_before_final_lanes": res.ledger_value_before_final_lanes,
-            "ledger_identity_error": res.ledger_identity_error,
-            "considered": TRACE.considered(),
-        }
+        return {"ok": True, "skeleton": sk.to_json(), "screen": screen, "seed": seed, "value": score.value, "violation": score.violation, "feasible": score.feasible,
+                **BuildRecord.from_result(res).to_json(), "uniques": uniques, "seconds": time.perf_counter() - t0, "considered": TRACE.considered()}
     except Exception as exc:
         return {"ok": False, "error": f"{type(exc).__name__}: {exc}", "trace": traceback.format_exc(), "skeleton": skeleton_json, "screen": screen, "seed": seed, "seconds": time.perf_counter() - t0, "considered": TRACE.considered()}
 

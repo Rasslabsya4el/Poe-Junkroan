@@ -37,24 +37,24 @@ def test_dry_run_echoes_through_the_search() -> None:
 def test_no_variants_reaches_the_search_as_flags() -> None:
     """The cheapest run (one full build per candidate) has to be reachable from `junkroan build`."""
 
-    plain = search_argv(argparse.Namespace(dry_run=False, no_variants=False), "/tmp/r.json", "Storm Brand")
-    assert plain == ["Storm Brand", "--request", "/tmp/r.json"]
-    cheap = search_argv(argparse.Namespace(dry_run=True, no_variants=True), "/tmp/r.json", "Storm Brand")
-    assert cheap == ["Storm Brand", "--request", "/tmp/r.json", "--dry-run", "--no-unique-variants", "--no-mutation"]
+    plain = search_argv(argparse.Namespace(dry_run=False, no_variants=False), "Storm Brand")
+    assert plain == ["Storm Brand"]
+    cheap = search_argv(argparse.Namespace(dry_run=True, no_variants=True), "Storm Brand")
+    assert cheap == ["Storm Brand", "--dry-run", "--no-unique-variants", "--no-mutation"]
 
 
 def test_seeds_reach_the_search_as_a_flag_and_the_request_as_a_field() -> None:
     """D71: the finalists are built `--seeds` times. The flag drives the run, the request
     field drives the echo's estimate, and both carry the same number."""
 
-    argv = search_argv(argparse.Namespace(dry_run=False, no_variants=True, seeds=2), "/tmp/r.json", "Storm Brand")
-    assert argv == ["Storm Brand", "--request", "/tmp/r.json", "--seeds", "2", "--no-unique-variants", "--no-mutation"]
-    assert search_argv(argparse.Namespace(dry_run=False, no_variants=False, seeds=None), "/tmp/r.json", "Smite") == ["Smite", "--request", "/tmp/r.json"]
+    argv = search_argv(argparse.Namespace(dry_run=False, no_variants=True, seeds=2), "Storm Brand")
+    assert argv == ["Storm Brand", "--seeds", "2", "--no-unique-variants", "--no-mutation"]
+    assert search_argv(argparse.Namespace(dry_run=False, no_variants=False, seeds=None), "Smite") == ["Smite"]
 
 
 def test_full_ranks_and_loop_budget_reach_the_search() -> None:
-    argv = search_argv(argparse.Namespace(dry_run=False, no_variants=False, seeds=None, full_ranks="1,3,9", loop_seconds=300), "/tmp/r.json", "Cold Snap")
-    assert argv == ["Cold Snap", "--request", "/tmp/r.json", "--full-ranks", "1,3,9", "--loop-seconds", "300"]
+    argv = search_argv(argparse.Namespace(dry_run=False, no_variants=False, seeds=None, full_ranks="1,3,9", loop_seconds=300), "Cold Snap")
+    assert argv == ["Cold Snap", "--full-ranks", "1,3,9", "--loop-seconds", "300"]
 
 
 def test_seeds_flag_becomes_a_request_field(capsys) -> None:

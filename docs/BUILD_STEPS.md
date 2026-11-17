@@ -332,7 +332,7 @@ Step name: `supports re-picked`
 
 **What it keeps.** The link the skeleton held before is kept when the re-pick does not score strictly above it. Otherwise the new link stays, and the picks are written into the build's pick list with their scores.
 
-**When it is skipped.** Skipped when repick_supports is off or for a screen run. scripts/search.py turns it on for a full run when the skeleton has fewer than 5 fixed supports; what other callers pass is not established.
+**When it is skipped.** Skipped when repick_supports is off or for a screen run. The search (`junkroan.search.flow.full_round`) turns it on for a full run when the skeleton has fewer than 5 fixed supports; what other callers pass is not established.
 
 Where: `pipeline.py:run (search in search/generator.py:pick_supports)`
 
